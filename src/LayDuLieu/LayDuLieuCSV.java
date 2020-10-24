@@ -7,7 +7,6 @@ public class LayDuLieuCSV {
 	public void layDuLieuCSV() {
 
 	}
-
 	public ArrayList<String> parseCSVLine(String csvLine) {
 		ArrayList<String > res = new ArrayList<>();
 		if(csvLine != null ){
