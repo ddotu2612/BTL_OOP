@@ -7,7 +7,7 @@ import org.jsoup.select.Elements;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CrawBienDongChungKhoan {
+public class CrawlBienDongChungKhoan {
     public static void main(String[] args) {
         String dir = System.getProperty("user.dir");
         Document doc;
