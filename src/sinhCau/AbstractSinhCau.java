@@ -1,24 +1,20 @@
 package sinhCau;
 
-public class AbstractSinhCau {
+import java.util.ArrayList;
+
+public abstract class AbstractSinhCau {
 
 	public AbstractSinhCau() {
-		// TODO - implement AbstractSinhCau.AbstractSinhCau
-		throw new UnsupportedOperationException();
-	}
 
+	}
 	/**
 	 * 
 	 * @param sentences
 	 */
 	public String sinhCauNgauNhien(String[] sentences) {
-		// TODO - implement AbstractSinhCau.sinhCauNgauNhien
-		throw new UnsupportedOperationException();
+		String a="" ;
+		return a;
 	}
 
-	public String[] sinhDoanVan() {
-		// TODO - implement AbstractSinhCau.sinhDoanVan
-		throw new UnsupportedOperationException();
-	}
-
+	public abstract ArrayList<String> sinhDoanVan();
 }

@@ -1,4 +1,4 @@
-package crawData;
+package crawlData;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -7,7 +7,7 @@ import org.jsoup.select.Elements;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class NDTNNCrawData {
+public class CrawlNhaDauTuNuocNgoai {
     public static void main(String[] args) {
         String dir = System.getProperty("user.dir") ;
         Document doc;
@@ -19,7 +19,7 @@ public class NDTNNCrawData {
 
                 int indext = 0 ;
                 StringBuilder sb = new StringBuilder();
-                FileWriter fw = new FileWriter(dir + "\\gdnnData");
+                FileWriter fw = new FileWriter(dir + "\\src\\duLieu\\nhaDauTuNuocNgoaiData.csv");
 
                 for ( int i =0 ; i < body.size(); i++) {
                     if( i % 8 == 0) {
