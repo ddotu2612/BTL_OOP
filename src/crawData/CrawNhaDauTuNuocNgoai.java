@@ -10,14 +10,13 @@ import java.io.IOException;
 public class CrawNhaDauTuNuocNgoai {
     public static void main(String[] args) {
         String div = System.getProperty("user.dir");
-        System.out.println(div);
         Document doc;
         try {
             doc = Jsoup.connect("https://s.cafef.vn/TraCuuLichSu2/3/HOSE/23/10/2020.chn").get();
             Elements codeItem = doc.select("tr > td.CodeItem > a");
             Elements item = doc.select("tr > td.Item");
             StringBuilder sb = new StringBuilder();
-            FileWriter fileWriter = new FileWriter( div + "\\src\\duLieu//NhadautuNNDate.csv");
+            FileWriter fileWriter = new FileWriter( div + "\\src\\duLieu//NhaDauTuNNDate.csv");
             sb.append("\"").append("Ma").append("\",").append("\"").append("KLMua").append("\",").append("\"").append("GTMua").append("\",").append("\"").append("KLBan").append("\",").append("\"").append("GTBan").append("\"");
             sb.append("\"").append("KLGDRong").append("\",").append("\"").append("GTDGRong").append("\",").append("\"").append("RoomConLai").append("\",").append("\"").append("DangSoHuu").append("\"\n");
             int index1 = 0 ;
