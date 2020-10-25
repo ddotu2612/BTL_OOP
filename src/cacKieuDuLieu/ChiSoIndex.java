@@ -13,6 +13,115 @@ public class ChiSoIndex {
 	private double tiLeThayDoi;
 	private String thayDoi;//so với phiên trước đó
 	private long GTGDKhopLenh;
+
+	public String getMaChungKhoan() {
+		return maChungKhoan;
+	}
+
+	public void setMaChungKhoan(String maChungKhoan) {
+		this.maChungKhoan = maChungKhoan;
+	}
+
+	public String getNgayGD() {
+		return ngayGD;
+	}
+
+	public void setNgayGD(String ngayGD) {
+		this.ngayGD = ngayGD;
+	}
+
+	public double getGiaMoCua() {
+		return giaMoCua;
+	}
+
+	public void setGiaMoCua(double giaMoCua) {
+		this.giaMoCua = giaMoCua;
+	}
+
+	public double getGiaDongCua() {
+		return giaDongCua;
+	}
+
+	public void setGiaDongCua(double giaDongCua) {
+		this.giaDongCua = giaDongCua;
+	}
+
+	public double getGiaCaoNhat() {
+		return giaCaoNhat;
+	}
+
+	public void setGiaCaoNhat(double giaCaoNhat) {
+		this.giaCaoNhat = giaCaoNhat;
+	}
+
+	public double getGiaThapNhat() {
+		return giaThapNhat;
+	}
+
+	public void setGiaThapNhat(double giaThapNhat) {
+		this.giaThapNhat = giaThapNhat;
+	}
+
+	public double getGiaThamChieu() {
+		return giaThamChieu;
+	}
+
+	public void setGiaThamChieu(double giaThamChieu) {
+		this.giaThamChieu = giaThamChieu;
+	}
+
+	public double getGiaTriThayDoi() {
+		return giaTriThayDoi;
+	}
+
+	public void setGiaTriThayDoi(double giaTriThayDoi) {
+		this.giaTriThayDoi = giaTriThayDoi;
+	}
+
+	public double getTiLeThayDoi() {
+		return tiLeThayDoi;
+	}
+
+	public void setTiLeThayDoi(double tiLeThayDoi) {
+		this.tiLeThayDoi = tiLeThayDoi;
+	}
+
+	public String getThayDoi() {
+		return thayDoi;
+	}
+
+	public long getGTGDKhopLenh() {
+		return GTGDKhopLenh;
+	}
+
+	public void setGTGDKhopLenh(long GTGDKhopLenh) {
+		this.GTGDKhopLenh = GTGDKhopLenh;
+	}
+
+	public long getGTGDThoaThuan() {
+		return GTGDThoaThuan;
+	}
+
+	public void setGTGDThoaThuan(long GTGDThoaThuan) {
+		this.GTGDThoaThuan = GTGDThoaThuan;
+	}
+
+	public long getKLGDKhopLenh() {
+		return KLGDKhopLenh;
+	}
+
+	public void setKLGDKhopLenh(long KLGDKhopLenh) {
+		this.KLGDKhopLenh = KLGDKhopLenh;
+	}
+
+	public long getKLGDThoaThuan() {
+		return KLGDThoaThuan;
+	}
+
+	public void setKLGDThoaThuan(long KLGDThoaThuan) {
+		this.KLGDThoaThuan = KLGDThoaThuan;
+	}
+
 	private long GTGDThoaThuan;
 	private long KLGDKhopLenh;
 	private long KLGDThoaThuan;
