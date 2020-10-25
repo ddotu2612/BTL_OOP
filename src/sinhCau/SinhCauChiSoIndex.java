@@ -4,7 +4,7 @@ import cacKieuDuLieu.ChiSoIndex;
 
 import java.util.ArrayList;
 
-public class SinhCauChiSoIndex {
+public class SinhCauChiSoIndex extends AbstractSinhCau{
 
 	private ArrayList<ChiSoIndex> dataList;
 	private ArrayList<String> sentences;

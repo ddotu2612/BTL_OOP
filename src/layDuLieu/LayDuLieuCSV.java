@@ -1,4 +1,4 @@
-package LayDuLieu;
+package layDuLieu;
 
 import java.util.ArrayList;
 

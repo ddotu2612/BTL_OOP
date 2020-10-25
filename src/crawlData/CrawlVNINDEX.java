@@ -1,14 +1,13 @@
-package crawData;
+package crawlData;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CrawVNINDEX {
+public class CrawlVNINDEX {
     public static void main(String[] args) {
         String dir = System.getProperty("user.dir");
         Document doc;
@@ -28,8 +27,6 @@ public class CrawVNINDEX {
                 int index1 = 0 ;
                 int index2 = 0 ;
                 int index3 = 0 ;
-                System.out.println(item_Price10.size());
-                System.out.println(item_DateItem.size()+","+item_ChangePrice.size()+","+lastItem_Price.size());
                 for (int i = 0; i < item_Price10.size(); i++) {
                     if( i % 10 == 0){
                         sb.append("\"").append(item_DateItem.get(index1++).text()).append("\",");
