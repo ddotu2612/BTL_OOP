@@ -1,4 +1,4 @@
-package laydulieu;
+package layDulieu;
 
 public class LayDuLieuNDTNN {
 }

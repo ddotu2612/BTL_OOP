@@ -8,7 +8,6 @@ public class MauCauChiSoIndex {
 	static final String giaTriThayDoi = "|giaTriThayDoi|";
 	static final String klgdThoaThuan = "|klgdThoaThuan|";
 	static final String gtgdThoaThuan = "|gtgdThoaThuan|";
-	static final String klgdThoaThuanvol = "|klgdThoaThuanvol|";
 	static final String giaMoCua = "|giaMoCua|";
 	static final String gtgdKhopLenh = "|gtgdKhopLenh|";
 	static final String klgdKhopLenh = "|klgdKhopLenh|";
@@ -21,7 +20,7 @@ public class MauCauChiSoIndex {
 	static final String CloseValue2 = "|CloseValue2|";
 
 	public static String[] ChotPhienGiaoDichTang = {"Chốt phiên ngày "+ ngay +", chỉ số " + maCK + " " +thayDoi+ ", lên thành " +giaDongCua+ " điểm.",
-			"Đóng cửa phiên ngày " +ngay+ ", chỉ số " + maCK + " tăng và dừng lại ở mức " +giaDongCua+ " điểm, " +thayDoi+ " so với phiên ngày trước đó.",
+			"Kết thúc phiên ngày " +ngay+ ", chỉ số " + maCK + " tăng và dừng lại ở mức " +giaDongCua+ " điểm, " +thayDoi+ " so với phiên ngày trước đó.",
 			"Phiên giao dịch ngày " +ngay+ " ghi nhận chỉ số " + maCK + " đạt " +giaDongCua+ " điểm, " +thayDoi+ " so với phiên trước đó.",
 			"Chỉ số " + maCK + " tại lúc đóng cửa phiên giao dịch ngày " +ngay+ " đạt " +giaDongCua+ " điểm, ghi nhận " +thayDoi+ " so với ngày trước đó.",
 			"Chỉ số " + maCK + " tại giờ đóng cửa giao dịch đạt " +giaDongCua+ " điểm, " +thayDoi+ " so với phiên trước.",
@@ -32,7 +31,7 @@ public class MauCauChiSoIndex {
 			"Phiên giao dịch ngày " +ngay+ " ghi nhận chỉ số " + maCK + " còn " +giaDongCua+ " điểm, " +thayDoi+ " so với phiên trước đó.",
 			"Chỉ số " + maCK + " tại lúc đóng cửa phiên giao dịch ngày " +ngay+ " đạt " +giaDongCua+ " điểm, ghi nhận " +thayDoi+ " so với ngày trước đó.",
 			"Chỉ số " + maCK + " tại giờ đóng cửa giao dịch đạt " +giaDongCua+ " điểm, " +thayDoi+ " so với phiên trước.",
-			"Chốt phiên giao dịch ngày " +ngay+ ", " + maCK + " giảm " +giaTriThayDoi+ " điểm , lên " +giaDongCua+ " điểm, chuyển nhượng " +klgdThoaThuanvol+ " triệu cổ phiếu, tương đương " +gtgdThoaThuan+ " tỷ đồng."};
+			"Chốt phiên giao dịch ngày " +ngay+ ", " + maCK + " giảm " +giaTriThayDoi+ " điểm , lên " +giaDongCua+ " điểm, chuyển nhượng " +klgdThoaThuan+ " triệu cổ phiếu, tương đương " +gtgdThoaThuan+ " tỷ đồng."};
 	public static String[] KhoiSacDauPhienGiam = {"Bất chấp những khởi sắc đầu phiên giao dịch, cuối ngày " +ngay+ ", " + maCK + " giảm xuống còn " +giaDongCua+ ", " +thayDoi+ " so với phiên trước đó.",
 			"Mặc dù có những dấu hiệu khởi sắc đầu phiên, cuối ngày " +ngay+ ", " + maCK + " giảm xuống còn " +giaDongCua+ ", " +thayDoi+ " so với phiên trước đó.",
 			"Có dấu hiệu của sự hồi phục đầu phiên giao dịch, song chốt phiên ngày " +ngay+ ", " + maCK + " giảm xuống còn " +giaDongCua+ ", " +thayDoi+ " so với phiên trước đó."};
@@ -48,25 +47,91 @@ public class MauCauChiSoIndex {
 			"Đã có tổng cộng trên " +klgdThoaThuan+ " triệu giao dịch thỏa thuận với tổng giá trị đạt hơn " +gtgdThoaThuan+ " tỷ đồng trong phiên giao dịch ngày " +ngay+ "."};
 	public static String[] TangManh = {"So với phiên trước đó, chỉ số " + maCK + " trong phiên giao dịch này tăng mạnh (" +giaTriThayDoi+ " điểm).",
 			"Trong phiên giao dịch này ghi nhận chỉ số " + maCK + " tăng mạnh so với phiên trước đó với mức tăng " +giaTriThayDoi+ " điểm."};
-	public static String[] TangNhe = {"So với phiên giao dịch trước đó, chỉ số " + maCK + " chỉ tăng nhẹ với mức " +thayDoi+ ""};
+	public static String[] TangNhe = {"So với phiên giao dịch trước đó, chỉ số " + maCK + " chỉ tăng nhẹ với mức " +thayDoi+ "."};
 	public static String[] GiamManh ={"Trong phiên giao dịch này ghi nhận chỉ số " + maCK + " giảm sâu so với phiên trước đó với mức giảm " +giaTriThayDoi+ " điểm."};
-	public static String[] GiamNhe = {"So với phiên giao dịch trước đó, chỉ số " + maCK + " chỉ giảm nhẹ với mức " +thayDoi+ ""};
+	public static String[] GiamNhe = {"So với phiên giao dịch trước đó, chỉ số " + maCK + " chỉ giảm nhẹ với mức " +thayDoi+ "."};
 	public static String[] TangLienTuc ={"Chỉ số " + maCK + " cho thấy những dấu hiệu tích cực khi tăng liên tục từ ngày " + Date1 + " đến ngày " + Date2 + ", tổng giá trị tăng lên tới " + Sum + " điểm.",
 			"Trong các phiên giao dịch liên tiếp kể từ ngày " + Date1 + " đến " + Date2 + " chỉ số " + maCK + " liên tục tăng từ " + CloseValue1 + " đến " + CloseValue2 + " điểm.",
 			"" + maCK + " liên tục tăng từ ngày " + Date1 + " đến " + Date2 + " với mức tăng tương ứng là " + Sum + " điểm."};
-	public static String[] GiamLienTuc = {"Chỉ số " + maCK + " cho thấy những dấu hiệu tích cực khi tăng liên tục từ ngày " + Date1 + " đến ngày " + Date2 + ", tổng giá trị tăng lên tới " + Sum + " điểm.",
-			"Trong các phiên giao dịch liên tiếp kể từ ngày " + Date1 + " đến " + Date2 + " chỉ số " + maCK + " liên tục tăng từ " + CloseValue1 + " đến " + CloseValue2 + " điểm.",
-			"" + maCK + " liên tục tăng từ ngày " + Date1 + " đến " + Date2 + " với mức tăng tương ứng là " + Sum + " điểm."};
+	public static String[] GiamLienTuc = {"Chỉ số " + maCK + " cho thấy những dấu hiệu tích cực khi giảm liên tục từ ngày " + Date1 + " đến ngày " + Date2 + ", tổng giá trị giảm lên tới " + Sum + " điểm.",
+			"Trong các phiên giao dịch liên tiếp kể từ ngày " + Date1 + " đến " + Date2 + " chỉ số " + maCK + " liên tục giảm từ " + CloseValue1 + " đến " + CloseValue2 + " điểm.",
+			"" + maCK + " liên tục tăng từ ngày " + Date1 + " đến " + Date2 + " với mức giảm tương ứng là " + Sum + " điểm."};
 	public static String[] GiaCaoNhat = {"Trong khoảng thời gian trên, chỉ số " + maCK + " đạt đỉnh tại mức " +giaDongCua+ " điểm tại ngày " +ngay+ ".",
 			"Chỉ số " + maCK + " trong khoảng thời gian trên chạm tới mốc cao nhất (" +giaDongCua+ " điểm) vào ngày " +ngay+ "."};
 	public static String[] GiaThapNhat = {"Ngày " +ngay+ " ghi nhận chỉ số " + maCK + " chạm đáy ở " +giaDongCua+ " điểm trong khoảng thời gian trên.",
-			"Trong khoảng thời gian trên, chỉ số " + maCK + " giảm xuống mức sâu nhất tại " +giaDongCua+ " điểm tại ngày " +ngay+ " "};
+			"Trong khoảng thời gian trên, chỉ số " + maCK + " giảm xuống mức sâu nhất tại " +giaDongCua+ " điểm tại ngày " +ngay+ "."};
 	public static String[] PhienTangManhNhat = {"Phiên giao dịch ngày " +ngay+ " ghi nhận chỉ số " + maCK + " tăng mạnh nhất (" +giaTriThayDoi+ " điểm) so với các phiên giao dịch ngay trước đó trong khoảng thời gian từ ngày " + Date0 + " đến ngày " + DateX + ".",};
-	public static String[] PhienGiamManhNhat = {"Khoảng thời gian từ ngày " + Date0 + " đến " + DateX + " ghi nhận " + maCK + " giảm mạnh nhất (" +giaTriThayDoi+ " điểm) so với các phiên giao dịch trước đó vào ngày " +ngay+ ""};
+	public static String[] PhienGiamManhNhat = {"Khoảng thời gian từ ngày " + Date0 + " đến " + DateX + " ghi nhận " + maCK + " giảm mạnh nhất (" +giaTriThayDoi+ " điểm) so với các phiên giao dịch trước đó vào ngày " +ngay+ "."};
 
-	public MauCauChiSoIndex() {
-		// TODO - implement MauCauChiSoIndex.MauCauChiSoIndex
-		throw new UnsupportedOperationException();
+	public static String[] getChotPhienGiaoDichTang() {
+		return ChotPhienGiaoDichTang;
 	}
 
+	public static String[] getChotPhienGiaoDichGiam() {
+		return ChotPhienGiaoDichGiam;
+	}
+
+	public static String[] getKhoiSacDauPhienGiam() {
+		return KhoiSacDauPhienGiam;
+	}
+
+	public static String[] getKhoiSacDauPhienTang() {
+		return KhoiSacDauPhienTang;
+	}
+
+	public static String[] getGiamDauPhienGiam() {
+		return GiamDauPhienGiam;
+	}
+
+	public static String[] getGiamDauPhienTang() {
+		return GiamDauPhienTang;
+	}
+
+	public static String[] getGiaoDichKhopLenh() {
+		return GiaoDichKhopLenh;
+	}
+
+	public static String[] getGiaoDichThoaThuan() {
+		return GiaoDichThoaThuan;
+	}
+
+	public static String[] getTangManh() {
+		return TangManh;
+	}
+
+	public static String[] getTangNhe() {
+		return TangNhe;
+	}
+
+	public static String[] getGiamManh() {
+		return GiamManh;
+	}
+
+	public static String[] getGiamNhe() {
+		return GiamNhe;
+	}
+
+	public static String[] getTangLienTuc() {
+		return TangLienTuc;
+	}
+
+	public static String[] getGiamLienTuc() {
+		return GiamLienTuc;
+	}
+
+	public static String[] getGiaCaoNhat() {
+		return GiaCaoNhat;
+	}
+
+	public static String[] getGiaThapNhat() {
+		return GiaThapNhat;
+	}
+
+	public static String[] getPhienTangManhNhat() {
+		return PhienTangManhNhat;
+	}
+
+	public static String[] getPhienGiamManhNhat() {
+		return PhienGiamManhNhat;
+	}
 }

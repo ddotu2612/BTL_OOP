@@ -177,7 +177,7 @@ public class ChiSoIndex {
 
 	public void infoData() {
 		System.out.println( maChungKhoan + "|" + ngayGD + "|" + giaDongCua + "|" + giaTriThayDoi + "|" + tiLeThayDoi + "|" + giaMoCua
-				+ "|" + giaCaoNhat + "|" + giaThapNhat +"|"+ KLGDThoaThuan +"|"+ GTGDThoaThuan+"|"+ KLGDKhopLenh +"|"+ GTGDKhopLenh);
+				+ "|" + giaCaoNhat + "|" + giaThapNhat +"|"+ KLGDThoaThuan +"|"+ GTGDThoaThuan+"|"+ KLGDKhopLenh +"|"+ GTGDKhopLenh + "\n");
 	}
 
 	public double getThayDoiDauPhien() {

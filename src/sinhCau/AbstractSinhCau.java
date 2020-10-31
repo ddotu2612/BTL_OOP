@@ -1,19 +1,15 @@
 package sinhCau;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public abstract class AbstractSinhCau {
 
-	public AbstractSinhCau() {
-
-	}
-	/**
-	 * 
-	 * @param sentences
-	 */
 	public String sinhCauNgauNhien(String[] sentences) {
-		String a="" ;
-		return a;
+		Random ran = new Random() ;
+		int i = ran.nextInt(sentences.length);
+		String res = sentences[i];
+		return res;
 	}
 
 	public abstract ArrayList<String> sinhDoanVan();

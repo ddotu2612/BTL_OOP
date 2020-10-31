@@ -33,15 +33,19 @@ public class CrawlVNINDEX {
                         sb.append("\"").append(item_Price10.get(i).text()).append("\",");
                     }else if (i % 10 == 1){
                         sb.append("\"").append(item_ChangePrice.get(index2++).text()).append("\",");
-                        sb.append("\"").append(item_Price10.get(i).text()).append("\",");
+                        sb.append("\"").append(item_Price10.get(i).text().replace(',','.')).append("\",");
                     }else if( i % 10 == 4){
-                        sb.append("\"").append(lastItem_Price.get(index3++).text()).append("\",");
+                        sb.append("\"").append(lastItem_Price.get(index3++).text().replace(',','.')).append("\",");
                         sb.append("\"").append(item_Price10.get(i).text()).append("\",");
                     }else if( i % 10 == 7 || i % 10 == 8 || i % 10 == 9){
                         continue;
                     } else {
-                        sb.append("\"").append(item_Price10.get(i).text());
-                        sb.append( (i % 10 != 6) ? "\"," : "\"\n");
+                        if(i % 10 == 2 || i % 10 == 3 ) {
+                            sb.append("\"").append(item_Price10.get(i).text().replace(',','.')).append("\",");
+                        } else {
+                            sb.append("\"").append(item_Price10.get(i).text());
+                            sb.append( (i % 10 != 6) ? "\"," : "\"\n");
+                        }
                     }
                     if(index1 == item_Price10.size()/10+1) break;
                 }
