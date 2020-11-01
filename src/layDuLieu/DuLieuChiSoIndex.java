@@ -8,10 +8,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class DuLieuChiSoIndex extends LayDuLieuCSV{
-
-	public DuLieuChiSoIndex() {
-	}
-
 	/**
 	 * 
 	 * @param a

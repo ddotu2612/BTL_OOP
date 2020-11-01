@@ -2,75 +2,97 @@ package mauCau;
 
 //mẫu câu nhà đầu tư nước ngoài
 public class MauCauNhaDauTuNuocNgoai {
-    public static String [] tongKhoiLuongMua = {
-            "Tổng Khối lượng mua ngày |Ngày| của sàn giao dịch |Sàn Giao Dịch| là |Tổng Khối Lượng Mua|",
-            "Tổng khối lượng mua của sàn giao dịch |Sàn Giao Dịch| trong ngày |Ngày| là|Tổng Khối Lượng Mua|",
-            "Ngày |Ngày| , Tổng Khối lượng mua trên sàn giao dịch |Sàn Giao Dịch| đạt |Tổng Khối Lượng Mua|"
+    static final String san = "|san|";
+    static final String ma = "|MaCK|";
+    static final String khoiLuongMua = "|khoiLuongMua|";
+    static final String giaTriMua = "|giaTriMua|";
+    static final String khoiLuongBan = "|khoiLuongBan|";
+    static final String giaTriBan = "|giaTriBan|";
+    static final String khoiLuongRong = "|khoiLuongRong|";
+    static final String giaTriGiaoDichRong = "|giaTriGiaoDichRong|";
+    static final String tongKhoiLuongMua = "|tongKhoiLuong";
+    static final String tongKhoiLuongBan = "|tongKhoiLuong";
+
+
+
+    public static String [] tongKhoiLuongMuaVao={
+            "Tổng Khối lượng mua ngày hôm nay của sàn giao dịch "+san+" là "+tongKhoiLuongMua+"",
+            "Ngày hôm nay, tổng khối lượng  mua trên sàn giao dịch "+san+"  đạt "+tongKhoiLuongMua+"",
     };
 
-    public static String [] tongKhoiLuongBan = {
-            "Tổng khối lượng bán ngày |Ngày| của sàn giao dịch |Sàn Giao Dịch| là |Tổng Khối Lượng Bán|",
-            "Tổng khối lượng bán của sàn giao dịch |Sàn Giao Dịch| trong ngày |Ngày| là|Tổng Khối Lượng Bán|",
-            "Ngày |Ngày| , tổng Khối lượng bán trên sàn giao dịch |Sàn Giao Dịch| đạt |Tổng Khối Lượng Bán|",
-            "Trong ngày |Ngày| ,|Tổng Khối Lượng Bán| là tổng số lượng bán trên sàn |Sàn Giao Dịch|"
+    public static String [] tongKhoiLuongBanRa={
+            ""+tongKhoiLuongBan+" là tổng khối lượng bán ra của sàn giao dịch "+san+" trong ngày hôm nay",
+            "Trên sàn "+san+" , tổng khối bán ra trong ngày hôm nay đạt "+tongKhoiLuongBan+"",
     };
-
     public static String [] coPhieuCoKhoiLuongMuaNhieuNhat = {
-            "Cổ Phiếu |Mua Nhiều Nhất| được rao mua nhiều nhất trong ngày.Tổng sức mua là |Sức Mua Lớn Nhất| ",
-            "Được Mua Với số lượng |Sức Mua Lớn Nhất|, Cổ Phiếu |Mua Nhiều Nhất| đạt kỷ lục về lượng bán",
-            "|Mua Nhiều Nhất| là Cổ phiếu được mua nhiều nhất với số lượng là |Sức Mua Lớn Nhất|",
-            "Các Nhà Đầu tư tranh nhau mua Cổ phiếu |Mua  Nhiều Nhất|, Khối lượng giao dịch đạt ngưỡng |Sức Mua Lớn Nhất|",
-            "Cổ phiếu được mua nhiều nhất với số lượng |Sức Mua Lớn Nhất| chính là |Mua Nhiều Nhất|"
+           "Trên "+san+" Cổ phiếu "+ma+" được mua nhiều nhất trong ngày với tổng sức mua là "+khoiLuongMua+"",
+            ""+ma+" được mua nhiều nhất.Tổng sức mua là "+khoiLuongMua+"",
+            "Với sức mua "+khoiLuongMua+","+ma+" đã trở thành cổ phiếu được mua nhiều nhất trong ngày tại sàn "+san+"",
+            "Các nhà đầu tư tranh nhau mua cổ phiếu "+ma+",khối lượng giao dịch đạt ngưỡng "+khoiLuongMua+"",
+    } ;
+    public static String [] coPhieuCoKhoiLuongBanNhieuNhat = {
+            "Trong phiên giao dịch ngày hôm nay,"+ma+" là cổ phiếu có khối lượng bán ra nhiều nhất đạt "+khoiLuongBan+"",
+            "Tổng khối lượng bán ra là "+khoiLuongBan+",cổ phiếu "+ma+" trở thành cổ phiếu được bán ra với khối lượng nhiều nhất",
+            "Cổ phiếu "+ma+" có khối lượng bán ra tăng vọt đạt "+khoiLuongBan+" trong ngày hôm nay trên sàn giao dịch "+san+"",
+            "Bị bán nhiều nhất hôm nay là "+ma+" với khối lượng bán ròng là "+khoiLuongBan+"",
     } ;
 
-    public static String [] coPhieuDuocMuaNhieuNhat = {
-            "Cổ Phiếu |Mua Nhiều Nhất| được rao mua nhiều nhất trong ngày.Tổng sức mua là |Số Lượng Mua| ",
-            "|Mua Nhiều Nhất| là Cổ phiếu được mua nhiều nhất với số lượng là |Số Lượng Mua|",
-            "Được Mua Với số lượng |Số Lượng Mua|, Cổ Phiếu |Mua Nhiều Nhất| đạt kỷ lục về lượng bán",
-            "Các Nhà Đầu tư tranh nhau mua Cổ phiếu |Mua Nhiều Nhất|, Khối lượng giao dịch đạt ngưỡng |Số Lượng Mua|",
-    };
-
-    public static String [] coPhieuDuocBanNhieuNhat = {
-            "Với số lượng bán ròng |Số Lượng Bán|,|Bán Nhiều Nhất| là cổ phiếu được bán nhiều nhất trong ngày ",
-            "Ngày Hôm nay, Cổ Phiếu được bán nhiều nhất là |Bán Nhiều Nhất|, với số lượng là |Số Lượng Bán|",
-            "Khối lượng bán ròng đạt |Số Lượng Bán|,|Bán Nhiều Nhất| dẫn đầu về khối lượng bán ròng",
-            "Khối Lượng bán ròng của |Bán Nhiều Nhất| đạt ngưỡng |Số Lượng Bán| đã tạo nên kỷ lục chưa từng có"
-    };
-
     public static String [] coPhieuMuaRongNhieuNhat = {
-            "|Mua Ròng Nhiều Nhất| được nhà đầu tư nước ngoài mua ròng hơn |Số Cổ Phiếu| cổ phiếu.",
-            "Được mua ròng nhiều nhất là |Mua Ròng Nhiều Nhất| với số cổ phiếu |Số Cổ Phiếu| bởi nhà đầu tư nước ngoài",
-            "Theo số liệu được thống kê với số cổ phiếu là |Số Cổ Phiếu| ,|Mua Ròng Nhiều Nhất| đã trở thành cổ phiếu được mua ròng nhiều nhất",
+            "Ở sàn "+san+",cổ phiếu cạnh tranh được mua ròng nhiều nhất là "+ma+ "với tổng khối lượng là "+khoiLuongRong+"",
+            "Trong ngày hôm nay, "+ma+" là cổ phiếu được mua ròng nhiều nhất với khối lượng giao dịch đạt ngưỡng "+khoiLuongRong+"",
+            "Với khối lượng mua ròng nhiều nhất trên sàn "+san+" đạt "+khoiLuongRong+","+ma+" đã trở thành cổ phiếu được mua ròng nhiều nhất trong ngày hôm nay",
+            ""+ma+" là cổ phiếu được khối ngoại mua ròng nhiều nhất trong ngày trên sàn "+san+" với "+khoiLuongRong+"",
     };
-    public static String [] coPhieuBanRongNhieuNhat = {
-            //saysomethings
+    public static String [] coPhieuCoGiaTriBanCaoNhat = {
+            "Phía bán cổ phiếu, mã "+ma+" có lượng và giá bán áp đảo là "+khoiLuongBan+"-"+giaTriBan+"",
+            "Giá trị bán đạt "+giaTriBan+","+ma+" đã trở thành cổ phiếu có giá trị bán cao nhất trong ngày hôm nay",
+            "Được bán nhiều nhất hôm nay là "+ma+" với giá trị bánđạt ngưỡng "+giaTriBan+"",
+            "Đứng thứ nhất về giá trị bán trên "+san+" là cổ phiếu "+ma+" với "+giaTriBan+"",
+    };
+    public static String [] coPhieuCoGiaTriMuaCaoNhat = {
+            "Với "+khoiLuongMua+" cổ phiếu được mua ,"+ma+" chính cổ phiếu có giá trị mua cao nhất trong ngày đạt "+giaTriMua+" trên sàn"+san+"",
+            ""+ma+" là cổ phiếu được mua vào mạnh nhất với giá trị mua khoảng "+giaTriMua+"",
+            "Trên sàn "+san+","+ma+" là cổ phiếu có giá trị mua cao nhất trong ngày đạt ngưỡng "+giaTriMua+"",
+            "Trong tất cả các cổ phiếu được mua trong ngày ở sàn "+san+" thì "+ma+" có giá trị mua cao nhất đạt"+giaTriMua+"",
+    };
+    public static String [] coPhieuCoGiaTriGiaoDichRongCaoNhat = {
+            ""+ma+" đứng thứ nhất về giá trị giao dịch ròng của khối ngoại trên sàn "+san+" đạt "+giaTriGiaoDichRong+"",
+            "Cổ phiếu "+ma+" tiếp tục dẫn đầu thị trường về giá trị giao dịch ròng, đạt "+giaTriGiaoDichRong+"",
+            "Trong ngày hôm nay cổ phiếu "+ma+" được khối ngoại quan tâm nhiều nhất là "+ma+",giá trị giao dịch ròng đạt "+giaTriGiaoDichRong+"",
+            "Xét theo giá trị giao dịch ròng trong tuần,với "+giaTriGiaoDichRong+" "+ma+" đã trở thành cổ phiếu có giá trị giao dịch ròng cao nhất",
+            "Tại sàn "+san+", cổ phiếu "+ma+" là cổ phiếu có giá trị giao dịch ròng cao nhất trong ngày hôm nay với "+giaTriGiaoDichRong+"",
     };
 
-    public static String[] getTongKhoiLuongMua() {
-        return tongKhoiLuongMua;
+
+    public static String[] getTongKhoiLuongMuaVao() {
+        return tongKhoiLuongMuaVao;
     }
 
-    public static String[] getTongKhoiLuongBan() {
-        return tongKhoiLuongBan;
+    public static String[] getTongKhoiLuongBanRa() {
+        return tongKhoiLuongBanRa;
     }
 
     public static String[] getCoPhieuCoKhoiLuongMuaNhieuNhat() {
         return coPhieuCoKhoiLuongMuaNhieuNhat;
     }
 
-    public static String[] getCoPhieuDuocMuaNhieuNhat() {
-        return coPhieuDuocMuaNhieuNhat;
-    }
-
-    public static String[] getCoPhieuDuocBanNhieuNhat() {
-        return coPhieuDuocBanNhieuNhat;
+    public static String[] getCoPhieuCoKhoiLuongBanNhieuNhat() {
+        return coPhieuCoKhoiLuongBanNhieuNhat;
     }
 
     public static String[] getCoPhieuMuaRongNhieuNhat() {
         return coPhieuMuaRongNhieuNhat;
     }
 
-    public static String[] getCoPhieuBanRongNhieuNhat() {
-        return coPhieuBanRongNhieuNhat;
+    public static String[] getCoPhieuCoGiaTriBanCaoNhat() {
+        return coPhieuCoGiaTriBanCaoNhat;
+    }
+
+    public static String[] getCoPhieuCoGiaTriMuaCaoNhat() {
+        return coPhieuCoGiaTriMuaCaoNhat;
+    }
+
+    public static String[] getCoPhieuCoGiaTriGiaoDichRongCaoNhat() {
+        return coPhieuCoGiaTriGiaoDichRongCaoNhat;
     }
 }
