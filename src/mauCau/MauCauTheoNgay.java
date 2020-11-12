@@ -3,7 +3,7 @@ package mauCau;
 public class MauCauTheoNgay {
 
     public class MauCauChiSoIndex {
-
+        static final String ngay = "|ngay|";
         static final String maCK = "|maCK|";
         static final String thayDoi = "|thayDoi|";
         static final String giaDongCua = "|giaDongCua|";
@@ -13,7 +13,7 @@ public class MauCauTheoNgay {
         static final String giaMoCua = "|giaMoCua|";
         static final String gtgdKhopLenh = "|gtgdKhopLenh|";
         static final String klgdKhopLenh = "|klgdKhopLenh|";
-        static final String Date0 = "|Date0|";
+        static final String Date0 = "|Date0|";  
         static final String Date1 = "|Date1|";
         static final String Date2 = "|Date2|";
         static final String DateX = "|DateX|";
