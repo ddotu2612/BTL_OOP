@@ -2,7 +2,7 @@ package mauCau;
 
 public class MauCauTheoNgay {
 
-    public class MauCauChiSoIndex {
+
         static final String ngay = "|ngay|";
         static final String maCK = "|maCK|";
         static final String thayDoi = "|thayDoi|";
@@ -136,6 +136,6 @@ public class MauCauTheoNgay {
         public static String[] getPhienGiamManhNhat() {
             return PhienGiamManhNhat;
         }
-    }
+
 }
 
