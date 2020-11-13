@@ -136,6 +136,5 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
 
     @Override
     public void setDataList(ArrayList<ChiSoIndex> chuyenCSVSangIndexList) {
-
     }
 }

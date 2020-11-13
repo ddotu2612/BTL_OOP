@@ -32,8 +32,8 @@ public class SinhCauChiSoIndex extends AbstractSinhCau{
 		cau = cau.replace("|giaMoCua|", String.valueOf(data.getGiaMoCua()));
 		cau = cau.replace( "|gtgdKhopLenh|", String.valueOf(data.quyDoiGTGDKhopLenh()));
 		cau = cau.replace("|klgdKhopLenh|", String.valueOf(data.quyDoiKLGDKhopLenh()));
-		cau = cau.replace("|DateX|",dataList.get(0).getNgayGD());
-		cau = cau.replace("|Date0|",dataList.get(dataList.size() - 1).getNgayGD());
+		cau = cau.replace("|DateX|", dataList.get(0).getNgayGD());
+		cau = cau.replace("|Date0|", dataList.get(dataList.size() - 1).getNgayGD());
 		return cau;
 	}
 
