@@ -15,18 +15,22 @@ public class CrawlNhaDauTuNuocNgoai {
             try {
                 doc = Jsoup.connect("https://s.cafef.vn/TraCuuLichSu2/3/HOSE/23/10/2020.chn").get();
                 Elements column1= doc.select("tr > td.CodeItem>a");
-                Elements body =doc.select("tr > td.Item");
+                Elements body = doc.select("tr > td.Item");
 
                 int indext = 0 ;
                 StringBuilder sb = new StringBuilder();
                 FileWriter fw = new FileWriter(dir + "\\src\\duLieu\\nhaDauTuNuocNgoaiData.csv");
 
                 for ( int i =0 ; i < body.size(); i++) {
+                    String s = body.get(i).text();
+                    String[] str = s.split(",");
+                    s = String.join(".",str);
                     if( i % 8 == 0) {
+
                         sb.append("\"").append(column1.get(indext++).text()).append("\",");
-                        sb.append("\"").append(body.get(i).text()).append("\",");
+                        sb.append("\"").append(s).append("\",");
                     } else {
-                        sb.append("\"").append(body.get(i).text());
+                        sb.append("\"").append(s);
                         sb.append( (i % 8 != 7) ? "\"," : "\"\n");
                     }
                     if( i == body.size() - 1 && indext == body.size() -1 ) break;

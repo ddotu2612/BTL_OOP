@@ -7,9 +7,10 @@ public class NhaDauTuNuocNgoai {
     private long khoiLuongBan;
     private long giaTriBan;
     private long khoiLuongRong;
-    private long giaoDichRong;
+    private long giaTriGiaoDichRong;
     private long roomConLai;
-    private long dangSoHuu;
+    private double dangSoHuu;
+
 
     public String getMa() {
         return ma;
@@ -59,12 +60,12 @@ public class NhaDauTuNuocNgoai {
         this.khoiLuongRong = khoiLuongRong;
     }
 
-    public long getGiaoDichRong() {
-        return giaoDichRong;
+    public long getGiaTriGiaoDichRong() {
+        return giaTriGiaoDichRong;
     }
 
-    public void setGiaoDichRong(long giaoDichRong) {
-        this.giaoDichRong = giaoDichRong;
+    public void setGiaTriGiaoDichRong(long giaoDichRong) {
+        this.giaTriGiaoDichRong = giaoDichRong;
     }
 
     public long getRoomConLai() {
@@ -75,42 +76,34 @@ public class NhaDauTuNuocNgoai {
         this.roomConLai = roomConLai;
     }
 
-    public long getDangSoHuu() {
+    public double getDangSoHuu() {
         return dangSoHuu;
     }
 
-    public void setDangSoHuu(long dangSoHuu) {
+    public void setDangSoHuu(double dangSoHuu) {
         this.dangSoHuu = dangSoHuu;
     }
 
-    public String getKhoiLuongMuaModified() {
-        if (khoiLuongMua / 1_000_000 > 1)
-            return String.format("%0.2f", (double) khoiLuongMua / 1_000_000) + "triệu";
-        else if (khoiLuongBan / 1000 > 1)
-            return String.format("%0.2f", (double) khoiLuongMua / 1000) + "nghìn";
+
+    public String getKhoiLuongQuyDoi( long khoiLuong) {
+        if (khoiLuong/1_000_000_000 > 1)
+            return String.format("%.2f",(double) khoiLuong/1_000_000_000) + " tỷ";
+        if (khoiLuong / 1_000_000 > 1)
+            return String.format("%.2f", (double) khoiLuong / 1_000_000) + " triệu";
+        else if (khoiLuong/ 1000 > 1)
+            return String.format("%.2f", (double) khoiLuong / 1000) + " nghìn";
         else
-            return String.format("%d", khoiLuongMua);
+            return String.format("%d", khoiLuong);
     }
 
-    public String getKhoiLuongBanModified() {
-        if (khoiLuongBan / 1_000_000 > 1)
-            return String.format("%0.2f", (double) khoiLuongBan / 1_000_000) + "triệu";
-        else if (khoiLuongBan / 1000 > 1)
-            return String.format("%0.2f", (double) khoiLuongBan / 1000) + "nghìn";
+    public String getGiaTriQuyDoi(long giaTri) {
+        if (giaTri/1_000_000_000 > 1)
+            return String.format("%.2f",(double) giaTri/1_000_000_000) + " tỷ";
+        else if(giaTri/1_000_000 > 1)
+            return String.format("%.2f",(double) giaTri/1_000_000) + " triệu";
         else
-            return String.format("%d", khoiLuongBan);
+            return String.format("%d",giaTri);
     }
 
-    public String getKhoiLuongRongModified() {
-        if (khoiLuongRong / 1_000_000 > 1)
-            return String.format("%0.2f", (double) khoiLuongRong / 1_000_000) + "triệu";
-        else if (khoiLuongRong / 1000 > 1)
-            return String.format("%0.2f", (double) khoiLuongRong / 1000) + "nghìn";
-        else
-            return String.format("%d", khoiLuongRong);
-    }
-    public void hienThiDuLieu() {
-        System.out.println(ma + "|"+ khoiLuongMua + "|"+giaTriMua+"|"+khoiLuongBan+"|"+giaTriBan+"|"+khoiLuongRong+"|"+giaoDichRong+"|"+roomConLai+"|"+dangSoHuu);
-    }
 }
 
