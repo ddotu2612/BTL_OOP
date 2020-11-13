@@ -13,19 +13,18 @@ public class MauCauTheoNgay {
     static final String gtgdKhopLenh = "|gtgdKhopLenh|";
     static final String klgdKhopLenh = "|klgdKhopLenh|";
 
-    public static String[] ChotPhienGiaoDichTang = {"Chốt phiên ngày " + ngay + ", chỉ số " + maCK + " " + thayDoi + ", lên thành " + giaDongCua + " điểm.",
+    public static String[] ChotPhienGiaoDichTang = {"Chốt phiên ngày" + ngay + ", chỉ số " + maCK + " " + thayDoi + ", lên thành " + giaDongCua + " điểm.",
             "Kết thúc phiên ngày " + ngay + ", chỉ số " + maCK + " tăng và dừng lại ở mức " + giaDongCua + " điểm, " + thayDoi + " so với phiên ngày trước đó.",
             "Phiên giao dịch ngày " + ngay + " ghi nhận chỉ số " + maCK + " đạt " + giaDongCua + " điểm, " + thayDoi + " so với phiên trước đó.",
             "Chỉ số " + maCK + " tại lúc đóng cửa phiên giao dịch ngày " + ngay + " đạt " + giaDongCua + " điểm, ghi nhận " + thayDoi + " so với ngày trước đó.",
             "Chỉ số " + maCK + " tại giờ đóng cửa giao dịch đạt " + giaDongCua + " điểm, " + thayDoi + " so với phiên trước.",
-            "Chốt phiên giao dịch ngày " + ngay + ", " + maCK + " tăng " + giaTriThayDoi + " điểm , lên " + giaDongCua + " điểm, chuyển nhượng " + klgdThoaThuan + " " +
-                    "triệu cổ phiếu, tương đương " + gtgdThoaThuan + " tỷ đồng."};
+            "Chốt phiên giao dịch ngày" + ngay + ", chỉ số" + maCK + "tăng" + giaTriThayDoi + "điểm, lên thành" + giaDongCua + "điểm, khối lượng gia dịch đạt" + klgdThoaThuan + "triệu cổ phiếu, tương đương " + gtgdThoaThuan + "tỷ đồng"};
     public static String[] ChotPhienGiaoDichGiam = {"Chốt phiên ngày " + ngay + ", chỉ số " + maCK + " " + thayDoi + ", xuống còn " + giaDongCua + " điểm.",
             "Đóng cửa phiên ngày " + ngay + ", chỉ số " + maCK + " giảm và dừng lại ở mức " + giaDongCua + " điểm, " + thayDoi + " so với phiên ngày trước đó.",
             "Phiên giao dịch ngày " + ngay + " ghi nhận chỉ số " + maCK + " còn " + giaDongCua + " điểm, " + thayDoi + " so với phiên trước đó.",
             "Chỉ số " + maCK + " tại lúc đóng cửa phiên giao dịch ngày " + ngay + " đạt " + giaDongCua + " điểm, ghi nhận " + thayDoi + " so với ngày trước đó.",
             "Chỉ số " + maCK + " tại giờ đóng cửa giao dịch đạt " + giaDongCua + " điểm, " + thayDoi + " so với phiên trước.",
-            "Chốt phiên giao dịch ngày " + ngay + ", " + maCK + " giảm " + giaTriThayDoi + " điểm , lên " + giaDongCua + " điểm, chuyển nhượng " + klgdThoaThuan + " triệu cổ phiếu, tương đương " + gtgdThoaThuan + " tỷ đồng."};
+            "Chốt phiên giao dịch ngày " + ngay + ", " + maCK + " giảm " + giaTriThayDoi + " điểm , còn " + giaDongCua + " điểm, khối lượng giao dịch " + klgdThoaThuan + " triệu cổ phiếu, tương đương " + gtgdThoaThuan + " tỷ đồng."};
     public static String[] KhoiSacDauPhienGiam = {"Bất chấp những khởi sắc đầu phiên giao dịch, cuối ngày " + ngay + ", " + maCK + " giảm xuống còn " + giaDongCua + ", " + thayDoi + " so với phiên trước đó.",
             "Mặc dù có những dấu hiệu khởi sắc đầu phiên, cuối ngày " + ngay + ", " + maCK + " giảm xuống còn " + giaDongCua + ", " + thayDoi + " so với phiên trước đó.",
             "Có dấu hiệu của sự hồi phục đầu phiên giao dịch, song chốt phiên ngày " + ngay + ", " + maCK + " giảm xuống còn " + giaDongCua + ", " + thayDoi + " so với phiên trước đó."};
