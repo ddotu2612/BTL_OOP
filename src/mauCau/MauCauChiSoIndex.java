@@ -40,7 +40,7 @@ public class MauCauChiSoIndex {
 	public static String[] GiamDauPhienGiam = {"Đầu phiên giao dịch ngày " +ngay+ " chứng kiến dấu hiệu giảm của chỉ số " + maCK + ", theo đó, đóng cửa phiên, chỉ số " + maCK + " giảm xuống còn " +giaDongCua+ " điểm.",
 			"Chỉ số " + maCK + " đã cho thấy những dấu hiệu tiêu cực ngay từ đầu phiên, kết thúc phiên giao dịch ngày " +ngay+ ", chỉ số " + maCK + " tụt xuống còn " +giaDongCua+ " điểm."};
 	public static String[] GiamDauPhienTang = {"Mặc dù khởi đầu trong không khí ảm đạm, chốt phiên giao dịch ngày " +ngay+ ", chỉ số " + maCK + " tăng đến " +giaDongCua+ " điểm.",
-	"Với khởi đầu phiên không mấy khả quan với giá mở cửa " +giaMoCua+ " ,kết thúc phiên giao dich ngày " +ngay+ " , mã " + maCK + " tăng lên tới " +giaDongCua+ ""};
+			"Với khởi đầu phiên không mấy khả quan với giá mở cửa " +giaMoCua+ " ,kết thúc phiên giao dich ngày " +ngay+ " , mã " + maCK + " tăng lên tới " +giaDongCua+ ""};
 	public static String[] GiaoDichKhopLenh = {"Phiên giao dịch ngày " +ngay+ " ghi nhận trên " +klgdKhopLenh+ " triệu giao dịch khớp lệnh, tổng giá trị lên tới hơn " +gtgdKhopLenh+ " tỷ đồng.",
 			"Đã có tổng cộng hơn " +klgdKhopLenh+ " triệu giao dịch khớp lệnh với tổng giá trị đạt trên " +gtgdKhopLenh+ " tỷ đồng trong phiên giao dịch ngày " +ngay+ "."};
 	public static String[] GiaoDichThoaThuan = {"Phiên giao dịch ngày " +ngay+ " ghi nhận hơn " +klgdThoaThuan+ " triệu giao dịch thỏa thuận, tổng giá trị lên tới trên " +gtgdThoaThuan+ " tỷ đồng.",
@@ -135,3 +135,4 @@ public class MauCauChiSoIndex {
 		return PhienGiamManhNhat;
 	}
 }
+

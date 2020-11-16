@@ -22,12 +22,12 @@ public class CrawlBienDongChungKhoan {
             StringBuilder sb = new StringBuilder();
             FileWriter fileWriter = new FileWriter(dir + "\\src\\duLieu//BienDongChungKhoan.csv");
             for (int i = 0; i < col1.size(); i++) {
-                sb.append("\"").append(col1.get(i).ownText()).append("\",");
-                sb.append("\"").append(col2.get(i).text()).append("\",");
-                sb.append("\"").append(col3.get(i).text()).append("\",");
-                sb.append("\"").append(col4.get(i).text()).append("\",");
-                sb.append("\"").append(col5.get(i).text()).append("\",");
-                sb.append("\"").append(col7.get(i).text()).append("\"\n");
+                sb.append(col1.get(i).ownText()).append(",");
+                sb.append(col2.get(i).text()).append(",");
+                sb.append(col3.get(i).text()).append(",");
+                sb.append(col4.get(i).text()).append(",");
+                sb.append(col5.get(i).text()).append(",");
+                sb.append(col7.get(i).text()).append("\n");
             }
             System.out.println(sb);
             fileWriter.write(sb.toString());
