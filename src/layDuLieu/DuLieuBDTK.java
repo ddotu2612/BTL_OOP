@@ -19,7 +19,7 @@ public class DuLieuBDTK extends LayDuLieuCSV {
         Data.setkLuongSoVoiTB1Thang(args.get(5));
         return Data;
     }
-    public static ArrayList<BienDongChungKhoan> CSV_Extract(String csvPath) {
+    public ArrayList<BienDongChungKhoan> CSV_Extract(String csvPath) {
         ArrayList<BienDongChungKhoan> datalist = new ArrayList<>();
         BufferedReader br = null;
         try {
