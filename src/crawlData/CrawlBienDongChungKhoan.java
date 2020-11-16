@@ -1,4 +1,4 @@
-package CrawData;
+package crawlData;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
