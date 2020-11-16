@@ -236,5 +236,4 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
 
         return cau;
     }
-    
 }
