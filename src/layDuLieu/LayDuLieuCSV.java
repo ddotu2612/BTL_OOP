@@ -9,7 +9,7 @@ public class LayDuLieuCSV {
 		ArrayList<String > res = new ArrayList<>();
 		if(csvLine != null ){
 			String[] data = csvLine.split(",");
-			for( var i: data){
+			for( String i: data){
 				res.add(i);
 			}
 		}

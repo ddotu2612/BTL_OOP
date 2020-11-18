@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="giaoDien.Controller">
+   <left>
+      <VBox fx:id="Vbox" prefHeight="516.0" prefWidth="200.0" styleClass="vbox" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="98.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="titleLabel" contentDisplay="CENTER" ellipsisString="" styleClass="hop" text="Thông Tin" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="40.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Chứng Khoán">
+                     <font>
+                        <Font name="Times New Roman Bold" size="29.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox id="vbox" fx:id="tintucBox" prefHeight="153.0" prefWidth="172.0" styleClass="hopTT">
+               <children>
+                  <HBox fx:id="tintuctileBox" prefHeight="44.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="tintuclabel" text="Tin Tức Chứng Khoán" textAlignment="CENTER" textFill="#f8efef">
+                           <font>
+                              <Font name="Times New Roman Bold" size="17.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="12.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <ComboBox fx:id="tintucComboxBox" onAction="#tintucEvent" onMouseDragEntered="#sinhcauEvent" prefHeight="25.0" prefWidth="171.0" promptText="Tin Tức Chứng Khoán">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets left="12.0" top="12.0" />
+                     </VBox.margin>
+                  </ComboBox>
+               </children>
+            </VBox>
+            <VBox fx:id="sinhcauBox" prefHeight="164.0" prefWidth="200.0" styleClass="hopSC">
+               <children>
+                  <HBox fx:id="sinhcautitleBox" prefHeight="69.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="sinhcautitleLabel" prefHeight="47.0" prefWidth="176.0" text="Sinh Câu Chứng Khoán" textFill="#f8efef">
+                           <font>
+                              <Font name="Times New Roman Bold" size="17.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="12.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <ComboBox fx:id="sinhcauComboxBox" onAction="#sinhcauEvent" prefHeight="25.0" prefWidth="172.0" promptText="Sinh Câu Chứng Khoán">
+                     <VBox.margin>
+                        <Insets left="12.0" />
+                     </VBox.margin></ComboBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="118.0" prefWidth="200.0">
+               <children>
+                  <Label text="Label" />
+                  <ComboBox prefWidth="150.0" />
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="2.0" top="2.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <ScrollPane fx:id="Scroll" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" BorderPane.alignment="CENTER">
+         <content>
+            <TextArea fx:id="noiDung" prefHeight="486.0" prefWidth="437.0" styleClass="noiDung">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextArea>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

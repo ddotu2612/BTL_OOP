@@ -1,0 +1,23 @@
+.vbox{
+    -fx-background-color: rgba(0,155,155,0.5);
+    -fx-border-radius: 5px;
+}
+
+.hop{
+    -fx-border-width: 20px;
+    -fx-start-margin: 10px;
+}
+
+.hopTT{
+    -fx-background-color: rgba(0,60,150,1);
+
+}
+.hopSC{
+    -fx-background-color: rgba(0,120,60,1);
+
+}
+
+.noiDung{
+    -fx-background-color: grey;
+    -fx-font-style: italic;
+}
