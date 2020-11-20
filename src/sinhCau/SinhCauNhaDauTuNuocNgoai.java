@@ -220,7 +220,7 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
 
     @Override
     public ArrayList<String> sinhDoanVan() {
-        cau.add("Tin về nhà đầu tư nước ngoài trên sàn "+this.san+" trong ngày "+ this.ngay+" :");
+        cau.add("Tin về nhà đầu tư nước ngoài trên sàn " +this.san+ " trong ngày " + this.ngay+ " :");
         cau.add(this.sinhCauTongGiaTriMuaVao());
         cau.add(this.sinhCauTongGiaTriBanRa());
         cau.add(this.sinhCauTongKhoiLuongMuaVao());
@@ -236,5 +236,4 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
 
         return cau;
     }
-    
 }
