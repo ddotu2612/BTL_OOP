@@ -5,6 +5,8 @@ import layDuLieu.DuLieuChiSoIndex;
 import mauCau.MauCauChiSoIndex;
 import sinhCau.SinhCauChiSoIndex;
 
+import java.util.ArrayList;
+
 public class Test {
     public static void main(String[] args) {
         String dir = System.getProperty("user.dir");
