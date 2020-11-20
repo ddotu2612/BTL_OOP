@@ -11,7 +11,7 @@ public class CrawlDuLieuTheoNgay {
         String dir = System.getProperty("user.dir");
         Document doc;
         try {
-            doc =  Jsoup.connect("https://s.cafef.vn/TraCuuLichSu2/1/HOSE/16/11/2020.chn").get();
+            doc =  Jsoup.connect("https://s.cafef.vn/TraCuuLichSu2/1/HOSE/20/11/2020.chn").get();
             FileWriter fw = new FileWriter(dir + "//src//duLieu//bienDongTheoNgayData.csv") ;
             Elements Item_DateItem_lsg = doc.select("tr > td.Item_DateItem_lsg > a");
             Elements Item_Price1 = doc.select("tr > td.Item_Price1");
@@ -24,10 +24,11 @@ public class CrawlDuLieuTheoNgay {
                     sb.append("\"").append(Item_DateItem_lsg.get(index1++).text()).append("\",");
                     sb.append("\"").append(Item_Price1.get(i).text()).append("\",");
                 }
-                else if (i % 10 == 1) {
+                else if (i % 10 == 2) {
                     sb.append("\"").append(Item_ChangePrice_lsg.get(index2 ++).text()).append("\",");
                     sb.append("\"").append(Item_Price1.get(i).text()).append("\",");
                 }
+                else if( i % 10 == 1) continue;
                 else {
                     sb.append("\"").append(Item_Price1.get(i).text());
                     sb.append( (i % 10 != 9) ? "\"," : "\"\n");
