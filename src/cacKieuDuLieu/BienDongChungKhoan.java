@@ -58,6 +58,8 @@ public class BienDongChungKhoan{
     }
 
     public void setkLuongSoVoiTB1Thang(String kLuongSoVoiTB1Thang) {
+        if (kLuongSoVoiTB1Thang == "-")
+            this.kLuongSoVoiTB1Thang = 0.0;
         this.kLuongSoVoiTB1Thang = Double.parseDouble(kLuongSoVoiTB1Thang);
     }
     public void XuatDulieu(){
