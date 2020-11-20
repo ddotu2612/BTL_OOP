@@ -1,15 +1,15 @@
 package crawlData;
 
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-import javax.swing.text.Document;
 import java.io.FileWriter;
 
 public class CrawlDuLieuTheoNgay {
     public static void main(String[] args) {
         String dir = System.getProperty("user.dir");
-        org.jsoup.nodes.Document doc;
+        Document doc;
         try {
             doc =  Jsoup.connect("https://s.cafef.vn/TraCuuLichSu2/1/HOSE/16/11/2020.chn").get();
             FileWriter fw = new FileWriter(dir + "//src//duLieu//bienDongTheoNgayData.csv") ;

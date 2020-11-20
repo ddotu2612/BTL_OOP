@@ -12,7 +12,7 @@ public class Test {
         String dir = System.getProperty("user.dir");
         SinhCauChiSoIndex sinhCauChiSoIndex = new SinhCauChiSoIndex();
         sinhCauChiSoIndex.setDataList(new DuLieuChiSoIndex().chuyenCSVSangIndexList(dir + "//src//duLieu//vnindexData.csv", "VNINDEX"));
-        for (var i : sinhCauChiSoIndex.sinhDoanVan()) {
+        for (String i : sinhCauChiSoIndex.sinhDoanVan()) {
             System.out.println(i);
         }
     }

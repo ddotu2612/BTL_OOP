@@ -11,7 +11,7 @@ public class TestNhaDTNN {
         sinhcauNDTNN.setDataList(new DuLieuNDTNN().chuyenFileCSVNDTNNSangList(dir + "//src//duLieu//nhaDauTuNuocNgoaiData.csv"));
         sinhcauNDTNN.setTongKhoiLuongMuaBan(sinhcauNDTNN.getDataList());
         sinhcauNDTNN.setTongGiaTriMuaBan(sinhcauNDTNN.getDataList());
-        for (var i : sinhcauNDTNN.sinhDoanVan()) {
+        for (String i : sinhcauNDTNN.sinhDoanVan()) {
             System.out.println(i);
         }
     }

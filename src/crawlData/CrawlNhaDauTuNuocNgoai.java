@@ -13,7 +13,7 @@ public class CrawlNhaDauTuNuocNgoai {
         Document doc;
         {
             try {
-                doc = Jsoup.connect("https://s.cafef.vn/TraCuuLichSu2/3/HOSE/23/10/2020.chn").get();
+                doc = Jsoup.connect("https://s.cafef.vn/TraCuuLichSu2/3/HOSE/today.chn#data").get();
                 Elements column1= doc.select("tr > td.CodeItem>a");
                 Elements body = doc.select("tr > td.Item");
 
