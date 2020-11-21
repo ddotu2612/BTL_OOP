@@ -92,7 +92,7 @@
       </VBox>
    </left>
    <center>
-      <ScrollPane fx:id="Scroll" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" BorderPane.alignment="CENTER">
+      <ScrollPane fx:id="Scroll" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" onScroll="#setScroll" BorderPane.alignment="CENTER">
          <content>
             <TextArea fx:id="noiDung" prefHeight="486.0" prefWidth="437.0" styleClass="noiDung">
                <font>
