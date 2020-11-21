@@ -1,9 +1,7 @@
 package layDuLieu;
 import cacKieuDuLieu.BienDongChungKhoan;
-import layDuLieu.LayDuLieuCSV;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,15 +17,18 @@ public class DuLieuBDTK extends LayDuLieuCSV {
         Data.setkLuongSoVoiTB1Thang(args.get(5));
         return Data;
     }
+<<<<<<< HEAD
+
+    public static ArrayList<BienDongChungKhoan> CSV_Extract(String csvPath) {
+=======
     public ArrayList<BienDongChungKhoan> CSV_Extract(String csvPath) {
+>>>>>>> adee5b874e2b550ff34fd49be0852d9d64719ab7
         ArrayList<BienDongChungKhoan> datalist = new ArrayList<>();
         BufferedReader br = null;
         try {
             String line;
             br = new BufferedReader(new FileReader(csvPath));
-            // Skip the first line
             br.readLine();
-            // How to read file in java line by line?
             while ((line = br.readLine()) != null) {
                 datalist.add(LayDLBDTK(parseCSVLine(line)));
             }
