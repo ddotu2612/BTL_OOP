@@ -1,6 +1,8 @@
 package cacKieuDuLieu;
 
-public class TheoNgay {
+import layDuLieu.DuLieuTheoNgay;
+
+public class TheoNgay  {
 
     private String maCk;
 
@@ -8,10 +10,10 @@ public class TheoNgay {
     private double giaCaoNhat;
     private double giaThapNhat;
     private double giaDongCua;
-    private int klgdKhopLenh;
-    private int klgdThoaThuan;
-    private int gtgdKhopLenh;
-    private int gtgdThoaThuan;
+    private long klgdKhopLenh;
+    private long klgdThoaThuan;
+    private long gtgdKhopLenh;
+    private long gtgdThoaThuan;
 
     private double thaydoi;
 
@@ -53,13 +55,6 @@ public class TheoNgay {
         this.thaydoi = 1000.0D * this.giaDongCua - 1000.0D * this.giaMoCua;
         return this.thaydoi;
     }
-
-    public void setStockCode(String stockCode) {
-        this.stockCode = stockCode;
-    }
-
-
-
 
 
     public void setGiaMoCua(double giaMoCua) {this.giaMoCua = giaMoCua; }

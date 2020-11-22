@@ -1,8 +1,8 @@
 package sinhcau;
 
-import cackieudulieu.ChungKhoanTheoNgay;
-import maucau.MauCauTheoNgay;
-import sosanhdulieuchungkhoantheongay.*;
+import layDuLieu.DuLieuTheoNgay;
+import mauCau.MauCauTheoNgay;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +14,7 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
     public SinhCauTheoNgay() {
 
     }
-    public List<ChungKhoanTheoNgay> datalist = new ArrayList<>();
+    public List<DuLieuTheoNgay> datalist = new ArrayList<>();
     public static List<String> sentences = new ArrayList<>();
 
     public String sinhCauNgauNhien(String [] sentences) {
@@ -23,7 +23,7 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
     }
 
     // Thay the cac key word va du lieu trong cau bang cac thuoc tinh cua data
-    public String chenDuLieu(String sentence,ChungKhoanTheoNgay data) {
+    public String chenDuLieu(String sentence,DuLieuTheoNgay data) {
 
         sentence = sentence.replace("|maCk|", data.getMaCk());
         sentence = sentence.replace("|giaMoCua|", Double.toString(data.getGiaMoCua()) + " đồng");
@@ -35,7 +35,7 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
         return sentence;
     }
 
-    public String chenListDuLieu(String sentence,List <ChungKhoanTheoNgay> datalist) {
+    public String chenListDuLieu(String sentence,List <DuLieuTheoNgay> datalist) {
 
         sentence = sentence.replace("|ticker0|", datalist.get(0).getTicker());
         sentence = sentence.replace("|ticker1|", datalist.get(1).getTicker());
@@ -48,29 +48,29 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
         return sentence;
     }
     //Sinh cau theo 1 ma
-    public String soVoiDauPhien(ChungKhoanTheoNgay data) {
+    public String soVoiDauPhien(DuLieuTheoNgay data) {
         if (data.getDif() > 0) return  chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getTangSoVoiBanDau()),data);
         else if (data.getDif() == 0) return  chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getBangSoVoiBanDau()),data);
         else return  chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiamSoVoiBanDau()),data);
     }
-    public String giaDauNgay(ChungKhoanTheoNgay data) {
+    public String giaDauNgay(DuLieuTheoNgay data) {
         return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaDauNgay()), data);
     }
-    public String giaCuoiNgay(ChungKhoanTheoNgay data) {
+    public String giaCuoiNgay(DuLieuTheoNgay data) {
         return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaCuoiNgay()), data);
     }
-    public String giaCaoNhat(ChungKhoanTheoNgay data) {
+    public String giaCaoNhat(DuLieuTheoNgay data) {
         return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaCaoNhat()), data);
     }
-    public String giaThapNhat(ChungKhoanTheoNgay data) {
+    public String giaThapNhat(DuLieuTheoNgay data) {
         return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaThapNhat()), data);
     }
-    public String khoiLuongGiaodich(ChungKhoanTheoNgay data) {
+    public String khoiLuongGiaodich(DuLieuTheoNgay data) {
         return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getKhoiLuongGiaoDich()), data);
     }
 
     //Sinh cau theo nhieu ma
-    public String giaCaoThapDauPhien(List<ChungKhoanTheoNgay> datalist) {
+    public String giaCaoThapDauPhien(List<DuLieuTheoNgay> datalist) {
         String sentence1,sentence2;
         datalist.sort(new SoSanhDiemMoPhien());
         sentence1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaThapDauNgay()), datalist);
@@ -79,7 +79,7 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
         return sentence1 + "\n" + sentence2;
     }
 
-    public String giaCaoThapChotPhien(List<ChungKhoanTheoNgay> datalist) {
+    public String giaCaoThapChotPhien(List<DuLieuTheoNgay> datalist) {
         String sentence1,sentence2;
         datalist.sort(new SoSanhDiemChotPhien());
         sentence1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaThapCuoiNgay()), datalist);
@@ -88,7 +88,7 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
         return sentence1 + "\n" + sentence2;
     }
 
-    public String sapXepKhoiLuongGiaoDich(List<ChungKhoanTheoNgay> datalist) {
+    public String sapXepKhoiLuongGiaoDich(List<DuLieuTheoNgay> datalist) {
         String sentence1,sentence2;
         datalist.sort(new SoSanhKhoiLuongGiaoDich());
         sentence1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaoDichIt()), datalist);
@@ -97,7 +97,7 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
         return sentence1 + "\n" + sentence2;
     }
 
-    public String maOnDinh(List<ChungKhoanTheoNgay> datalist) {
+    public String maOnDinh(List<DuLieuTheoNgay> datalist) {
         String sentence1,sentence2;
         datalist.sort(new SoSanhTinhOnDinh());
         sentence1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getMaOnDinh()), datalist);

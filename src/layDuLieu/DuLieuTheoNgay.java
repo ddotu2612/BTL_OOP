@@ -1,6 +1,7 @@
 package layDuLieu;
 
 import cacKieuDuLieu.TheoNgay;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,6 +13,7 @@ public class DuLieuTheoNgay extends LayDuLieuCSV {
     /**
      *
      * @param a
+     * @return
      */
 
     public TheoNgay taoDuLieuTheoNgay(List <String> a){
@@ -44,7 +46,7 @@ public class DuLieuTheoNgay extends LayDuLieuCSV {
             br.readLine();
             // Đọc file csv
             while ((line = br.readLine()) != null) {
-                list.add(taoDuLieuTheoNgay(parseCSVLine(line)));
+               list.add(taoDuLieuTheoNgay(parseCSVLine(line)));
             }
         } catch (IOException e) {
             e.printStackTrace();
