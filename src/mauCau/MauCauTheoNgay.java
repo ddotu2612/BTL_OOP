@@ -52,13 +52,13 @@ public  class MauCauTheoNgay{
     private static String[] giaThapDauNgay = new String[]{
             "Mở cửa phiên giao dịch,cổ phiếu có giá thấp nhất là |maCk0| với giá |giaMoCua0|/1 cổ phiếu.",
             "Mở cửa phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá thấp nhất ",
-            "Mở đầu phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá thấp nhất,trong đó nổi bật là |maCk0| với giá |giaMoCua0|/1 cổ phiếu "
+            "Mở đầu phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá thấp nhất,trong đó quan ngại nhất là |maCk0| với giá |giaMoCua0|/1 cổ phiếu "
     };
 
     private static String[] giaThapCuoiNgay = new String[]{
             "Kết thúc phiên giao dịch, cổ phiếu có giá thấp nhất là |maCk0| với giá |closeValue0|/1 cổ phiếu.",
             "Đóng cửa phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá thấp nhất ",
-            "Chốt phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá thấp nhất,trong đó nổi bật là |maCk0| với giá |closeValue0|/1 cổ phiếu "
+            "Chốt phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá thấp nhất,trong đó quan ngại nhất là |maCk0| với giá |closeValue0|/1 cổ phiếu "
     };
 
     private static String[] giaDauNgay = new String[]{
