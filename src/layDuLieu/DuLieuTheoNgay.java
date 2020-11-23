@@ -1,7 +1,6 @@
 package layDuLieu;
 
 import cacKieuDuLieu.TheoNgay;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -36,8 +35,8 @@ public class DuLieuTheoNgay extends LayDuLieuCSV {
      *
      * @param csvPath
     */
-    public ArrayList<DuLieuTheoNgay> chuyenCSVSangIndexList (String csvPath) {
-        ArrayList<DuLieuTheoNgay> list = new ArrayList<>() ;
+    public ArrayList<TheoNgay> chuyenCSVSangIndexList (String csvPath) {
+        ArrayList<TheoNgay> list = new ArrayList<>() ;
         BufferedReader br = null;
         try {
             String line;

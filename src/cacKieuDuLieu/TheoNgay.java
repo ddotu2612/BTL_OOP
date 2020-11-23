@@ -21,17 +21,14 @@ public class TheoNgay  {
     }
 
     public String chuyendoiklgd() {
-        String string = this.klgdKhopLenh > 1000000 ? "hơn " + this.klgdKhopLenh / 1000000 + " triệu" : (this.klgdKhopLenh > 1000 ? "hơn " + this.klgdKhopLenh / 1000 + " nghìn" : String.valueOf(this.klgdKhopLenh));
+        String string = this.klgdKhopLenh > 1000000 ? "hơn " + this.klgdKhopLenh / 1000000 + " triệu" :
+                (this.klgdKhopLenh > 1000 ? "hơn " + this.klgdKhopLenh / 1000 + " nghìn" : String.valueOf(this.klgdKhopLenh));
         return string;
     }
 
-    public String maCk() {
+    public String getMaCk() {
         return this.maCk;
     }
-
-
-
-
 
     public double getGiaMoCua() { return 1000.0D * this.giaMoCua;}
 
@@ -51,11 +48,28 @@ public class TheoNgay  {
         return this.klgdKhopLenh;
     }
 
+    public long getGtgdKhopLenh() {
+        return gtgdKhopLenh;
+    }
+
+    public long getKlgdThoaThuan() {
+        return klgdThoaThuan;
+    }
+
+    public long getGtgdThoaThuan() {
+        return gtgdThoaThuan;
+    }
+
+
     public double getThaydoi() {
         this.thaydoi = 1000.0D * this.giaDongCua - 1000.0D * this.giaMoCua;
         return this.thaydoi;
     }
 
+
+    public void setMaCk(String maCk) {
+        this.maCk = maCk;
+    }
 
     public void setGiaMoCua(double giaMoCua) {this.giaMoCua = giaMoCua; }
 
@@ -75,31 +89,18 @@ public class TheoNgay  {
         this.klgdKhopLenh = klgdKhopLenh;
     }
 
-    public void setMaCk(String maCk) {
-        this.maCk = maCk;
-    }
-
-    public long getGtgdKhopLenh() {
-        return gtgdKhopLenh;
-    }
-
     public void setGtgdKhopLenh(long gtgdKhopLenh) {
         this.gtgdKhopLenh = gtgdKhopLenh;
-    }
-
-    public long getKlgdThoaThuan() {
-        return klgdThoaThuan;
     }
 
     public void setKlgdThoaThuan(long klgdThoaThuan) {
         this.klgdThoaThuan = klgdThoaThuan;
     }
 
-    public long getGtgdThoaThuan() {
-        return gtgdThoaThuan;
-    }
-
     public void setGtgdThoaThuan(long gtgdThoaThuan) {
         this.gtgdThoaThuan = gtgdThoaThuan;
     }
+
+
+
 }
