@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.input.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -35,20 +37,32 @@
                   </Label>
                </children>
             </VBox>
-            <VBox id="vbox" fx:id="tintucBox" prefHeight="153.0" prefWidth="172.0" styleClass="hopTT">
+            <VBox id="vbox" fx:id="tintucBox" prefHeight="235.0" prefWidth="200.0" styleClass="hopTT">
                <children>
-                  <HBox fx:id="tintuctileBox" prefHeight="44.0" prefWidth="200.0">
+                  <VBox prefHeight="120.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="tintuclabel" text="Tin Tức Chứng Khoán" textAlignment="CENTER" textFill="#f8efef">
-                           <font>
-                              <Font name="Times New Roman Bold" size="17.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="12.0" top="10.0" />
-                           </HBox.margin>
-                        </Label>
+                        <HBox fx:id="tintuctileBox" prefHeight="83.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="tintuclabel" text="Tin Tức Chứng Khoán" textAlignment="CENTER" textFill="#f8efef">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="17.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="12.0" top="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ImageView fitHeight="83.0" fitWidth="83.0" opacity="0.91" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icon/news_article_blog-512.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="55.0" />
+                           </VBox.margin>
+                        </ImageView>
                      </children>
-                  </HBox>
+                  </VBox>
                   <ComboBox fx:id="tintucComboxBox" onAction="#tintucEvent" onMouseDragEntered="#sinhcauEvent" prefHeight="25.0" prefWidth="171.0" promptText="Tin Tức Chứng Khoán">
                      <opaqueInsets>
                         <Insets />
@@ -59,30 +73,36 @@
                   </ComboBox>
                </children>
             </VBox>
-            <VBox fx:id="sinhcauBox" prefHeight="164.0" prefWidth="200.0" styleClass="hopSC">
+            <VBox fx:id="sinhcauBox" prefHeight="235.0" prefWidth="200.0" styleClass="hopSC">
                <children>
-                  <HBox fx:id="sinhcautitleBox" prefHeight="69.0" prefWidth="200.0">
+                  <VBox prefHeight="128.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="sinhcautitleLabel" prefHeight="47.0" prefWidth="176.0" text="Sinh Câu Chứng Khoán" textFill="#f8efef">
-                           <font>
-                              <Font name="Times New Roman Bold" size="17.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="12.0" top="10.0" />
-                           </HBox.margin>
-                        </Label>
+                        <HBox fx:id="sinhcautitleBox" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="sinhcautitleLabel" prefHeight="34.0" prefWidth="176.0" text="Sinh Câu Chứng Khoán" textFill="#f8efef">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="17.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="12.0" top="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ImageView fitHeight="66.0" fitWidth="74.0" opacity="0.65" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icon/baseline_description_black_18dp.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="60.0" />
+                           </VBox.margin>
+                        </ImageView>
                      </children>
-                  </HBox>
+                  </VBox>
                   <ComboBox fx:id="sinhcauComboxBox" onAction="#sinhcauEvent" prefHeight="25.0" prefWidth="172.0" promptText="Sinh Câu Chứng Khoán">
                      <VBox.margin>
                         <Insets left="12.0" />
                      </VBox.margin></ComboBox>
-               </children>
-            </VBox>
-            <VBox prefHeight="118.0" prefWidth="200.0">
-               <children>
-                  <Label text="Label" />
-                  <ComboBox prefWidth="150.0" />
                </children>
             </VBox>
          </children>
@@ -102,4 +122,28 @@
          </content>
       </ScrollPane>
    </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="quitMenu" mnemonicParsing="false" onAction="#quit" text="Quit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="refreshMenu" mnemonicParsing="false" onAction="#refresh" text="Refresh">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="R" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
 </BorderPane>

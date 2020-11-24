@@ -9,11 +9,6 @@ import java.util.List;
 
 
 public class DuLieuTheoNgay extends LayDuLieuCSV {
-    /**
-     *
-     * @param a
-     * @return
-     */
 
     public TheoNgay taoDuLieuTheoNgay(List <String> a){
         TheoNgay dulieuTheoNgay = new TheoNgay();
@@ -31,10 +26,8 @@ public class DuLieuTheoNgay extends LayDuLieuCSV {
 
 
     }
-    /**
-     *
-     * @param csvPath
-    */
+
+
     public ArrayList<TheoNgay> chuyenCSVSangIndexList (String csvPath) {
         ArrayList<TheoNgay> list = new ArrayList<>() ;
         BufferedReader br = null;

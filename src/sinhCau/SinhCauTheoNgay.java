@@ -2,7 +2,10 @@ package sinhCau;
 
 import cacKieuDuLieu.TheoNgay;
 import mauCau.MauCauTheoNgay;
-import sinhCau.AbstractSinhCau;
+import sosanh.theongay.SoSanhDiemChotPhien;
+import sosanh.theongay.SoSanhDiemMoPhien;
+import sosanh.theongay.SoSanhKhoiLuongGiaoDich;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -16,10 +19,7 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
     public List<TheoNgay> datalist = new ArrayList<>();
     public static List<String> cau = new ArrayList<>();
 
-    public String sinhCauNgauNhien(String [] cau) {
-        Random rd = new Random();
-        return cau[rd.nextInt(cau.length)];
-    }
+
 
     // Thay the cac key word va du lieu trong cau bang cac thuoc tinh cua data
     public String chenDuLieu(String cau, TheoNgay data) {
@@ -71,7 +71,8 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
     //Sinh cau theo nhieu ma
     public String giaCaoThapDauPhien(List<TheoNgay> datalist) {
         String cau1, cau2;
-        datalist.sort(new SoSanhDiemMoPhien());
+//        .sort(new SoSanhDiemMoPhien());
+        Collections.sort(datalist, new SoSanhDiemMoPhien());
         cau1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaThapDauNgay()), datalist);
         Collections.reverse(datalist);
         cau2 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaCaoDauNgay()), datalist);
@@ -79,27 +80,27 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
     }
 
     public String giaCaoThapChotPhien(List<TheoNgay> datalist) {
-        String sentence1,sentence2;
+        String cau1,cau2;
         datalist.sort(new SoSanhDiemChotPhien());
-        sentence1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaThapCuoiNgay()), datalist);
+        cau1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaThapCuoiNgay()), datalist);
         Collections.reverse(datalist);
-        sentence2 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaCaoCuoiNgay()), datalist);
-        return sentence1 + "\n" + sentence2;
+        cau2 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaCaoCuoiNgay()), datalist);
+        return cau1 + "\n" + cau2;
     }
 
     public String sapXepKhoiLuongGiaoDich(List<TheoNgay> datalist) {
-        String sentence1,sentence2;
+        String cau1,cau2;
         datalist.sort(new SoSanhKhoiLuongGiaoDich());
-        sentence1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaoDichIt()), datalist);
+        cau1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaoDichIt()), datalist);
         Collections.reverse(datalist);
-        sentence2 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaoDichNhieu()), datalist);
-        return sentence1 + "\n" + sentence2;
+        cau2 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaoDichNhieu()), datalist);
+        return cau1 + "\n" + cau2;
     }
 
 
 
-    public List<String> sinhDoanVan() {
-//		List<String> cau = new ArrayList<>();
+    public ArrayList<String> sinhDoanVan() {
+        ArrayList<String> cau = new ArrayList<>();
         Random rd = new Random();
         int i = rd.nextInt(datalist.size());
         cau.add("Tin về sàn giao dịch " + datalist.get(i).getMaCk() +" :");
