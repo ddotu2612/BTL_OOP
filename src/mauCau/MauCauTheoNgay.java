@@ -1,109 +1,118 @@
 package mauCau;
 
-public class MauCauTheoNgay {
+public  class MauCauTheoNgay{
+    public MauCauTheoNgay(){
 
-    static final String ngay = "|ngay|";
-    static final String maCK = "|maCK|";
-    static final String thayDoi = "|thayDoi|";
-    static final String giaDongCua = "|giaDongCua|";
-    static final String giaTriThayDoi = "|giaTriThayDoi|";
-    static final String klgdThoaThuan = "|klgdThoaThuan|";
-    static final String gtgdThoaThuan = "|gtgdThoaThuan|";
-    static final String giaMoCua = "|giaMoCua|";
-    static final String gtgdKhopLenh = "|gtgdKhopLenh|";
-    static final String klgdKhopLenh = "|klgdKhopLenh|";
-
-    public static String[] ChotPhienGiaoDichTang = {"Chốt phiên ngày" + ngay + ", chỉ số " + maCK + " " + thayDoi + ", lên thành " + giaDongCua + " điểm.",
-            "Kết thúc phiên ngày " + ngay + ", chỉ số " + maCK + " tăng và dừng lại ở mức " + giaDongCua + " điểm, " + thayDoi + " so với phiên ngày trước đó.",
-            "Phiên giao dịch ngày " + ngay + " ghi nhận chỉ số " + maCK + " đạt " + giaDongCua + " điểm, " + thayDoi + " so với phiên trước đó.",
-            "Chỉ số " + maCK + " tại lúc đóng cửa phiên giao dịch ngày " + ngay + " đạt " + giaDongCua + " điểm, ghi nhận " + thayDoi + " so với ngày trước đó.",
-            "Chỉ số " + maCK + " tại giờ đóng cửa giao dịch đạt " + giaDongCua + " điểm, " + thayDoi + " so với phiên trước.",
-            "Chốt phiên giao dịch ngày" + ngay + ", chỉ số" + maCK + "tăng" + giaTriThayDoi + "điểm, lên thành" + giaDongCua + "điểm, khối lượng gia dịch đạt" + klgdThoaThuan + "triệu cổ phiếu, tương đương " + gtgdThoaThuan + "tỷ đồng"};
-    public static String[] ChotPhienGiaoDichGiam = {"Chốt phiên ngày " + ngay + ", chỉ số " + maCK + " " + thayDoi + ", xuống còn " + giaDongCua + " điểm.",
-            "Đóng cửa phiên ngày " + ngay + ", chỉ số " + maCK + " giảm và dừng lại ở mức " + giaDongCua + " điểm, " + thayDoi + " so với phiên ngày trước đó.",
-            "Phiên giao dịch ngày " + ngay + " ghi nhận chỉ số " + maCK + " còn " + giaDongCua + " điểm, " + thayDoi + " so với phiên trước đó.",
-            "Chỉ số " + maCK + " tại lúc đóng cửa phiên giao dịch ngày " + ngay + " đạt " + giaDongCua + " điểm, ghi nhận " + thayDoi + " so với ngày trước đó.",
-            "Chỉ số " + maCK + " tại giờ đóng cửa giao dịch đạt " + giaDongCua + " điểm, " + thayDoi + " so với phiên trước.",
-            "Chốt phiên giao dịch ngày " + ngay + ", " + maCK + " giảm " + giaTriThayDoi + " điểm , còn " + giaDongCua + " điểm, khối lượng giao dịch " + klgdThoaThuan + " triệu cổ phiếu, tương đương " + gtgdThoaThuan + " tỷ đồng."};
-    public static String[] KhoiSacDauPhienGiam = {"Bất chấp những khởi sắc đầu phiên giao dịch, cuối ngày " + ngay + ", " + maCK + " giảm xuống còn " + giaDongCua + ", " + thayDoi + " so với phiên trước đó.",
-            "Mặc dù có những dấu hiệu khởi sắc đầu phiên, cuối ngày " + ngay + ", " + maCK + " giảm xuống còn " + giaDongCua + ", " + thayDoi + " so với phiên trước đó.",
-            "Có dấu hiệu của sự hồi phục đầu phiên giao dịch, song chốt phiên ngày " + ngay + ", " + maCK + " giảm xuống còn " + giaDongCua + ", " + thayDoi + " so với phiên trước đó."};
-    public static String[] KhoiSacDauPhienTang = {"Tiếp nối những sắc xanh từ đầu phiên giao dịch, cuối ngày " + ngay + ", " + maCK + " vươn lên, chạm mốc " + giaDongCua + " điểm.",
-            "Phiên giao dịch " + ngay + " chứng kiến những thay đổi tích cực đối với chỉ số " + maCK + ", theo đà đó, chốt phiên giao dịch, " + maCK + " vươn lên, chạm mốc " + giaDongCua + " điểm."};
-    public static String[] GiamDauPhienGiam = {"Đầu phiên giao dịch ngày " + ngay + " chứng kiến dấu hiệu giảm của chỉ số " + maCK + ", theo đó, đóng cửa phiên, chỉ số " + maCK + " giảm xuống còn " + giaDongCua + " điểm.",
-            "Chỉ số " + maCK + " đã cho thấy những dấu hiệu tiêu cực ngay từ đầu phiên, kết thúc phiên giao dịch ngày " + ngay + ", chỉ số " + maCK + " tụt xuống còn " + giaDongCua + " điểm."};
-    public static String[] GiamDauPhienTang = {"Mặc dù khởi đầu trong không khí ảm đạm, chốt phiên giao dịch ngày " + ngay + ", chỉ số " + maCK + " tăng đến " + giaDongCua + " điểm.",
-            "Với khởi đầu phiên không mấy khả quan với giá mở cửa " + giaMoCua + " ,kết thúc phiên giao dich ngày " + ngay + " , mã " + maCK + " tăng lên tới " + giaDongCua + ""};
-    public static String[] GiaoDichKhopLenh = {"Phiên giao dịch ngày " + ngay + " ghi nhận trên " + klgdKhopLenh + " triệu giao dịch khớp lệnh, tổng giá trị lên tới hơn " + gtgdKhopLenh + " tỷ đồng.",
-            "Đã có tổng cộng hơn " + klgdKhopLenh + " triệu giao dịch khớp lệnh với tổng giá trị đạt trên " + gtgdKhopLenh + " tỷ đồng trong phiên giao dịch ngày " + ngay + "."};
-    public static String[] GiaoDichThoaThuan = {"Phiên giao dịch ngày " + ngay + " ghi nhận hơn " + klgdThoaThuan + " triệu giao dịch thỏa thuận, tổng giá trị lên tới trên " + gtgdThoaThuan + " tỷ đồng.",
-            "Đã có tổng cộng trên " + klgdThoaThuan + " triệu giao dịch thỏa thuận với tổng giá trị đạt hơn " + gtgdThoaThuan + " tỷ đồng trong phiên giao dịch ngày " + ngay + "."};
-    public static String[] TangManh = {"So với phiên trước đó, chỉ số " + maCK + " trong phiên giao dịch này tăng mạnh (" + giaTriThayDoi + " điểm).",
-            "Trong phiên giao dịch này ghi nhận chỉ số " + maCK + " tăng mạnh so với phiên trước đó với mức tăng " + giaTriThayDoi + " điểm."};
-    public static String[] TangNhe = {"So với phiên giao dịch trước đó, chỉ số " + maCK + " chỉ tăng nhẹ với mức " + thayDoi + "."};
-    public static String[] GiamManh = {"Trong phiên giao dịch này ghi nhận chỉ số " + maCK + " giảm sâu so với phiên trước đó với mức giảm " + giaTriThayDoi + " điểm."};
-    public static String[] GiamNhe = {"So với phiên giao dịch trước đó, chỉ số " + maCK + " chỉ giảm nhẹ với mức " + thayDoi + "."};
-    public static String[] GiaCaoNhat = {"Trong khoảng thời gian trên, chỉ số " + maCK + " đạt đỉnh tại mức " + giaDongCua + " điểm tại ngày " + ngay + ".",
-            "Chỉ số " + maCK + " trong khoảng thời gian trên chạm tới mốc cao nhất (" + giaDongCua + " điểm) vào ngày " + ngay + "."};
-    public static String[] GiaThapNhat = {"Ngày " + ngay + " ghi nhận chỉ số " + maCK + " chạm đáy ở " + giaDongCua + " điểm trong khoảng thời gian trên.",
-            "Trong khoảng thời gian trên, chỉ số " + maCK + " giảm xuống mức sâu nhất tại " + giaDongCua + " điểm tại ngày " + ngay + "."};
-
-
-    public static String[] getChotPhienGiaoDichTang() {
-        return ChotPhienGiaoDichTang;
     }
+    private static String[] tangSoVoiBanDau = new String[]{
+            "Chốt phiên cuối ngày, giá cổ phiếu |maCk| tăng từ |openValue| lên thành |closeValue| .",
+            "Đóng cửa phiên cuối ngày, giá cổ phiếu |maCk| dừng lại ở mức |closeValue|, so với khi mở cửa phiên giao dịch tăng |thaydoi|.",
+            "Chốt phiên giao dịch, ghi nhận giá cổ phiếu |maCk| đạt |closeValue|,tăng |thaydoi| so với khi mở cửa phiên giao dịch.",
+            "Cổ phiếu |maCk| tại lúc đóng cửa phiên giao dịch đạt |closeValue|,ghi nhận tăng |thaydoi| so với thời điểm bắt đầu phiên giao dịch."
+    };
 
-    public static String[] getChotPhienGiaoDichGiam() {
-        return ChotPhienGiaoDichGiam;
-    }
+    private static String[] bangSoVoiBanDau = new String[]{
+            "Chốt phiên cuối ngày , giá cổ phiếu |maCk| đứng giá tại |openValue| .",
+            "Đóng cửa phiên cuối ngày , giá cổ phiếu |maCk| dừng lại ở mức |closeValue|,không đổi so với khi mở cửa phiên giao dịch.",
+            "Chốt phiên giao dịch, ghi nhận giá cổ phiếu |maCk| đạt |closeValue|,không đổi so với khi mở cửa phiên giao dịch.",
+            "Cổ phiếu |maCk| tại lúc đóng cửa phiên giao dịch đạt |closeValue|,ghi nhận không đổi so với thời điểm bắt đầu phiên giao dịch."
+    };
 
-    public static String[] getKhoiSacDauPhienGiam() {
-        return KhoiSacDauPhienGiam;
-    }
+    private static String[] giamSoVoiBanDau = new String[]{
+            "Chốt phiên cuối ngày , giá cổ phiếu |maCk| giảm từ |openValue| xuống thành |closeValue|.",
+            "Đóng cửa phiên cuối ngày, giá cổ phiếu |maCk| dừng lại ở mức |closeValue|,so với khi mở cửa phiên giao dịch giảm |thaydoi|.",
+            "Chốt phiên giao dịch ghi nhận giá cổ phiếu |maCk| đạt |closeValue|,giảm |thaydoi| so với khi mở cửa phiên giao dịch.",
+            "Cổ phiếu |maCk| tại lúc đóng cửa phiên giao dịch chỉ đạt |closeValue|,ghi nhận giảm |thaydoi| so với thời điểm bắt đầu phiên giao dịch."
+    };
 
-    public static String[] getKhoiSacDauPhienTang() {
-        return KhoiSacDauPhienTang;
-    }
+    private static String[] giaoDichNhieu = new String[]{
+            "Đóng cửa phiên giao dịch,các cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| được giao dịch nhiều nhất. Trong đó,đứng đầu là mã cổ phiếu |maCk0| với khối lượng giao dịch |volume0|",
+            "Chốt phiên giao dịch, các cổ phiếu được nhà đầu tư giao dịch nhiều nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| Trong đó |maCk0| đang dẫn đầu xu thế thị trường với khối lượng giao dịch |volume0|",
+            "kết thúc phiên giao dịch ,các cổ phiếu đang dẫn đầu xu thế thị trường là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| "
+    };
 
-    public static String[] getGiamDauPhienGiam() {
-        return GiamDauPhienGiam;
-    }
+    private static String[] giaoDichIt = new String[]{
+            "Đóng cửa phiên giao dịch,các cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| được giao dịch ít nhất. Trong đó,thấp nhất là mã cổ phiếu |maCk0| với khối lượng giao dịch |volume0|",
+            "Chốt phiên giao dịch các cổ phiếu được nhà đầu tư giao dịch ít nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| Trong đó |maCk0| ít được các nhà đầu tư quan tâm nhất với khối lượng giao dịch |volume0|",
+            "Kết thúc phiên giao dịch,các cổ phiếu ít được các nhà đầu tư quan tâm nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| "
+    };
 
-    public static String[] getGiamDauPhienTang() {
-        return GiamDauPhienTang;
-    }
+    private static String[] giaCaoDauNgay = new String[]{
+            "Mở cửa phiên giao dịch,cổ phiếu có giá cao nhất là |maCk0| với giá |giaMoCua0|/1 cổ phiếu.",
+            "Mở cửa phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá cao nhất ",
+            "Mở đầu phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá cao nhất,trong đó đứng đầu là |maCk0| với giá |giaMoCua0|/1 cổ phiếu "
+    };
 
-    public static String[] getGiaoDichKhopLenh() {
-        return GiaoDichKhopLenh;
-    }
+    private static String[] giaCaoCuoiNgay = new String[]{
+            "Kết thúc phiên giao dịch,cổ phiếu có giá cao nhất là |maCk0| với giá |closeValue0|/1 cổ phiếu.",
+            "Đóng cửa phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá cao nhất ",
+            "Chốt phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá cao nhất,trong đó đứng đầu là |maCk0| với giá |closeValue0|/1 cổ phiếu "
+    };
 
-    public static String[] getGiaoDichThoaThuan() {
-        return GiaoDichThoaThuan;
-    }
+    private static String[] giaThapDauNgay = new String[]{
+            "Mở cửa phiên giao dịch,cổ phiếu có giá thấp nhất là |maCk0| với giá |giaMoCua0|/1 cổ phiếu.",
+            "Mở cửa phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá thấp nhất ",
+            "Mở đầu phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá thấp nhất,trong đó quan ngại nhất là |maCk0| với giá |giaMoCua0|/1 cổ phiếu "
+    };
 
-    public static String[] getTangManh() {
-        return TangManh;
-    }
+    private static String[] giaThapCuoiNgay = new String[]{
+            "Kết thúc phiên giao dịch, cổ phiếu có giá thấp nhất là |maCk0| với giá |closeValue0|/1 cổ phiếu.",
+            "Đóng cửa phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá thấp nhất ",
+            "Chốt phiên giao dịch, ghi nhận các mã cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| có giá thấp nhất,trong đó quan ngại nhất là |maCk0| với giá |closeValue0|/1 cổ phiếu "
+    };
 
-    public static String[] getTangNhe() {
-        return TangNhe;
-    }
+    private static String[] giaDauNgay = new String[]{
+            "Mở cửa phiên giao dịch, ghi nhận cổ phiếu |maCk| có giá |openValue|/1 cổ phiếu",
+            "Mở đầu phiên giao dịch, 1 cổ phiếu |maCk| có giá |openValue|",
+            "Giá trị 1 cổ phiếu |maCk| là |openValue| tại thời điểm bắt đầu phiên giao dịch"
+    };
 
-    public static String[] getGiamManh() {
-        return GiamManh;
-    }
+    private static String[] giaCuoiNgay = new String[]{
+            "Đóng cửa phiên giao dịch, ghi nhận cổ phiếu |maCk| có giá |closeValue|/1 cổ phiếu",
+            "Chốt phiên giao dịch,1 cổ phiếu |maCk| có giá |closeValue|",
+            "Giá trị 1 cổ phiếu |maCk| là |closeValue| tại thời điểm kết thúc phiên giao dịch"
+    };
 
-    public static String[] getGiamNhe() {
-        return GiamNhe;
-    }
+    private static String[] giaCaoNhat = new String[]{
+            "Trong phiên giao dịch, ghi nhận từng có thời điểm giá cổ phiếu |maCk| đạt giá trị |highestValue|, cao nhất trong ngày",
+            "Giá trị cao nhất của cổ phiếu |maCk| trong ngày là |highestValue|",
+            "Cổ phiếu |maCk| đạt giá trị cao nhất là |highestValue| trong phiên giao dịch"
+    };
 
+    private static String[] giaThapNhat = new String[]{
+            "Trong phiên giao dịch, ghi nhận từng có thời điểm giá cổ phiếu |maCk| đạt giá trị |lowestValue|, thấp nhất trong ngày",
+            "Giá trị thấp nhất của cổ phiếu |maCk| trong ngày là |lowestValue|",
+            "Cổ phiếu |maCk| đạt giá trị thấp nhất là |lowestValue| trong phiên giao dịch"
+    };
 
-    public static String[] getGiaCaoNhat() {
-        return GiaCaoNhat;
-    }
+    private static String[] khoiLuongGiaoDich = new String[]{
+            "Trong toàn bộ phiên giao dịch,mã cổ phiếu |maCk| đạt khối lượng giao dịch |volume|",
+            "Có tổng cộng |volume| lượt giao dịch cổ phiếu |maCk| trong phiên giao dịch"
+    };
 
-    public static String[] getGiaThapNhat() {
-        return GiaThapNhat;
-    }
+    private static String[] maOnDinh = new String[]{
+            "Các mã cổ phiếu có độ ổn định cao nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| "
+    };
+
+    private static String[] maKhongOnDinh = new String[]{
+            "Các mã cổ phiếu có độ ổn định thấp nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| "
+    };
+
+    public static String[] getTangSoVoiBanDau() { return tangSoVoiBanDau; }
+    public static String[] getBangSoVoiBanDau() { return bangSoVoiBanDau; }
+    public static String[] getGiamSoVoiBanDau() { return giamSoVoiBanDau; }
+    public static String[] getGiaoDichNhieu() { return giaoDichNhieu; }
+    public static String[] getGiaoDichIt() { return giaoDichIt; }
+    public static String[] getGiaCaoDauNgay() { return giaCaoDauNgay; }
+    public static String[] getGiaThapDauNgay() { return giaThapDauNgay; }
+    public static String[] getGiaCaoCuoiNgay() { return giaCaoCuoiNgay; }
+    public static String[] getGiaThapCuoiNgay() { return giaThapCuoiNgay; }
+    public static String[] getGiaDauNgay() { return giaDauNgay; }
+    public static String[] getGiaCuoiNgay() { return giaCuoiNgay; }
+    public static String[] getGiaCaoNhat() { return giaCaoNhat; }
+    public static String[] getGiaThapNhat() { return giaThapNhat; }
+    public static String[] getMaOnDinh() { return maOnDinh; }
+    public static String[] getMaKhongOnDinh() { return maKhongOnDinh;}
+    public static String[] getKhoiLuongGiaoDich() { return khoiLuongGiaoDich; }
+
 }
-

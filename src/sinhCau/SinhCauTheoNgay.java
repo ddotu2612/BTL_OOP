@@ -1,239 +1,117 @@
 package sinhCau;
 
-import cacKieuDuLieu.ChiSoIndex;
-
+import cacKieuDuLieu.TheoNgay;
 import mauCau.MauCauTheoNgay;
-
+import sinhCau.AbstractSinhCau;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
-import static java.lang.StrictMath.abs;
 
 public class SinhCauTheoNgay extends AbstractSinhCau {
-    
-    private ArrayList<ChiSoIndex> dataList = new ArrayList<>();
-    public static ArrayList<String> doanVan = new ArrayList<>();
+    public SinhCauTheoNgay() {
 
-    public void setDataList (ArrayList<ChiSoIndex> dataList) {
-        this.dataList = dataList;
+    }
+    public List<TheoNgay> datalist = new ArrayList<>();
+    public static List<String> cau = new ArrayList<>();
+
+    public String sinhCauNgauNhien(String [] cau) {
+        Random rd = new Random();
+        return cau[rd.nextInt(cau.length)];
     }
 
-    public ArrayList<ChiSoIndex> getDataList() {
-        return this.dataList;
-    }
+    // Thay the cac key word va du lieu trong cau bang cac thuoc tinh cua data
+    public String chenDuLieu(String cau, TheoNgay data) {
 
-    public String chenDuLieu(String cau, ChiSoIndex data) {
-        cau = cau.replace("|ngay|", data.getNgayGD() );
-        cau = cau.replace("|maCK|", data.getMaChungKhoan() );
-        cau = cau.replace("|thayDoi|", data.chuyenDoiThayDoi() );
-        cau = cau.replace("|giaDongCua|", String.valueOf( data.getGiaDongCua() ) );
-        cau = cau.replace("|giaTriThayDoi|", String.valueOf( data.getGiaTriThayDoi()));
-        cau = cau.replace("|klgdThoaThuan|", String.valueOf(data.quyDoiKLGDThoaThuan()));
-        cau = cau.replace("|gtgdThoaThuan|", String.valueOf(data.quyDoiGTGDThoaThuan()));
-        cau = cau.replace("|giaMoCua|", String.valueOf(data.getGiaMoCua()));
-        cau = cau.replace( "|gtgdKhopLenh|", String.valueOf(data.quyDoiGTGDKhopLenh()));
-        cau = cau.replace("|klgdKhopLenh|", String.valueOf(data.quyDoiKLGDKhopLenh()));
+        cau = cau.replace("|maCk|", data.getMaCk());
+        cau = cau.replace("|giaMoCua|", Double.toString(data.getGiaMoCua()) + " đồng");
+        cau = cau.replace("|closeValue|", Double.toString(data.getGiaDongCua()) + " đồng");
+        cau = cau.replace("|giaCaoNhat|", Double.toString(data.getGiaCaoNhat()) + " đồng");
+        cau = cau.replace("|lowestValue|", Double.toString(data.getGiaThapNhat()) + " đồng");
+        cau = cau.replace("|thaydoi|", Double.toString(Math.abs(data.getThaydoi())) + " đồng");
+
         return cau;
     }
 
+    public String chenListDuLieu(String cau, List <TheoNgay> datalist) {
 
-    public String sinhChotPhienGiaoDich(ChiSoIndex data) {
-        String cau ;
-        if(data.getGiaTriThayDoi() > 0) {
-            cau = sinhCauNgauNhien(MauCauTheoNgay.getChotPhienGiaoDichTang());
-        } else {
-            cau = sinhCauNgauNhien(MauCauTheoNgay.getChotPhienGiaoDichGiam());
-        }
-        cau = chenDuLieu(cau , data);
+        cau = cau.replace("|maCk0|", datalist.get(0).getMaCk());
+        cau = cau.replace("|maCk1|", datalist.get(1).getMaCk());
+        cau = cau.replace("|maCk2|", datalist.get(2).getMaCk());
+        cau = cau.replace("|maCk3|", datalist.get(3).getMaCk());
+        cau = cau.replace("|maCk4|", datalist.get(4).getMaCk());
+        cau = cau.replace("|giaMoCua0|", Double.toString(datalist.get(0).getGiaMoCua()) + " đồng");
+        cau = cau.replace("|giaDongCua0|", Double.toString(datalist.get(0).getGiaDongCua()) + " đồng");
+
         return cau;
     }
+    //Sinh cau theo 1 ma
+    public String soVoiDauPhien(TheoNgay data) {
+        if (data.getThaydoi() > 0) return  chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getTangSoVoiBanDau()),data);
+        else if (data.getThaydoi() == 0) return  chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getBangSoVoiBanDau()),data);
+        else return  chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiamSoVoiBanDau()),data);
+    }
+    public String giaDauNgay(TheoNgay data) {
+        return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaDauNgay()), data);
+    }
+    public String giaCuoiNgay(TheoNgay data) {
+        return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaCuoiNgay()), data);
+    }
+    public String giaCaoNhat(TheoNgay data) {
+        return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaCaoNhat()), data);
+    }
+    public String giaThapNhat(TheoNgay data) {
+        return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaThapNhat()), data);
+    }
+    public String khoiLuongGiaodich(TheoNgay data) {
+        return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getKhoiLuongGiaoDich()), data);
+    }
+
+    //Sinh cau theo nhieu ma
+    public String giaCaoThapDauPhien(List<TheoNgay> datalist) {
+        String cau1, cau2;
+        datalist.sort(new SoSanhDiemMoPhien());
+        cau1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaThapDauNgay()), datalist);
+        Collections.reverse(datalist);
+        cau2 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaCaoDauNgay()), datalist);
+        return cau1 + "\n" + cau2;
+    }
+
+    public String giaCaoThapChotPhien(List<TheoNgay> datalist) {
+        String sentence1,sentence2;
+        datalist.sort(new SoSanhDiemChotPhien());
+        sentence1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaThapCuoiNgay()), datalist);
+        Collections.reverse(datalist);
+        sentence2 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaCaoCuoiNgay()), datalist);
+        return sentence1 + "\n" + sentence2;
+    }
+
+    public String sapXepKhoiLuongGiaoDich(List<TheoNgay> datalist) {
+        String sentence1,sentence2;
+        datalist.sort(new SoSanhKhoiLuongGiaoDich());
+        sentence1 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaoDichIt()), datalist);
+        Collections.reverse(datalist);
+        sentence2 = chenListDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaoDichNhieu()), datalist);
+        return sentence1 + "\n" + sentence2;
+    }
 
 
-    public String sinhMoPhienGiaoDich(ChiSoIndex data) {
-        String cau ;
-        if(data.getThayDoiDauPhien() > 0 && data.getGiaTriThayDoi() > 0){
-            cau = sinhCauNgauNhien(MauCauTheoNgay.getKhoiSacDauPhienTang());
-        }
-        else if(data.getThayDoiDauPhien() > 0 && data.getGiaTriThayDoi() < 0){
-            cau = sinhCauNgauNhien(MauCauTheoNgay.getKhoiSacDauPhienGiam());
-        }
-        else if(data.getThayDoiDauPhien() < 0 && data.getGiaTriThayDoi() > 0){
-            cau = sinhCauNgauNhien(MauCauTheoNgay.getGiamDauPhienTang());
-        }
-        else{
-            cau = sinhCauNgauNhien(MauCauTheoNgay.getGiamDauPhienGiam());
-        }
-        cau = chenDuLieu(cau , data);
+
+    public List<String> sinhDoanVan() {
+//		List<String> cau = new ArrayList<>();
+        Random rd = new Random();
+        int i = rd.nextInt(datalist.size());
+        cau.add("Tin về sàn giao dịch " + datalist.get(i).getMaCk() +" :");
+        cau.add(giaDauNgay(datalist.get(i)));
+        cau.add(giaCuoiNgay(datalist.get(i)));
+        cau.add(soVoiDauPhien(datalist.get(i)));
+        cau.add(giaCaoNhat(datalist.get(i)));
+        cau.add(giaThapNhat(datalist.get(i)));
+        cau.add(khoiLuongGiaodich(datalist.get(i)));
+        cau.add(giaCaoThapDauPhien(datalist));
+        cau.add(giaCaoThapChotPhien(datalist));
+        cau.add(sapXepKhoiLuongGiaoDich(datalist));
         return cau;
     }
-
-
-    public String sinhGiaCaoNhat(ChiSoIndex data) {
-        String cau;
-        cau = sinhCauNgauNhien(MauCauTheoNgay.getGiaCaoNhat());
-        cau = chenDuLieu(cau, data);
-        return cau;
-    }
-
-
-    public String sinhGiaThapNhat(ChiSoIndex data) {
-        String cau;
-        cau = sinhCauNgauNhien(MauCauTheoNgay.getGiaThapNhat());
-        cau = chenDuLieu(cau, data);
-        return cau;
-    }
-
-
-
-
-
-    public String sinhGiaoDichKhopLenh(ChiSoIndex data) {
-        String cau;
-        cau = sinhCauNgauNhien(MauCauTheoNgay.getGiaoDichKhopLenh());
-        cau = chenDuLieu(cau, data);
-        return cau;
-    }
-
-
-    public String sinhGiaoDichThoaThuan(ChiSoIndex data) {
-        String cau;
-        cau = sinhCauNgauNhien(MauCauTheoNgay.getGiaoDichThoaThuan());
-        cau = chenDuLieu(cau, data);
-        return cau;
-    }
-
-
-    public String sinhCauDanhGia(ChiSoIndex data) {
-        String cau;
-        if(data.getTiLeThayDoi() > 1 ) {
-            cau = sinhCauNgauNhien(MauCauTheoNgay.getTangManh());
-        }
-        else if(data.getTiLeThayDoi() > 0 && data.getTiLeThayDoi() <= 1) {
-            cau = sinhCauNgauNhien(MauCauTheoNgay.getTangNhe());
-        }
-        else if(data.getTiLeThayDoi() < -1) {
-            cau = sinhCauNgauNhien(MauCauTheoNgay.getGiamManh());
-        }
-        else {
-            cau = sinhCauNgauNhien(MauCauTheoNgay.getGiamNhe());
-        }
-        cau = chenDuLieu(cau, data);
-        return cau;
-    }
-
-    public ArrayList<String> sinhDuLieuMoiNgay(ChiSoIndex data) {
-        ArrayList<String> doanVan = new ArrayList<>();
-        //Thông tin chứng khoán theo ngày sẽ có các thông tin
-        //Thông tin về mở phiên giao dịch, về giao dich thõa thuận, giao dịch khớp lệnh
-        //Thông tin chốt phiên giao dịch và sinh câu đánh giá chung
-        doanVan.add("Tin tức về mã chứng khoán " + data.getMaChungKhoan() + " ngày "+ data.getNgayGD() + ": ");
-        doanVan.add(sinhMoPhienGiaoDich(data));
-        doanVan.add(sinhGiaoDichThoaThuan(data));
-        doanVan.add(sinhGiaoDichKhopLenh(data));
-        doanVan.add(sinhChotPhienGiaoDich(data));
-        doanVan.add(sinhCauDanhGia(data));
-
-        return doanVan;
-    }
-
-    public ArrayList<String> sinhDuLieuNhieuNgay() {
-        ArrayList<String> doanVan = new ArrayList<>();
-
-        int MAX_SIZE = this.dataList.size();
-
-        //Thiết lập các giá trị max, min ban đầu là phiên đầu tiên trong danh sách
-        ChiSoIndex giaCaoNhat = dataList.get(0);
-        ChiSoIndex giaThapNhat = dataList.get(0);
-        ChiSoIndex thayDoiManhNhat = dataList.get(0);
-        ChiSoIndex thayDoiItNhat = dataList.get(0);
-
-        //Tìm các phiên có giá đóng cửa cao nhất, thấp nhất, phiên tăng mạnh nhất, phiên tăng ít nhất
-        for(int i = 0; i < MAX_SIZE; i++) {
-            if(dataList.get(i).getGiaDongCua() > giaCaoNhat.getGiaDongCua()) {
-                giaCaoNhat = dataList.get(i);
-            }
-            if(dataList.get(i).getGiaDongCua() < giaThapNhat.getGiaDongCua()) {
-                giaThapNhat = dataList.get(i);
-            }
-            if(dataList.get(i).getGiaTriThayDoi() > thayDoiManhNhat.getGiaTriThayDoi()) {
-                thayDoiManhNhat = dataList.get(i);
-            }
-            if(dataList.get(i).getGiaTriThayDoi() < thayDoiItNhat.getGiaTriThayDoi()) {
-                thayDoiItNhat = dataList.get(i);
-            }
-        }
-
-        //Sinh câu đánh giá tổng quát trong nhiều phiên
-        doanVan.add("Đánh giá tổng quan :" );
-        doanVan.add(sinhGiaCaoNhat(giaCaoNhat));
-        doanVan.add(sinhGiaThapNhat(giaThapNhat));
-
-        //Sinh câu tăng liên tục ,giảm liên tục trong nhiều phiên giao dịch
-        //Chỉ xét những mã tăng liên tục hoặc giảm liên tục từ 3 ngày liện tiếp trở lên
-
-        for (int i = 0; i < MAX_SIZE - 2; i++) {
-            if(dataList.get(i).getGiaTriThayDoi() > 0 && dataList.get(i + 1).getGiaTriThayDoi() > 0 && dataList.get(i + 2).getGiaTriThayDoi() > 0) {
-                double sum = dataList.get(i).getGiaTriThayDoi() + dataList.get(i + 1).getGiaTriThayDoi() + dataList.get(i + 2).getGiaTriThayDoi();
-                int j = i + 2;
-                while(j + 1 < MAX_SIZE) {
-                    if(dataList.get(i + 1).getGiaTriThayDoi() > 0) {
-                        j++;
-                        sum += dataList.get(j+1).getGiaTriThayDoi();
-                    } else {
-                        break;
-                    }
-                }
-
-            }
-            if(dataList.get(i).getGiaTriThayDoi() < 0 && dataList.get(i + 1).getGiaTriThayDoi() < 0 && dataList.get(i + 2).getGiaTriThayDoi() < 0) {
-                double sum = dataList.get(i).getGiaTriThayDoi() + dataList.get(i + 1).getGiaTriThayDoi() + dataList.get(i + 2).getGiaTriThayDoi();
-                int j = i + 2;
-                while(j + 1 < MAX_SIZE) {
-                    if(dataList.get(i + 1).getGiaTriThayDoi() < 0) {
-                        sum += dataList.get(j+1).getGiaTriThayDoi();
-                        j++;
-                    } else {
-                        break;
-                    }
-                }
-
-            }
-        }
-        return doanVan;
-    }
-
-    public ArrayList<String> ketHopDanhSach(ArrayList<String> danhSach1, ArrayList<String> danhSach2) {
-        for (int i = 0; i < danhSach2.size(); i++) {
-            danhSach1.add(danhSach2.get(i));
-        }
-        return danhSach1;
-    }
-
-    @Override
-    public ArrayList<String> sinhDoanVan() {
-        int MAX_SIZE = dataList.size();
-        int i = 0;
-        int count = 0;
-
-        //sinh câu dữ liệu ngày đầu tiên trong danh sách :
-        doanVan = ketHopDanhSach(doanVan, sinhDuLieuMoiNgay(dataList.get(MAX_SIZE - 1)));
-
-        //sinh dữ liệu 3 ngày bất kì trong khoảng
-        Random rand = new Random();//trừ hai ngày đầu và cuối của danh sách
-        while(count < 3) {
-            i = rand.nextInt(MAX_SIZE - 2) + 1;
-            doanVan = ketHopDanhSach(doanVan, sinhDuLieuMoiNgay(dataList.get(i)));
-            count ++;
-        }
-
-        //sinh dữ liệu cho ngày cuối cùng trong danh sách :
-        doanVan = ketHopDanhSach(doanVan, sinhDuLieuMoiNgay(dataList.get(0)));
-
-        //sinh dữ liệu chung cho nhiều ngày
-        doanVan = ketHopDanhSach(doanVan, sinhDuLieuNhieuNgay());
-
-        return doanVan;
-    }
-
 }
-
