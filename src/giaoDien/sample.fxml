@@ -10,45 +10,60 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="giaoDien.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="giaoDien.Controller">
    <left>
-      <VBox fx:id="Vbox" prefHeight="516.0" prefWidth="200.0" styleClass="vbox" BorderPane.alignment="CENTER">
+      <VBox fx:id="Vbox" prefHeight="715.0" prefWidth="278.0" styleClass="vbox" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="98.0" prefWidth="200.0">
+            <HBox styleClass="title">
                <children>
-                  <Label fx:id="titleLabel" contentDisplay="CENTER" ellipsisString="" styleClass="hop" text="Thông Tin" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="40.0" right="2.0" top="2.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label text="Chứng Khoán">
-                     <font>
-                        <Font name="Times New Roman Bold" size="29.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                  </Label>
-               </children>
-            </VBox>
-            <VBox id="vbox" fx:id="tintucBox" prefHeight="235.0" prefWidth="200.0" styleClass="hopTT">
-               <children>
-                  <VBox prefHeight="120.0" prefWidth="200.0">
+                  <VBox prefHeight="72.0" prefWidth="191.0" styleClass="title">
                      <children>
-                        <HBox fx:id="tintuctileBox" prefHeight="83.0" prefWidth="200.0">
+                        <Label fx:id="titleLabel" contentDisplay="CENTER" ellipsisString="" styleClass="hop" text="Thông Tin" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                           <font>
+                              <Font name="Bookman Old Style" size="24.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="40.0" right="2.0" top="2.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Chứng Khoán">
+                           <font>
+                              <Font name="Times New Roman Bold" size="29.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <ImageView fitHeight="102.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/noun_Stock_161182%20(1).png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <VBox id="vbox" fx:id="tintucBox" prefHeight="203.0" prefWidth="200.0" styleClass="hopTT">
+               <children>
+                  <VBox prefHeight="132.0" prefWidth="258.0">
+                     <children>
+                        <HBox fx:id="tintuctileBox" prefHeight="39.0" prefWidth="258.0">
                            <children>
                               <Label fx:id="tintuclabel" text="Tin Tức Chứng Khoán" textAlignment="CENTER" textFill="#f8efef">
                                  <font>
                                     <Font name="Times New Roman Bold" size="17.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="12.0" top="10.0" />
+                                    <Insets left="50.0" top="10.0" />
                                  </HBox.margin>
                               </Label>
                            </children>
@@ -58,24 +73,27 @@
                               <Image url="@icon/news_article_blog-512.png" />
                            </image>
                            <VBox.margin>
-                              <Insets left="55.0" />
+                              <Insets left="87.0" />
                            </VBox.margin>
                         </ImageView>
                      </children>
                   </VBox>
-                  <ComboBox fx:id="tintucComboxBox" onAction="#tintucEvent" onMouseDragEntered="#sinhcauEvent" prefHeight="25.0" prefWidth="171.0" promptText="Tin Tức Chứng Khoán">
+                  <ComboBox fx:id="tintucComboxBox" onAction="#tintucEvent" onMouseDragEntered="#sinhcauEvent" prefHeight="36.0" prefWidth="185.0" promptText="Tin Tức Chứng Khoán">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <VBox.margin>
-                        <Insets left="12.0" top="12.0" />
+                        <Insets left="38.0" top="12.0" />
                      </VBox.margin>
                   </ComboBox>
                </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
             </VBox>
-            <VBox fx:id="sinhcauBox" prefHeight="235.0" prefWidth="200.0" styleClass="hopSC">
+            <VBox fx:id="sinhcauBox" prefHeight="212.0" prefWidth="200.0" styleClass="hopSC">
                <children>
-                  <VBox prefHeight="128.0" prefWidth="200.0">
+                  <VBox prefHeight="141.0" prefWidth="258.0">
                      <children>
                         <HBox fx:id="sinhcautitleBox" prefHeight="50.0" prefWidth="200.0">
                            <children>
@@ -84,7 +102,7 @@
                                     <Font name="Times New Roman Bold" size="17.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="12.0" top="10.0" />
+                                    <Insets left="45.0" top="10.0" />
                                  </HBox.margin>
                               </Label>
                            </children>
@@ -94,17 +112,33 @@
                               <Image url="@icon/baseline_description_black_18dp.png" />
                            </image>
                            <VBox.margin>
-                              <Insets left="60.0" />
+                              <Insets left="96.0" />
                            </VBox.margin>
                         </ImageView>
                      </children>
-                  </VBox>
-                  <ComboBox fx:id="sinhcauComboxBox" onAction="#sinhcauEvent" prefHeight="25.0" prefWidth="172.0" promptText="Sinh Câu Chứng Khoán">
                      <VBox.margin>
-                        <Insets left="12.0" />
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <ComboBox fx:id="sinhcauComboxBox" onAction="#sinhcauEvent" prefHeight="36.0" prefWidth="185.0" promptText="Sinh Câu Chứng Khoán">
+                     <VBox.margin>
+                        <Insets left="38.0" />
                      </VBox.margin></ComboBox>
                </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
             </VBox>
+            <Button mnemonicParsing="false" onAction="#refresh" prefHeight="46.0" prefWidth="85.0" text="Refresh">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="90.0" top="25.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#quit" prefHeight="46.0" prefWidth="86.0" text="Quit">
+               <VBox.margin>
+                  <Insets left="90.0" top="5.0" />
+               </VBox.margin>
+            </Button>
          </children>
          <BorderPane.margin>
             <Insets left="2.0" top="2.0" />
@@ -114,7 +148,7 @@
    <center>
       <ScrollPane fx:id="Scroll" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" BorderPane.alignment="CENTER">
          <content>
-            <TextArea fx:id="noiDung" prefHeight="486.0" prefWidth="437.0" styleClass="noiDung">
+            <TextArea fx:id="noiDung" styleClass="noiDung">
                <font>
                   <Font size="15.0" />
                </font>
@@ -122,28 +156,4 @@
          </content>
       </ScrollPane>
    </center>
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem fx:id="quitMenu" mnemonicParsing="false" onAction="#quit" text="Quit">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="Q" control="ANY" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator>
-                  </MenuItem>
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem fx:id="refreshMenu" mnemonicParsing="false" onAction="#refresh" text="Refresh">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="R" control="ANY" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator>
-                  </MenuItem>
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
 </BorderPane>

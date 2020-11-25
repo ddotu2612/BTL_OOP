@@ -13,7 +13,9 @@ import layDuLieu.DuLieuChiSoIndex.*;
 import tinTuc.ChiSoChungKhoan;
 import sinhCau.*;
 import tinTuc.*;
+import tinTuc.LayDuLieu;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.List;
@@ -37,11 +39,9 @@ public class Controller implements Initializable {
     SinhCauNhaDauTuNuocNgoai nhaDauTu = new SinhCauNhaDauTuNuocNgoai();
     SinhCauTheoNgay theoNgay = new SinhCauTheoNgay();
 
-    ChiSoChungKhoan chiSoCK = new ChiSoChungKhoan();
-    CoDongChungKhoan coDongCK = new CoDongChungKhoan();
-    CoPhieuChungKhoan coPhieuCK = new CoPhieuChungKhoan();
-    CoTucChungKhoan coTucCK = new CoTucChungKhoan();
-    GiaChungKhoan giaCK = new GiaChungKhoan();
+    String [] list={"HNX","HSX","UPCOM"};
+    Random rd = new Random();
+
     //GiaiNganChungKhoan
     public void inThongTin(List<String> p){
         Collections.shuffle(p);
@@ -78,13 +78,13 @@ public class Controller implements Initializable {
         if(sinhcauComboxBox.getValue().equals("Sinh Câu Nhà Đầu Tư Nước Ngoài")){
             noiDung.appendText("NHÀ ĐẦU TƯ NƯỚC NGOÀI:\n");
             nhaDauTu.setDataList(new DuLieuNDTNN().chuyenFileCSVNDTNNSangList("D:\\Git\\OOP\\BTL_OOP\\src\\duLieu\\nhaDauTuNuocNgoaiData.csv"));
+            nhaDauTu.setSanGiaoDich("HOSE");
             nhaDauTu.cau.clear();
             nhaDauTu.sinhDoanVan();
             inTatCa(nhaDauTu.cau);
         }
         if(sinhcauComboxBox.getValue().equals("Chứng Khoán Theo Ngày")){
             noiDung.appendText("CHỨNG KHOÁN THEO NGÀY:\n");
-
             theoNgay.datalist = new DuLieuTheoNgay().chuyenCSVSangIndexList("D:\\Git\\OOP\\BTL_OOP\\src\\duLieu\\bienDongTheoNgayData.csv");
             theoNgay.cau.clear();
             theoNgay.sinhDoanVan();
@@ -92,7 +92,15 @@ public class Controller implements Initializable {
         }
     }
 
-    public void tintucEvent(ActionEvent event){
+    public void tintucEvent(ActionEvent event) throws IOException {
+        LayDuLieu data = new LayDuLieu();
+        data.layCau();
+        PhanLoai pl = new PhanLoai();
+        for(String s: data.cauChungKhoan) {
+            pl.phanLoai(s);
+        }
+
+
         if(tintucComboxBox.getValue().equals("Chỉ Số Chứng Khoán")){
             noiDung.appendText("CHỈ SỐ CHỨNG KHOÁN:\n");
             inThongTin(ChiSoChungKhoan.chiSo);
