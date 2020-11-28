@@ -30,10 +30,9 @@ public class CrawlDuLieuTheoNgay {
                 }
                 else if( i % 10 == 1) continue;
                 else {
-                    sb.append("\"").append(Item_Price1.get(i).text());
+                    sb.append("\"").append(Item_Price1.get(i).text().replace(",", "."));
                     sb.append( (i % 10 != 9) ? "\"," : "\"\n");
                 }
-                if(index1 == Item_Price1.size()/11) break;
             }
             System.out.println(sb);
             fw.write(sb.toString());
