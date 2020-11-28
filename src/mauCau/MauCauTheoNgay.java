@@ -90,14 +90,6 @@ public  class MauCauTheoNgay{
             "Có tổng cộng |volume| lượt giao dịch cổ phiếu |maCk| trong phiên giao dịch"
     };
 
-    private static String[] maOnDinh = new String[]{
-            "Các mã cổ phiếu có độ ổn định cao nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| "
-    };
-
-    private static String[] maKhongOnDinh = new String[]{
-            "Các mã cổ phiếu có độ ổn định thấp nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| "
-    };
-
     private static String[] giaTriGiaoDichThoaThuan = new String[]{
             "Kết thúc phiên giao dịch, mã cổ phiếu |maCK| được giao dịch thỏa thuận tổng cộng |gtgdThoaThuan| tỷ đồng ",
             "Chốt phiên giao dịch, ghi nhận mã cổ phiếu |maCK| đã có tổng cộng |gtgdThoaThuan| tỷ đồng được thỏa thuận giao dịch ",
@@ -123,8 +115,6 @@ public  class MauCauTheoNgay{
     public static String[] getGiaCuoiNgay() { return giaCuoiNgay; }
     public static String[] getGiaCaoNhat() { return giaCaoNhat; }
     public static String[] getGiaThapNhat() { return giaThapNhat; }
-    public static String[] getMaOnDinh() { return maOnDinh; }
-    public static String[] getMaKhongOnDinh() { return maKhongOnDinh; }
     public static String[] getKhoiLuongGiaoDich() { return khoiLuongGiaoDich; }
     public static String[] getGiaTriGiaoDichThoaThuan() { return giaTriGiaoDichThoaThuan; }
     public static String[] getGiaTriGiaoDichKhopLenh() { return giaTriGiaoDichKhopLenh; }
