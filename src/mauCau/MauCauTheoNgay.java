@@ -5,7 +5,7 @@ public  class MauCauTheoNgay{
 
     }
     private static String[] tangSoVoiBanDau = new String[]{
-            "Chốt phiên cuối ngày, giá cổ phiếu |maCk| tăng từ |giaMoCua| lên thành |giaDongCua| .",
+            "Chốt phiên cuối ngày, giá cổ phiếu |maCk| tăng từ |openValue| lên thành |giaDongCua| .",
             "Đóng cửa phiên cuối ngày, giá cổ phiếu |maCk| dừng lại ở mức |giaDongCua|, so với khi mở cửa phiên giao dịch tăng |thaydoi|.",
             "Chốt phiên giao dịch, ghi nhận giá cổ phiếu |maCk| đạt |giaDongCua|,tăng |thaydoi| so với khi mở cửa phiên giao dịch.",
             "Cổ phiếu |maCk| tại lúc đóng cửa phiên giao dịch đạt |giaDongCua|,ghi nhận tăng |thaydoi| so với thời điểm bắt đầu phiên giao dịch."
@@ -13,7 +13,7 @@ public  class MauCauTheoNgay{
 
     private static String[] bangSoVoiBanDau = new String[]{
             "Chốt phiên cuối ngày , giá cổ phiếu |maCk| đứng giá tại |giaMoCua| .",
-            "Đóng cửa phiên cuối ngày , giá cổ phiếu |maCk| dừng lại ở mức |giaDongCua|,không đổi so với khi mở cửa phiên giao dịch.",
+            "Đóng cửa phiên cuối ngày , giá cổ phiếu |maCk| dừng lại ở mức |giaMoCua|,không đổi so với khi mở cửa phiên giao dịch.",
             "Chốt phiên giao dịch, ghi nhận giá cổ phiếu |maCk| đạt |giaDongCua|,không đổi so với khi mở cửa phiên giao dịch.",
             "Cổ phiếu |maCk| tại lúc đóng cửa phiên giao dịch đạt |giaDongCua|,ghi nhận không đổi so với thời điểm bắt đầu phiên giao dịch."
     };
@@ -26,14 +26,14 @@ public  class MauCauTheoNgay{
     };
 
     private static String[] giaoDichNhieu = new String[]{
-            "Đóng cửa phiên giao dịch,các cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| được giao dịch nhiều nhất. Trong đó,đứng đầu là mã cổ phiếu |maCk0| với khối lượng giao dịch |volume0|",
-            "Chốt phiên giao dịch, các cổ phiếu được nhà đầu tư giao dịch nhiều nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| Trong đó |maCk0| đang dẫn đầu xu thế thị trường với khối lượng giao dịch |volume0|",
+            "Đóng cửa phiên giao dịch,các cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| được giao dịch nhiều nhất. Trong đó,đứng đầu là mã cổ phiếu |maCk0| với khối lượng giao dịch |klgd0|",
+            "Chốt phiên giao dịch, các cổ phiếu được nhà đầu tư giao dịch nhiều nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| Trong đó |maCk0| đang dẫn đầu xu thế thị trường với khối lượng giao dịch |klgd0|",
             "kết thúc phiên giao dịch ,các cổ phiếu đang dẫn đầu xu thế thị trường là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| "
     };
 
     private static String[] giaoDichIt = new String[]{
-            "Đóng cửa phiên giao dịch,các cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| được giao dịch ít nhất. Trong đó,thấp nhất là mã cổ phiếu |maCk0| với khối lượng giao dịch |volume0|",
-            "Chốt phiên giao dịch các cổ phiếu được nhà đầu tư giao dịch ít nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| Trong đó |maCk0| ít được các nhà đầu tư quan tâm nhất với khối lượng giao dịch |volume0|",
+            "Đóng cửa phiên giao dịch,các cổ phiếu |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| được giao dịch ít nhất. Trong đó,thấp nhất là mã cổ phiếu |maCk0| với khối lượng giao dịch |klgd0|",
+            "Chốt phiên giao dịch các cổ phiếu được nhà đầu tư giao dịch ít nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| Trong đó |maCk0| ít được các nhà đầu tư quan tâm nhất với khối lượng giao dịch |klgd0|",
             "Kết thúc phiên giao dịch,các cổ phiếu ít được các nhà đầu tư quan tâm nhất là |maCk0|,|maCk1|,|maCk2|,|maCk3|,|maCk4| "
     };
 
@@ -62,7 +62,7 @@ public  class MauCauTheoNgay{
     };
 
     private static String[] giaDauNgay = new String[]{
-            "Mở cửa phiên giao dịch, ghi nhận cổ phiếu |maCk| có giá |giaMoCua|/1 cổ phiếu",
+            "Mở cửa phiên giao dịch, ghi nhận cổ phiếu |maCk| có giá |giaDongCua|/1 cổ phiếu",
             "Mở đầu phiên giao dịch, 1 cổ phiếu |maCk| có giá |giaMoCua|",
             "Giá trị 1 cổ phiếu |maCk| là |giaMoCua| tại thời điểm bắt đầu phiên giao dịch"
     };
@@ -85,21 +85,22 @@ public  class MauCauTheoNgay{
             "Cổ phiếu |maCk| đạt giá trị thấp nhất là |giaThapNhat| trong phiên giao dịch"
     };
 
-    private static String[] khoiLuongGiaoDich = new String[]{
-            "Trong toàn bộ phiên giao dịch,mã cổ phiếu |maCk| đạt khối lượng giao dịch |volume|",
-            "Có tổng cộng |volume| lượt giao dịch cổ phiếu |maCk| trong phiên giao dịch"
+    private static String[] khoiLuongGiaoDichKhopLenh = new String[]{
+            "Trong toàn bộ phiên giao dịch,mã cổ phiếu |maCk| đạt khối lượng giao dịch |klgd|",
+            "Có tổng cộng |klgd| lượt giao dịch cổ phiếu |maCk| trong phiên giao dịch"
     };
 
+
     private static String[] giaTriGiaoDichThoaThuan = new String[]{
-            "Kết thúc phiên giao dịch, mã cổ phiếu |maCK| được giao dịch thỏa thuận tổng cộng |gtgdThoaThuan| tỷ đồng ",
-            "Chốt phiên giao dịch, ghi nhận mã cổ phiếu |maCK| đã có tổng cộng |gtgdThoaThuan| tỷ đồng được thỏa thuận giao dịch ",
-            "Kết thúc phiên giao dịch, các nhà đầu tư đã thỏa thuận giá trị tộng cộng |gtgdThoaThuan| cho mã cổ phiếu |maCK|"
+            "Kết thúc phiên giao dịch, mã cổ phiếu |maCk| được giao dịch thỏa thuận tổng cộng |gtgdThoaThuan|.",
+            "Chốt phiên giao dịch, ghi nhận mã cổ phiếu |maCk| đã có tổng cộng |gtgdThoaThuan| được thỏa thuận giao dịch",
+            "Kết thúc phiên giao dịch, các nhà đầu tư đã thỏa thuận giá trị tộng cộng |gtgdThoaThuan| cho mã cổ phiếu |maCk|"
     };
 
     private static String[] giaTriGiaoDichKhopLenh = new String[]{
-            "Kết thúc phiên giao dịch, mã cổ phiếu |maCK| được khớp lệnh với giá trị tổng cộng |gtdgKhopLenh| tỷ đồng",
-            "Chốt phiên giao dịch, ghi nhận mã cổ phiếu |maCK| có tổng cộng |gtgdKhopLenh| tỷ đồng được khớp lệnh",
-            "Kết thúc phiên giao dịch, tổng cộng có |gtgdKhopLenh| tỷ đồng đã được khớp lệnh cho mã cổ phiểu |maCK|"
+            "Kết thúc phiên giao dịch, mã cổ phiếu |maCk| được khớp lệnh với giá trị tổng cộng |gtdgKhopLenh|",
+            "Chốt phiên giao dịch, ghi nhận mã cổ phiếu |maCk| có tổng cộng |gtgdKhopLenh| được khớp lệnh",
+            "Kết thúc phiên giao dịch, tổng cộng có |gtgdKhopLenh| đã được khớp lệnh cho mã cổ phiểu |maCk|"
     };
 
     public static String[] getTangSoVoiBanDau() { return tangSoVoiBanDau; }
@@ -115,8 +116,9 @@ public  class MauCauTheoNgay{
     public static String[] getGiaCuoiNgay() { return giaCuoiNgay; }
     public static String[] getGiaCaoNhat() { return giaCaoNhat; }
     public static String[] getGiaThapNhat() { return giaThapNhat; }
-    public static String[] getKhoiLuongGiaoDich() { return khoiLuongGiaoDich; }
+    public static String[] getKhoiLuongGiaoDichKhopLenh() { return khoiLuongGiaoDichKhopLenh; }
     public static String[] getGiaTriGiaoDichThoaThuan() { return giaTriGiaoDichThoaThuan; }
     public static String[] getGiaTriGiaoDichKhopLenh() { return giaTriGiaoDichKhopLenh; }
+
 
 }
