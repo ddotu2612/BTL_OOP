@@ -17,7 +17,12 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
 
     }
     public List<TheoNgay> datalist = new ArrayList<>();
-    public static List<String> cau = new ArrayList<>();
+
+    public void setDatalist(List<TheoNgay> datalist) {
+        this.datalist = datalist;
+    }
+
+
 
 
 
@@ -26,10 +31,15 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
 
         cau = cau.replace("|maCk|", data.getMaCk());
         cau = cau.replace("|giaMoCua|", Double.toString(data.getGiaMoCua()) + " đồng");
-        cau = cau.replace("|closeValue|", Double.toString(data.getGiaDongCua()) + " đồng");
+        cau = cau.replace("|giaDongCua|", Double.toString(data.getGiaDongCua()) + " đồng");
         cau = cau.replace("|giaCaoNhat|", Double.toString(data.getGiaCaoNhat()) + " đồng");
-        cau = cau.replace("|lowestValue|", Double.toString(data.getGiaThapNhat()) + " đồng");
-        cau = cau.replace("|thaydoi|", Double.toString(Math.abs(data.getThaydoi())) + " đồng");
+        cau = cau.replace("|giaThapNhat|", Double.toString(data.getGiaThapNhat()) + " đồng");
+        cau = cau.replace("|gtgdKhopLenh|", (data.getGtgdKhopLenh())+" đồng");
+        cau = cau.replace("|gtgdThoaThuan|", (data.getGtgdThoaThuan())+" đồng");
+        cau = cau.replace("|thaydoi|",Double.toString(Math.abs(data.getThaydoi())));
+        cau = cau.replace("|klgd|", Long.toString(data.getKlgdKhopLenh()/1000000000));
+
+
 
         return cau;
     }
@@ -43,6 +53,7 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
         cau = cau.replace("|maCk4|", datalist.get(4).getMaCk());
         cau = cau.replace("|giaMoCua0|", Double.toString(datalist.get(0).getGiaMoCua()) + " đồng");
         cau = cau.replace("|giaDongCua0|", Double.toString(datalist.get(0).getGiaDongCua()) + " đồng");
+        cau=cau.replace("|klgd0|",datalist.get(0).getKlgdKhopLenh()/1000000000+ " đồng");
 
         return cau;
     }
@@ -64,8 +75,14 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
     public String giaThapNhat(TheoNgay data) {
         return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaThapNhat()), data);
     }
-    public String khoiLuongGiaodich(TheoNgay data) {
-        return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getKhoiLuongGiaoDich()), data);
+    public String khoiLuongGiaodichKhopLenh(TheoNgay data) {
+        return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getKhoiLuongGiaoDichKhopLenh()), data);
+    }
+    public String giaTriGiaoDichThoaThuan(TheoNgay data){
+        return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaTriGiaoDichThoaThuan()),data);
+    }
+    public String giaTriGiaoDichKhopLenh(TheoNgay data){
+        return chenDuLieu(sinhCauNgauNhien(MauCauTheoNgay.getGiaTriGiaoDichKhopLenh()),data);
     }
 
     //Sinh cau theo nhieu ma
@@ -98,21 +115,22 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
     }
 
 
-
     public ArrayList<String> sinhDoanVan() {
-        ArrayList<String> cau = new ArrayList<>();
+        ArrayList<String> doan = new ArrayList<>();
         Random rd = new Random();
         int i = rd.nextInt(datalist.size());
-        cau.add("Tin về sàn giao dịch " + datalist.get(i).getMaCk() +" :");
-        cau.add(giaDauNgay(datalist.get(i)));
-        cau.add(giaCuoiNgay(datalist.get(i)));
-        cau.add(soVoiDauPhien(datalist.get(i)));
-        cau.add(giaCaoNhat(datalist.get(i)));
-        cau.add(giaThapNhat(datalist.get(i)));
-        cau.add(khoiLuongGiaodich(datalist.get(i)));
-        cau.add(giaCaoThapDauPhien(datalist));
-        cau.add(giaCaoThapChotPhien(datalist));
-        cau.add(sapXepKhoiLuongGiaoDich(datalist));
-        return cau;
+        doan.add("Tin về sàn giao dịch " + datalist.get(i).getMaCk() +" :");
+        doan.add(giaDauNgay(datalist.get(i)));
+        doan.add(giaCuoiNgay(datalist.get(i)));
+        doan.add(soVoiDauPhien(datalist.get(i)));
+        doan.add(giaCaoNhat(datalist.get(i)));
+        doan.add(giaThapNhat(datalist.get(i)));
+        doan.add(giaTriGiaoDichThoaThuan(datalist.get(i)));
+        doan.add(khoiLuongGiaodichKhopLenh(datalist.get(i)));
+        doan.add(giaTriGiaoDichKhopLenh(datalist.get(i)));
+        doan.add(giaCaoThapDauPhien(datalist));
+        doan.add(giaCaoThapChotPhien(datalist));
+        doan.add(sapXepKhoiLuongGiaoDich(datalist));
+        return doan;
     }
 }
