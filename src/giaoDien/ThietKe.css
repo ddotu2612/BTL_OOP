@@ -1,6 +1,10 @@
 .vbox{
-    -fx-background-color: rgba(0,155,155,0.5);
+    -fx-background-color:  #4dacff;
     -fx-border-radius: 5px;
+}
+
+.title{
+    -fx-background-color: #cc99ff;
 }
 
 .hop{
@@ -9,15 +13,15 @@
 }
 
 .hopTT{
-    -fx-background-color: rgba(0,60,150,1);
+    -fx-background-color:  #3333cc;
 
 }
 .hopSC{
-    -fx-background-color: rgba(0,120,60,1);
+    -fx-background-color: #3333cc;
 
 }
 
 .noiDung{
-    -fx-background-color: grey;
+    -fx-background-color:  #c2c2a3;
     -fx-font-style: italic;
 }

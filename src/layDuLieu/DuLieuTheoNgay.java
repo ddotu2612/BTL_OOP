@@ -18,10 +18,10 @@ public class DuLieuTheoNgay extends LayDuLieuCSV {
         dulieuTheoNgay.setGiaMoCua(Double.parseDouble(a.get(4).substring(1,a.get(4).length()-1)));
         dulieuTheoNgay.setGiaCaoNhat(Double.parseDouble(a.get(5).substring(1,a.get(5).length()-1)));
         dulieuTheoNgay.setGiaThapNhat(Double.parseDouble(a.get(6).substring(1,a.get(6).length()-1)));
-        dulieuTheoNgay.setKlgdKhopLenh(Long.parseLong(a.get(7).substring(1,a.get(7).length()-1).replace(",","")));
-        dulieuTheoNgay.setGtgdKhopLenh(Long.parseLong(a.get(8).substring(1,a.get(8).length()-1).replace(",","")));
-        dulieuTheoNgay.setKlgdThoaThuan(Long.parseLong(a.get(9).substring(1,a.get(9).length()-1).replace(",","")));
-        dulieuTheoNgay.setGtgdThoaThuan(Long.parseLong(a.get(10).substring(1,a.get(10).length()-1).replace(",","")));
+        dulieuTheoNgay.setKlgdKhopLenh(Long.parseLong(a.get(7).substring(1,a.get(7).length()-1).replace(".","")));
+        dulieuTheoNgay.setGtgdKhopLenh(Long.parseLong(a.get(8).substring(1,a.get(8).length()-1).replace(".","")));
+        dulieuTheoNgay.setKlgdThoaThuan(Long.parseLong(a.get(9).substring(1,a.get(9).length()-1).replace(".","")));
+        dulieuTheoNgay.setGtgdThoaThuan(Long.parseLong(a.get(10).substring(1,a.get(10).length()-1).replace(".","")));
         return dulieuTheoNgay;
 
 

@@ -1,7 +1,5 @@
 package cacKieuDuLieu;
 
-import layDuLieu.DuLieuTheoNgay;
-
 public class TheoNgay  {
 
     private String maCk;
@@ -20,11 +18,11 @@ public class TheoNgay  {
     public TheoNgay() {
     }
 
-    public String chuyendoiklgd() {
-        String string = this.klgdKhopLenh > 1000000 ? "hơn " + this.klgdKhopLenh / 1000000 + " triệu" :
-                (this.klgdKhopLenh > 1000 ? "hơn " + this.klgdKhopLenh / 1000 + " nghìn" : String.valueOf(this.klgdKhopLenh));
-        return string;
-    }
+//    public String chuyendoiklgd() {
+//        String string = this.klgdKhopLenh > 1000000 ? "hơn " + this.klgdKhopLenh / 1000000 + " triệu" :
+//                (this.klgdKhopLenh > 1000 ? "hơn " + this.klgdKhopLenh / 1000 + " nghìn" : String.valueOf(this.klgdKhopLenh));
+//        return string;
+//    }
 
     public String getMaCk() {
         return this.maCk;
