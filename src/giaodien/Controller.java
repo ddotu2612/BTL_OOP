@@ -60,7 +60,7 @@ public class Controller implements Initializable {
             noiDung.appendText("===BIẾN ĐỘNG CHỨNG KHOÁN===:\n");
             String dir = System.getProperty("user.dir");
             bienDongCK.setDatalist(new DuLieuBDTK().CSV_Extract(dir+"\\BTL_OOP\\src\\dulieu\\BienDongChungKhoan.csv"));
-//                bienDongCK.listModify();
+//            bienDongCK.listModify();
 //            bienDongCK.doanvan.clear();
 //            bienDongCK.sinhDoanVan();
             inTatCa(bienDongCK.sinhDoanVan());
