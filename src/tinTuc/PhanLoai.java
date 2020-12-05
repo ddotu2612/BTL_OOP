@@ -1,4 +1,4 @@
-package tintuc;
+package tinTuc;
 
 public class PhanLoai {
 	ChiSoChungKhoan cs = new ChiSoChungKhoan();

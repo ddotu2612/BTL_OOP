@@ -12,6 +12,5 @@ public class TestTheoNgay {
         for (String i : sinhCauTheoNgay.sinhDoanVan()) {
             System.out.println(i);
         }
-
     }
 }

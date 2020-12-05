@@ -233,7 +233,6 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
         cau.add(this.sinhCauCoPhieuCoGiaTriBanThapNhat());
         cau.add(this.sinhCauCoPhieuCoGiaTriGiaoDichRongCaoNhat());
         cau.add(this.sinhCauCoPhieuSoHuuCaoNhat());
-
         return cau;
     }
 }

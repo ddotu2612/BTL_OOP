@@ -1,9 +1,9 @@
-package tintuc;
+package tinTuc;
 
 import java.io.IOException;
 import java.util.List;
 
-public class testTinTucCK {
+public class TestTinTucCK {
     public static void main(String[] args) throws IOException {
         LayDuLieu data = new LayDuLieu();
         data.layCau();
