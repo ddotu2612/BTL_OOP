@@ -1,7 +1,7 @@
 package sosanh;
 
 import java.util.Comparator;
-import cacKieuDuLieu.BienDongChungKhoan;
+import cackieudulieu.BienDongChungKhoan;
 
 public class SoSanhKhoiLuong implements Comparator<BienDongChungKhoan> {
 
