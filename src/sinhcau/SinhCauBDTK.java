@@ -183,7 +183,6 @@ public class SinhCauBDTK extends AbstractSinhCau {
         cau = cau.replace("|klsvtbt1|", String.valueOf(this.datalist.get(x-1).getkLuongSoVoiTB1Thang()));
         cau = cau.replace("|klsvtbt2|", String.valueOf(this.datalist.get(x-2).getkLuongSoVoiTB1Thang()));
         cau = cau.replace("|klsvtbt3|", String.valueOf(this.datalist.get(x-3).getkLuongSoVoiTB1Thang()));
-
         return cau;
     }
 
@@ -200,7 +199,6 @@ public class SinhCauBDTK extends AbstractSinhCau {
         doanvan.add(sinhCauGiaGiamNhieuNhat());
         doanvan.add(sinhCauKluongSoVoiTBLonNhat());
         doanvan.add(sinhCauKluongSoVoiTBNhoNhat());
-
         return doanvan;
     }
 }

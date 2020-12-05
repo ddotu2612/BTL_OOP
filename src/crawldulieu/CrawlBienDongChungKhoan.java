@@ -27,7 +27,11 @@ public class CrawlBienDongChungKhoan {
                 sb.append(col3.get(i).text()).append(",");
                 sb.append(col4.get(i).text()).append(",");
                 sb.append(col5.get(i).text()).append(",");
-                sb.append(col7.get(i).text()).append("\n");
+                if(col7.get(i).text().equals("-")) {
+                    sb.append("0").append("\n");
+                } else {
+                    sb.append(col7.get(i).text()).append("\n");
+                }
             }
             System.out.println(sb);
             fileWriter.write(sb.toString());

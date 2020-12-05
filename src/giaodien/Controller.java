@@ -59,7 +59,8 @@ public class Controller implements Initializable {
     public void sinhcauEvent(ActionEvent event){
         if(sinhcauComboxBox.getValue().equals("Sinh Câu Biến Động Chứng Khoán")){
             noiDung.appendText("BIẾN ĐỘNG CHỨNG KHOÁN:\n");
-            bienDongCK.setDatalist(new DuLieuBDTK().CSV_Extract("D:\\Git\\OOP\\BTL_OOP\\src\\duLieu\\BienDongChungKhoan.csv"));
+            String dir = System.getProperty("user.dir");
+            bienDongCK.setDatalist(new DuLieuBDTK().CSV_Extract(dir +"//src//duLieu//BienDongChungKhoan.csv"));
             bienDongCK.listModify();
             bienDongCK.doanvan.clear();
             bienDongCK.sinhDoanVan();
