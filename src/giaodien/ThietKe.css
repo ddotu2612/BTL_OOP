@@ -1,5 +1,5 @@
 .vbox{
-    -fx-background-color:  #4dacff;
+    -fx-background-color:  #5F9EA0;
     -fx-border-radius: 5px;
 }
 
@@ -13,11 +13,11 @@
 }
 
 .hopTT{
-    -fx-background-color:  #3333cc;
+    -fx-background-color: #DEB887;
 
 }
 .hopSC{
-    -fx-background-color: #3333cc;
+    -fx-background-color: #DEB887;
 
 }
 
