@@ -1,7 +1,10 @@
 package sinhcau;
 import cackieudulieu.NhaDauTuNuocNgoai;
 import maucau.MauCauNhaDauTuNuocNgoai;
+import sosanh.nhadautunuocngoai.*;
+
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
     private ArrayList<NhaDauTuNuocNgoai> dataList = new ArrayList<>();
@@ -26,16 +29,8 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
         return tongGiaTriMua;
     }
 
-    public void setTongGiaTriMua(long tongGiaTriMua) {
-        this.tongGiaTriMua = tongGiaTriMua;
-    }
-
     public long getTongGiaTriBan() {
         return tongGiaTriBan;
-    }
-
-    public void setTongGiaTriBan(long tongGiaTriBan) {
-        this.tongGiaTriBan = tongGiaTriBan;
     }
 
     public void setDataList(ArrayList<NhaDauTuNuocNgoai> dataList) {
@@ -50,18 +45,9 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
         return tongKhoiLuongMua;
     }
 
-    public void setTongKhoiLuongMua(long tongKhoiLuongMua) {
-        this.tongKhoiLuongMua = tongKhoiLuongMua;
-    }
-
     public long getTongKhoiLuongBan() {
         return tongKhoiLuongBan;
     }
-
-    public void setTongKhoiLuongBan(long tongKhoiLuongBan) {
-        this.tongKhoiLuongBan = tongKhoiLuongBan;
-    }
-
 
     public String getSanGiaoDich() {
         return san;
@@ -71,149 +57,96 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
     }
 
     public void setTongKhoiLuongMuaBan( ArrayList<NhaDauTuNuocNgoai> dataList) {
-        int i = 0;
-        for(i = 0; i< dataList.size();i++) {
+        for(int i = 0; i < dataList.size();i++) {
             this.tongKhoiLuongMua += dataList.get(i).getKhoiLuongMua();
             this.tongKhoiLuongBan += dataList.get(i).getKhoiLuongBan();
         }
     }
     public void setTongGiaTriMuaBan( ArrayList<NhaDauTuNuocNgoai> dataList) {
-        int i = 0;
-        for(i = 0; i< dataList.size();i++) {
+        for(int i = 0; i < dataList.size();i++) {
             this.tongGiaTriMua += dataList.get(i).getGiaTriMua();
             this.tongGiaTriBan += dataList.get(i).getGiaTriBan();
         }
     }
 
-    public String chenDuLieu (String cau, NhaDauTuNuocNgoai data) {
-        cau = cau.replace("|MaCK|",data.getMa());
-        cau = cau.replace("|khoiLuongMua|",String.valueOf(data.getKhoiLuongQuyDoi(data.getKhoiLuongMua())));
-        cau = cau.replace("|giaTriMua|",String.valueOf(data.getGiaTriQuyDoi(data.getGiaTriMua())));
-        cau = cau.replace("|khoiLuongBan|",String.valueOf(data.getKhoiLuongQuyDoi(data.getKhoiLuongBan())));
-        cau = cau.replace("|giaTriBan|",String.valueOf(data.getGiaTriQuyDoi(data.getGiaTriBan())));
-        cau = cau.replace("|khoiLuongRong|",String.valueOf(data.getKhoiLuongQuyDoi(data.getKhoiLuongRong())));
-        cau = cau.replace("|giaTriGiaoDichRong|",String.valueOf(data.getGiaTriQuyDoi(data.getGiaTriGiaoDichRong())));
-        cau = cau.replace("|dangSoHuu|",String.valueOf(data.getDangSoHuu()));
+    public String sinhCauTopCoPhieuDuocMuaNhieu () {
+        String cau;
+        Collections.sort(this.dataList,new SoSanhKhoiLuongMuaVao());
+        cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTopCoPhieuDuocMuaNhieu());
+        for(int i = 0 ; i < dataList.size(); i++) {
+            cau = cau.replace("|mã "+(i+1)+"|",dataList.get(i).getMa());
+            cau = cau.replace("|KL"+(i+1)+"|",String.valueOf(new NhaDauTuNuocNgoai().getKhoiLuongQuyDoi(dataList.get(i).getKhoiLuongMua())));
+        }
         return cau;
     }
 
-    public String sinhCauTongKhoiLuongMuaVao ( ){
+    public String sinhCauTongKhoiLuongMuaVao () {
         String cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTongKhoiLuongMuaVao());
         cau = cau.replace("|tongKhoiLuongMua|",String.valueOf(new NhaDauTuNuocNgoai().getKhoiLuongQuyDoi(this.getTongKhoiLuongMua())));
         return cau;
     }
-    public String sinhCauTongKhoiLuongBanRa( ){
+    public String sinhCauTongKhoiLuongBanRa() {
         String cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTongKhoiLuongBanRa());
-        cau = cau.replace("|tongKhoiLuongBan|",String.valueOf(new NhaDauTuNuocNgoai().getKhoiLuongQuyDoi(this.getTongKhoiLuongMua())));
+        cau = cau.replace("|tongKhoiLuongBan|",String.valueOf(new NhaDauTuNuocNgoai().getKhoiLuongQuyDoi(this.getTongKhoiLuongBan())));
         return cau;
     }
-    public String sinhCauTongGiaTriBanRa ( ){
+    public String sinhCauTongGiaTriBanRa () {
         String cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTongGiaTriBanRa());
         cau = cau.replace("|tongGiaTriBan|",String.valueOf(new NhaDauTuNuocNgoai().getGiaTriQuyDoi(this.getTongGiaTriBan())));
         return cau;
     }
-    public String sinhCauTongGiaTriMuaVao ( ){
+    public String sinhCauTongGiaTriMuaVao () {
         String cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTongGiaTriMuaVao());
         cau = cau.replace("|tongGiaTriMua|",String.valueOf(new NhaDauTuNuocNgoai().getGiaTriQuyDoi(this.getTongGiaTriMua())));
         return cau;
     }
-    public String sinhCauCoPhieuCoKhoiLuongMuaNhieuNhat( ) {
-        String cau;
-        cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getCoPhieuCoKhoiLuongMuaNhieuNhat());
 
-        //tìm max
-        NhaDauTuNuocNgoai max_KL = dataList.get(0);
-        for (int i = 1 ; i < dataList.size(); i++ ) {
-            if (max_KL.getKhoiLuongMua() < dataList.get(i).getKhoiLuongMua()) {
-                max_KL = dataList.get(i);
-            }
-        }
-        cau = chenDuLieu(cau,max_KL);
-        return cau;
-    }
-    public String sinhCauCoPhieuCoKhoiLuongBanNhieuNhat( ) {
+    public String sinhCauCoPhieuCoKhoiLuongBanNhieuNhat() {
         String cau;
+        Collections.sort(this.dataList,new SoSanhKhoiLuongBan());
         cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getCoPhieuCoKhoiLuongBanNhieuNhat());
-        NhaDauTuNuocNgoai max_KL = dataList.get(0);
-        for (int i = 1 ; i < dataList.size(); i++ ) {
-            if (max_KL.getKhoiLuongBan() < dataList.get(i).getKhoiLuongBan()) {
-                max_KL = dataList.get(i);
-            }
-        }
-        cau = chenDuLieu(cau,max_KL);
+        cau = cau.replace("|ma|",dataList.get(0).getMa());
+        cau = cau.replace("|khoiLuongBan|",new NhaDauTuNuocNgoai().getKhoiLuongQuyDoi(dataList.get(0).getKhoiLuongBan()));
         return cau;
     }
-    public String sinhCauCoPhieuMuaRongNhieuNhat( ) {
+    public String sinhCauTopCoPhieuMuaRongNhieuNhat() {
         String cau;
-        cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getCoPhieuMuaRongNhieuNhat());
-        NhaDauTuNuocNgoai max_KL = dataList.get(0);
-        for (int i = 1 ; i < dataList.size(); i++ ) {
-            if (max_KL.getKhoiLuongRong() < dataList.get(i).getKhoiLuongRong()) {
-                max_KL = dataList.get(i);
-            }
+        Collections.sort(this.dataList,new SoSanhKhoiLuongMuaRong());
+        cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTopCoPhieuMuaRongNhieuNhat());
+        for (int i = 0 ; i < dataList.size(); i++ ) {
+            cau = cau.replace("|mã "+(i+1)+"|",dataList.get(i).getMa());
+            cau = cau.replace("|KLR"+(i+1)+"|",String.valueOf(new NhaDauTuNuocNgoai().getKhoiLuongQuyDoi(this.dataList.get(i).getKhoiLuongRong())));
         }
-        cau = chenDuLieu(cau,max_KL);
         return cau;
     }
-    public String sinhCauCoPhieuCoGiaTriMuaCaoNhat( ) {
+
+    public String sinhCauCoPhieuCoGiaTriBanCaoNhat() {
         String cau;
-        cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getCoPhieuCoGiaTriMuaCaoNhat());
-        NhaDauTuNuocNgoai max_GT = dataList.get(0);
-        for (int i = 1 ; i < dataList.size(); i++ ) {
-            if (max_GT.getGiaTriMua() < dataList.get(i).getGiaTriMua()) {
-                max_GT = dataList.get(i);
-            }
+        Collections.sort(this.dataList,new SoSanhGiaTriBan());
+        cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTopCoPhieuCoGiaTriBanCaoNhat());
+        for(int i = 0 ; i < dataList.size() ;i++) {
+            cau = cau.replace("|mã "+(i+1)+"|",dataList.get(i).getMa());
+            cau = cau.replace("|GTB"+(i+1)+"|",String.valueOf(new NhaDauTuNuocNgoai().getGiaTriQuyDoi(dataList.get(i).getGiaTriBan())));
         }
-        cau = chenDuLieu(cau,max_GT);
-        return cau;
-    }
-    public String sinhCauCoPhieuCoGiaTriBanCaoNhat( ) {
-        String cau;
-        cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getCoPhieuCoGiaTriBanCaoNhat());
-        NhaDauTuNuocNgoai max_GT = dataList.get(0);
-        for (int i = 1 ; i < dataList.size(); i++ ) {
-            if (max_GT.getGiaTriBan() < dataList.get(i).getGiaTriBan()) {
-                max_GT = dataList.get(i);
-            }
-        }
-        cau = chenDuLieu(cau,max_GT);
         return cau;
     }
     public String sinhCauCoPhieuCoGiaTriGiaoDichRongCaoNhat() {
         String cau;
+        Collections.sort(this.dataList,new SoSanhGiaTriGDRong());
         cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getCoPhieuCoGiaTriGiaoDichRongCaoNhat());
-        NhaDauTuNuocNgoai max_KL = dataList.get(0);
-        for (int i = 1 ; i < dataList.size(); i++ ) {
-            if (max_KL.getGiaTriGiaoDichRong() < dataList.get(i).getGiaTriGiaoDichRong()) {
-                max_KL = dataList.get(i);
-            }
-        }
-        cau = chenDuLieu(cau,max_KL);
+        cau = cau.replace("|ma|",dataList.get(0).getMa());
+        cau = cau.replace("|giaTriGiaoDichRong|",new NhaDauTuNuocNgoai().getGiaTriQuyDoi(dataList.get(0).getGiaTriGiaoDichRong()));
         return cau;
     }
-    public String sinhCauCoPhieuCoGiaTriBanThapNhat() {
-        String cau;
-        cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getCoPhieuCoGiaTriBanThapNhat());
-        NhaDauTuNuocNgoai minGT_GT = dataList.get(0);
-        for (int i = 1 ; i < dataList.size(); i++ ) {
-            if (minGT_GT.getGiaTriBan() > dataList.get(i).getGiaTriBan()) {
-                minGT_GT = dataList.get(i);
-            }
-        }
-        cau = chenDuLieu(cau,minGT_GT);
-        return cau;
 
-    }
     public String sinhCauCoPhieuSoHuuCaoNhat () {
         String cau;
-        cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getCoPhieuDuocSoHuuCaoNhat());
-        NhaDauTuNuocNgoai maxSoHuu = dataList.get(0);
-        for(int i = 1 ; i < dataList.size();i++) {
-            if (maxSoHuu.getDangSoHuu() < dataList.get(i).getDangSoHuu()) {
-                maxSoHuu = dataList.get(i);
-            }
+        Collections.sort(this.dataList,new SoSanhTyLeSoHuu());
+        cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTopCoPhieuDuocSoHuuCaoNhat());
+        for(int i = 0 ;i < dataList.size();i++ ) {
+            cau = cau.replace("|mã "+(i+1)+"|",dataList.get(i).getMa());
+            cau = cau.replace("|tỷ lệ "+(i+1)+"|",String.valueOf(dataList.get(i).getDangSoHuu()));
         }
-        cau = chenDuLieu(cau,maxSoHuu);
         return cau;
 
     }
@@ -221,16 +154,14 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
     @Override
     public ArrayList<String> sinhDoanVan() {
         cau.add("Tin về nhà đầu tư nước ngoài trên sàn " +this.san+ " trong ngày " + this.ngay+ " :");
+        cau.add(this.sinhCauTopCoPhieuDuocMuaNhieu());
         cau.add(this.sinhCauTongGiaTriMuaVao());
         cau.add(this.sinhCauTongGiaTriBanRa());
         cau.add(this.sinhCauTongKhoiLuongMuaVao());
         cau.add(this.sinhCauTongKhoiLuongBanRa());
-        cau.add(this.sinhCauCoPhieuCoKhoiLuongMuaNhieuNhat());
         cau.add(this.sinhCauCoPhieuCoKhoiLuongBanNhieuNhat());
-        cau.add(this.sinhCauCoPhieuMuaRongNhieuNhat());
-        cau.add(this.sinhCauCoPhieuCoGiaTriMuaCaoNhat());
+        cau.add(this.sinhCauTopCoPhieuMuaRongNhieuNhat());
         cau.add(this.sinhCauCoPhieuCoGiaTriBanCaoNhat());
-        cau.add(this.sinhCauCoPhieuCoGiaTriBanThapNhat());
         cau.add(this.sinhCauCoPhieuCoGiaTriGiaoDichRongCaoNhat());
         cau.add(this.sinhCauCoPhieuSoHuuCaoNhat());
 
