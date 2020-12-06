@@ -24,7 +24,7 @@ public class CrawlVNINDEX {
                 StringBuilder sb = new StringBuilder() ;
                 sb.append("\"").append("Ngày" ).append(",\"").append("Giá đóng cửa" ).append(",\"").append("Thay đổi" ).append(",\"").append("Khối lượng KL" ).append(",\"");
                 sb.append("Giá trị KL" ).append(",\"").append("Khối lượng TT" ).append(",\"").append("Giá trị TT" ).append(",\"").append("Giá mở cửa" ).append(",\"").append("Giá cao nhất" ).append(",\"").append("Giá thấp nhất" ).append(",\"\n");
-                FileWriter fw = new FileWriter(dir + "//src//duLieu//vnindexData.csv") ;
+                FileWriter fw = new FileWriter(dir + "//BTL_OOP//src//duLieu//vnindexData.csv") ;
                 int index1 = 0 ;
                 int index2 = 0 ;
                 int index3 = 0 ;

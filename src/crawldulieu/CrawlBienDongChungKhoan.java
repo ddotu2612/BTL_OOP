@@ -20,7 +20,7 @@ public class CrawlBienDongChungKhoan {
             Elements col5 = doc.select("tr >td.col5");
             Elements col7 = doc.select("tr >td.col7");
             StringBuilder sb = new StringBuilder();
-            FileWriter fileWriter = new FileWriter(dir + "\\src\\duLieu//BienDongChungKhoan.csv");
+            FileWriter fileWriter = new FileWriter(dir + "\\BTL_OOP\\src\\dulieu\\BienDongChungKhoan.csv");
             for (int i = 0; i < col1.size(); i++) {
                 sb.append(col1.get(i).ownText()).append(",");
                 sb.append(col2.get(i).text()).append(",");

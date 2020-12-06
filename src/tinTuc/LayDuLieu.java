@@ -15,10 +15,10 @@ public class LayDuLieu {
 		//Set the URL to connect
 		String url = "https://vnexpress.net/kinh-doanh/chung-khoan";
 
-		for(int i = 1; i <= 50; i++) {
+		for(int i = 1; i <= 10; i++) {
 			//Fetch and parse HTML file from the web into a Document object
 			//Chỉ tìm kiếm hot tag 50 trang đầu
-			Document docPage = Jsoup.connect(url+"-p"+i).timeout(20000).get();
+			Document docPage = Jsoup.connect(url+"-p"+i).timeout(10000).get();
 
 			//Using Selector Syntax
 			Elements elementPage = docPage.select(".description a[data-medium]");

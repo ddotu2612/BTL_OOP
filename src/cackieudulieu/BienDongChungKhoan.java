@@ -1,4 +1,7 @@
 package cackieudulieu;
+
+import javafx.beans.property.DoubleProperty;
+
 public class BienDongChungKhoan{
     private String ma;
     private double vonHoa; // don vi ty dong
