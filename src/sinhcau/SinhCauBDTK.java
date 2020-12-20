@@ -7,6 +7,7 @@ import sosanh.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.ListIterator;
 
 public class SinhCauBDTK extends AbstractSinhCau {
     private List<BienDongChungKhoan> datalist = new ArrayList<>();
@@ -21,29 +22,24 @@ public class SinhCauBDTK extends AbstractSinhCau {
         this.listModify();
     }
     public void listModify(){
-        for(int i = 0; i < this.datalist.size(); i++){
-            if(this.datalist.get(i).getVonHoa() == 0.0){
-                this.datalist.remove(i);
-                i--;
-            }
-            if (this.datalist.get(i).getKhoiLuong() == 0.0){
-                this.datalist.remove(i);
-                i--;
-            }
+        ListIterator i = datalist.listIterator();
+        while (i.hasNext()) {
+            BienDongChungKhoan bdck = (BienDongChungKhoan) i.next();
+            if(bdck.getVonHoa() == 0.0 || bdck.getKhoiLuong() == 0.0)
+                i.remove();
         }
     }
 
     public String sinhCauGiaoDichNhieuNhat(){
         String cau;
         Collections.sort(this.datalist, new SoSanhKhoiLuong());
-
         cau = sinhCauNgauNhien(MaucauBienDongChungKhoan.getGiaoDichNhieuNhat());
         cau = cau.replace("|ma1|", this.datalist.get(0).getMa());
         cau = cau.replace("|ma2|", this.datalist.get(1).getMa());
         cau = cau.replace("|ma3|", this.datalist.get(2).getMa());
-        cau = cau.replace("|khoiLuong1|", String.valueOf(this.datalist.get(0).getKhoiLuong()));
-        cau = cau.replace("|khoiLuong2|", String.valueOf(this.datalist.get(0).getKhoiLuong()));
-        cau = cau.replace("|khoiLuong3|", String.valueOf(this.datalist.get(0).getKhoiLuong()));
+        cau = cau.replace("|khoiLuong1|", new BienDongChungKhoan().chuyenKhoiLuong(this.datalist.get(0).getKhoiLuong()));
+        cau = cau.replace("|khoiLuong2|", new BienDongChungKhoan().chuyenKhoiLuong(this.datalist.get(0).getKhoiLuong()));
+        cau = cau.replace("|khoiLuong3|",new BienDongChungKhoan().chuyenKhoiLuong(this.datalist.get(0).getKhoiLuong()));
 
         return cau;
     }
@@ -188,6 +184,7 @@ public class SinhCauBDTK extends AbstractSinhCau {
 
     @Override
     public List<String> sinhDoanVan() {
+
         doanvan.add("Biến động chứng khoán trong 1 tháng trở lại đây: ");
         doanvan.add(sinhCauGiaoDichNhieuNhat());
         doanvan.add(sinhCauGiaoDichItNhat());
@@ -199,6 +196,7 @@ public class SinhCauBDTK extends AbstractSinhCau {
         doanvan.add(sinhCauGiaGiamNhieuNhat());
         doanvan.add(sinhCauKluongSoVoiTBLonNhat());
         doanvan.add(sinhCauKluongSoVoiTBNhoNhat());
+
         return doanvan;
     }
 }

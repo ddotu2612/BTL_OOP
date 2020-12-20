@@ -4,20 +4,21 @@ import cackieudulieu.ChiSoIndex;
 import maucau.MauCauChiSoIndex;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import static java.lang.StrictMath.abs;
 
 public class SinhCauChiSoIndex extends AbstractSinhCau{
 
-	private ArrayList<ChiSoIndex> dataList = new ArrayList<>();
-	public static ArrayList<String> doanVan = new ArrayList<>();
+	private List<ChiSoIndex> dataList = new ArrayList<>();
+	public static List<String> doanVan = new ArrayList<>();
 
-	public void setDataList (ArrayList<ChiSoIndex> dataList) {
+	public void setDataList (List<ChiSoIndex> dataList) {
 		this.dataList = dataList;
 	}
 
-	public ArrayList<ChiSoIndex> getDataList() {
+	public List<ChiSoIndex> getDataList() {
 		return this.dataList;
 	}
 
@@ -134,8 +135,9 @@ public class SinhCauChiSoIndex extends AbstractSinhCau{
 		return cau;
 	}
 
-	public ArrayList<String> sinhDuLieuMoiNgay(ChiSoIndex data) {
-		ArrayList<String> doanVan = new ArrayList<>();
+	public List<String> sinhDuLieuMoiNgay(ChiSoIndex data) {
+		List<String> doanVan = new ArrayList<>();
+
 		//Thông tin chứng khoán theo ngày sẽ có các thông tin
 		//Thông tin về mở phiên giao dịch, về giao dich thõa thuận, giao dịch khớp lệnh
 		//Thông tin chốt phiên giao dịch và sinh câu đánh giá chung
@@ -149,10 +151,10 @@ public class SinhCauChiSoIndex extends AbstractSinhCau{
 		return doanVan;
 	}
 
-	public ArrayList<String> sinhDuLieuNhieuNgay() {
+	public List<String> sinhDuLieuNhieuNgay() {
 		ArrayList<String> doanVan = new ArrayList<>();
 
-		int MAX_SIZE = this.dataList.size();
+		int MAX_SIZE = this.dataList.size() - 1;
 
 		//Thiết lập các giá trị max, min ban đầu là phiên đầu tiên trong danh sách
 		ChiSoIndex giaCaoNhat = dataList.get(0);
@@ -233,7 +235,7 @@ public class SinhCauChiSoIndex extends AbstractSinhCau{
 		return doanVan;
 	}
 
-	public ArrayList<String> ketHopDanhSach(ArrayList<String> danhSach1, ArrayList<String> danhSach2) {
+	public List<String> ketHopDanhSach(List<String> danhSach1, List<String> danhSach2) {
 		for (int i = 0; i < danhSach2.size(); i++) {
 			danhSach1.add(danhSach2.get(i));
 		}
@@ -241,7 +243,7 @@ public class SinhCauChiSoIndex extends AbstractSinhCau{
 	}
 
 	@Override
-	public ArrayList<String> sinhDoanVan() {
+	public List<String> sinhDoanVan() {
 		int MAX_SIZE = dataList.size();
 		int i = 0;
 		int count = 0;

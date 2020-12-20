@@ -44,10 +44,6 @@ public class TheoNgay  {
         return gtgdKhopLenh;
     }
 
-    public long getKlgdThoaThuan() {
-        return klgdThoaThuan;
-    }
-
     public long getGtgdThoaThuan() {
         return gtgdThoaThuan;
     }

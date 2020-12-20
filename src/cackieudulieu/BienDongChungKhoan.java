@@ -1,12 +1,10 @@
 package cackieudulieu;
 
-import javafx.beans.property.DoubleProperty;
-
 public class BienDongChungKhoan{
     private String ma;
     private double vonHoa; // don vi ty dong
     private double gia; // Don vi ty dong
-    private double khoiLuong; // don vi co phieu
+    private long khoiLuong; // don vi co phieu
     private double giaSoVoiThangTruoc; // don vi %
     private double kLuongSoVoiTB1Thang;
 
@@ -34,12 +32,19 @@ public class BienDongChungKhoan{
         this.gia = Double.parseDouble(gia);
     }
 
-    public double getKhoiLuong() {
+    public Long getKhoiLuong() {
         return khoiLuong;
     }
 
     public void setKhoiLuong(String khoiLuong) {
-        this.khoiLuong = Double.parseDouble(khoiLuong);
+        this.khoiLuong = Long.parseLong(khoiLuong);
+    }
+
+    public String chuyenKhoiLuong(Long khoiLuong) {
+        if(khoiLuong * 1.0/1000000 >= 1.0){
+            return String.format("%.2f",(float)(khoiLuong/1000000)) + " triệu";
+        }
+        return String.valueOf(khoiLuong);
     }
 
     public double getGiaSoVoiThangTruoc() {
@@ -47,7 +52,8 @@ public class BienDongChungKhoan{
     }
 
     public void setGiaSoVoiThangTruoc(String giaSoVoiThangTruoc) {
-        for (int i = 0; i < giaSoVoiThangTruoc.length(); i++) {
+        int n = giaSoVoiThangTruoc.length();
+        for (int i = 0; i < n; i++) {
             if (giaSoVoiThangTruoc.charAt(i) == ' ') {
                 this.giaSoVoiThangTruoc = Double.parseDouble(giaSoVoiThangTruoc.substring(0, i));
                 break;

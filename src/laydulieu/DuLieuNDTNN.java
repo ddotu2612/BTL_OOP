@@ -6,9 +6,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DuLieuNDTNN extends LayDuLieuCSV {
-    public NhaDauTuNuocNgoai taoNDTNN(ArrayList<String> a) {
+    public NhaDauTuNuocNgoai taoNDTNN(List<String> a) {
         NhaDauTuNuocNgoai duLieuNDTNN = new NhaDauTuNuocNgoai();
         duLieuNDTNN.setMa(a.get(0).substring(1, a.get(0).length() - 1));
         duLieuNDTNN.setKhoiLuongMua(Long.parseLong(a.get(1).substring(1, a.get(1).length() - 1).replace(".", "")));
@@ -21,8 +22,8 @@ public class DuLieuNDTNN extends LayDuLieuCSV {
         return duLieuNDTNN;
     }
 
-    public  ArrayList<NhaDauTuNuocNgoai> chuyenFileCSVNDTNNSangList(String csvPath) {
-        ArrayList <NhaDauTuNuocNgoai> list = new ArrayList<>();
+    public  List<NhaDauTuNuocNgoai> chuyenFileCSVNDTNNSangList(String csvPath) {
+        List <NhaDauTuNuocNgoai> list = new ArrayList<>();
         BufferedReader br = null;
         try {
             String line ;

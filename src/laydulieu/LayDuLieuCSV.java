@@ -3,12 +3,12 @@ package laydulieu;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LayDuLieuCSV {
 
-	public ArrayList<String> parseCSVLine(String csvLine) {
-
-		ArrayList<String > res = new ArrayList<>();
+	public List<String> parseCSVLine(String csvLine) {
+		List<String > res = new ArrayList<>();
 		if(csvLine != null ){
 			String[] data = csvLine.split(",");
 			for( String i: data){

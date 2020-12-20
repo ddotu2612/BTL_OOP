@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.input.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="giaodien.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="695.0" prefWidth="1146.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="giaodien.Controller">
    <left>
-      <VBox fx:id="Vbox" prefHeight="715.0" prefWidth="278.0" styleClass="vbox" BorderPane.alignment="CENTER">
+      <VBox fx:id="Vbox" prefHeight="665.0" prefWidth="299.0" styleClass="vbox" BorderPane.alignment="CENTER">
          <children>
-            <HBox styleClass="title">
+            <HBox prefHeight="123.0" prefWidth="279.0" style="-fx-background-color: #FF3300;" styleClass="title">
                <children>
                   <VBox prefHeight="72.0" prefWidth="191.0" styleClass="title">
                      <children>
@@ -47,23 +54,26 @@
                         <Image url="@icon/noun_Stock_161182%20(1).png" />
                      </image>
                      <HBox.margin>
-                        <Insets top="10.0" />
+                        <Insets left="5.0" top="5.0" />
                      </HBox.margin>
                   </ImageView>
                </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
             </HBox>
-            <VBox id="vbox" fx:id="tintucBox" prefHeight="203.0" prefWidth="200.0" styleClass="hopTT">
+            <VBox id="vbox" fx:id="tintucBox" prefHeight="216.0" prefWidth="279.0" style="-fx-background-color: #66FF33;" styleClass="hopTT">
                <children>
-                  <VBox prefHeight="132.0" prefWidth="258.0">
+                  <VBox prefHeight="132.0" prefWidth="283.0">
                      <children>
                         <HBox fx:id="tintuctileBox" prefHeight="39.0" prefWidth="258.0">
                            <children>
-                              <Label fx:id="tintuclabel" text="Tin Tức Chứng Khoán" textAlignment="CENTER" textFill="#f8efef">
+                              <Label fx:id="tintuclabel" text="Tin Tức Chứng Khoán" textAlignment="CENTER" textFill="#902e2e">
                                  <font>
                                     <Font name="Times New Roman Bold" size="17.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="50.0" top="10.0" />
+                                    <Insets left="60.0" top="10.0" />
                                  </HBox.margin>
                               </Label>
                            </children>
@@ -73,17 +83,17 @@
                               <Image url="@icon/news_article_blog-512.png" />
                            </image>
                            <VBox.margin>
-                              <Insets left="87.0" />
+                              <Insets left="98.0" />
                            </VBox.margin>
                         </ImageView>
                      </children>
                   </VBox>
-                  <ComboBox fx:id="tintucComboxBox" onAction="#tintucEvent" onMouseDragEntered="#sinhcauEvent" prefHeight="36.0" prefWidth="185.0" promptText="Tin Tức Chứng Khoán">
+                  <ComboBox fx:id="tintucComboxBox" onAction="#tintucEvent" prefHeight="36.0" prefWidth="185.0" promptText="Tin Tức Chứng Khoán">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <VBox.margin>
-                        <Insets left="38.0" top="12.0" />
+                        <Insets left="50.0" top="12.0" />
                      </VBox.margin>
                   </ComboBox>
                </children>
@@ -91,18 +101,18 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </VBox>
-            <VBox fx:id="sinhcauBox" prefHeight="212.0" prefWidth="200.0" styleClass="hopSC">
+            <VBox fx:id="sinhcauBox" prefHeight="186.0" prefWidth="279.0" style="-fx-background-color: #66FF33;" styleClass="hopSC">
                <children>
-                  <VBox prefHeight="141.0" prefWidth="258.0">
+                  <VBox prefHeight="128.0" prefWidth="279.0">
                      <children>
                         <HBox fx:id="sinhcautitleBox" prefHeight="50.0" prefWidth="200.0">
                            <children>
-                              <Label fx:id="sinhcautitleLabel" prefHeight="34.0" prefWidth="176.0" text="Sinh Câu Chứng Khoán" textFill="#f8efef">
+                              <Label fx:id="sinhcautitleLabel" prefHeight="49.0" prefWidth="176.0" text="Sinh Câu Chứng Khoán" textFill="#902e2e">
                                  <font>
                                     <Font name="Times New Roman Bold" size="17.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="45.0" top="10.0" />
+                                    <Insets left="60.0" top="10.0" />
                                  </HBox.margin>
                               </Label>
                            </children>
@@ -112,7 +122,7 @@
                               <Image url="@icon/baseline_description_black_18dp.png" />
                            </image>
                            <VBox.margin>
-                              <Insets left="96.0" />
+                              <Insets left="110.0" />
                            </VBox.margin>
                         </ImageView>
                      </children>
@@ -120,25 +130,56 @@
                         <Insets />
                      </VBox.margin>
                   </VBox>
-                  <ComboBox fx:id="sinhcauComboxBox" onAction="#sinhcauEvent" prefHeight="36.0" prefWidth="185.0" promptText="Sinh Câu Chứng Khoán">
+                  <ComboBox fx:id="sinhcauComboxBox" prefHeight="35.0" prefWidth="185.0" promptText="            Chọn sinh câu">
                      <VBox.margin>
-                        <Insets left="38.0" />
+                        <Insets left="50.0" />
                      </VBox.margin></ComboBox>
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </VBox>
-            <Button mnemonicParsing="false" onAction="#refresh" prefHeight="46.0" prefWidth="85.0" text="Refresh">
+            <GridPane prefHeight="116.0" prefWidth="291.0" style="-fx-background-color: #66FF33;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.3333282470703" minWidth="10.0" prefWidth="142.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.6666717529297" minWidth="10.0" prefWidth="157.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <DatePicker fx:id="ngay" prefHeight="40.0" prefWidth="150.0" promptText="Chọn Ngày">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin>
+                  </DatePicker>
+                  <ComboBox fx:id="san" prefHeight="40.0" prefWidth="104.0" promptText="         Sàn" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <Button mnemonicParsing="false" onAction="#quit" prefHeight="42.0" prefWidth="145.0" style="-fx-background-radius: 25;" text="Thoát " GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Times New Roman Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#refresh" prefHeight="42.0" prefWidth="146.0" style="-fx-background-radius: 25;" text="Làm mới" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Times New Roman Bold" size="22.0" />
+                     </font>
+                  </Button>
+               </children>
                <VBox.margin>
-                  <Insets bottom="20.0" left="90.0" top="25.0" />
+                  <Insets left="10.0" right="10.0" />
                </VBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#quit" prefHeight="46.0" prefWidth="86.0" text="Quit">
-               <VBox.margin>
-                  <Insets left="90.0" top="5.0" />
-               </VBox.margin>
-            </Button>
+            </GridPane>
          </children>
          <BorderPane.margin>
             <Insets left="2.0" top="2.0" />
@@ -148,7 +189,7 @@
    <center>
       <ScrollPane fx:id="Scroll" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" BorderPane.alignment="CENTER">
          <content>
-            <TextArea fx:id="noiDung" styleClass="noiDung">
+            <TextArea fx:id="noiDung" prefHeight="681.0" prefWidth="839.0" styleClass="noiDung">
                <font>
                   <Font size="15.0" />
                </font>

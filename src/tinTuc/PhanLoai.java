@@ -1,6 +1,7 @@
 package tinTuc;
 
 public class PhanLoai {
+
 	ChiSoChungKhoan cs = new ChiSoChungKhoan();
 	CoDongChungKhoan cd = new CoDongChungKhoan();
 	CoPhieuChungKhoan cp = new CoPhieuChungKhoan();

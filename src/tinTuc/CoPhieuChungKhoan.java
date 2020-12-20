@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CoPhieuChungKhoan implements ChungKhoan {
-	public static List<String> coPhieu =new ArrayList<String>();
+	public static List<String> coPhieu = new ArrayList<String>();
         
 	@Override
 	public boolean checkKey(String s) {

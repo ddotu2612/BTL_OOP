@@ -13,5 +13,4 @@ public abstract class AbstractSinhCau {
 	}
 
 	public abstract List<String> sinhDoanVan();
-
 }

@@ -10,8 +10,8 @@ public class CrawlDuLieuTheoNgay {
         String dir = System.getProperty("user.dir");
         Document doc;
         try {
-            doc =  Jsoup.connect("https://s.cafef.vn/TraCuuLichSu2/1/HOSE/20/11/2020.chn").get();
-            FileWriter fw = new FileWriter(dir + "//BTL_OOP//src//duLieu//bienDongTheoNgayData.csv") ;
+            doc =  Jsoup.connect("https://s.cafef.vn/TraCuuLichSu2/1/UPCOM/16/12/2020.chn").get();
+            FileWriter fw = new FileWriter(dir + "//src//duLieu//bienDongTheoNgayData.csv") ;
             Elements Item_DateItem_lsg = doc.select("tr > td.Item_DateItem_lsg > a");
             Elements Item_Price1 = doc.select("tr > td.Item_Price1");
             Elements Item_ChangePrice_lsg = doc.select("tr > td.Item_ChangePrice_lsg");

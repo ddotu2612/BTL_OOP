@@ -45,16 +45,8 @@ public class ChiSoIndex {
 		this.giaDongCua = giaDongCua;
 	}
 
-	public double getGiaCaoNhat() {
-		return giaCaoNhat;
-	}
-
 	public void setGiaCaoNhat(double giaCaoNhat) {
 		this.giaCaoNhat = giaCaoNhat;
-	}
-
-	public double getGiaThapNhat() {
-		return giaThapNhat;
 	}
 
 	public void setGiaThapNhat(double giaThapNhat) {
@@ -67,10 +59,6 @@ public class ChiSoIndex {
 
 	public double getTiLeThayDoi() {
 		return tiLeThayDoi;
-	}
-
-	public void setTiLeThayDoi(double tiLeThayDoi) {
-		this.tiLeThayDoi = tiLeThayDoi;
 	}
 
 	public void setGTGDKhopLenh(long GTGDKhopLenh) {
@@ -94,40 +82,42 @@ public class ChiSoIndex {
 	private long KLGDThoaThuan;
 
 	public void setThayDoi(String thayDoi) {
+		int n = thayDoi.length();
 		this.thayDoi = thayDoi;
 		int i;
 		int j;
-		for(i = 0; i< thayDoi.length();i++)
+		for(i = 0; i< n;i++)
 			if(thayDoi.charAt(i) == '(' ) break;
-		for(j = i; j< thayDoi.length();j++)
+		for(j = i; j< n;j++)
 			if(thayDoi.charAt(j) == ')' ) break;
 		this.giaTriThayDoi = Double.parseDouble(this.thayDoi.substring(1, i-1));
 		this.tiLeThayDoi = Double.parseDouble(this.thayDoi.substring(i+1,j-1));
 	}
 
 	public String chuyenDoiThayDoi() {
+		int n = thayDoi.length();
 		String a ;
 		int i,j;
 		if(thayDoi.charAt(1) == '-'){
-			for(i = 0 ; i < thayDoi.length() ; i++){
+			for(i = 0 ; i < n ; i++){
 				if(thayDoi.charAt(i) == '(') break;
 			}
-			for(j = 0 ; j < thayDoi.length() ; j++){
+			for(j = 0 ; j < n ; j++){
 				if(thayDoi.charAt(j) == ')' ) break;
 			}
 			double giaTri=Double.parseDouble(thayDoi.substring(2 , i-1));
 			double tiLe=Double.parseDouble(thayDoi.substring(i+2 , j-1));
-			a="giảm "+giaTri+" điểm (tương ứng với "+tiLe+ " phần trăm )";
+			a = "giảm " + giaTri + " điểm (tương ứng với " + tiLe + " phần trăm )";
 		}else{
-			for(i = 0 ; i < thayDoi.length() ; i++){
+			for(i = 0 ; i < n ; i++){
 				if(thayDoi.charAt(i) == '(') break;
 			}
-			for(j = 0 ; j < thayDoi.length() ; j++){
+			for(j = 0 ; j < n ; j++){
 				if(thayDoi.charAt(j) == ')' ) break;
 			}
-			double giaTri=Double.parseDouble(thayDoi.substring(1 , i-1));
-			double tiLe=Double.parseDouble(thayDoi.substring(i+1 , j-1));
-			a="tăng "+giaTri+" điểm (tương ứng với "+tiLe+ " phần trăm )";
+			double giaTri = Double.parseDouble(thayDoi.substring(1 , i-1));
+			double tiLe = Double.parseDouble(thayDoi.substring(i+1 , j-1));
+			a = "tăng " + giaTri + " điểm (tương ứng với " + tiLe + " phần trăm )";
 		}
 		return a;
 	}

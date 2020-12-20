@@ -14,7 +14,7 @@ public class DuLieuTheoNgay extends LayDuLieuCSV {
         TheoNgay dulieuTheoNgay = new TheoNgay();
         dulieuTheoNgay.setMaCk(a.get(0).substring(1,a.get(0).length()-1));
         dulieuTheoNgay.setGiaDongCua(Double.parseDouble(a.get(1).substring(1,a.get(1).length()-1)));
-        dulieuTheoNgay.setGiaDongCua(Double.parseDouble(a.get(3).substring(1,a.get(3).length()-1)));
+        //dulieuTheoNgay.setGiaDongCua(Double.parseDouble(a.get(3).substring(1,a.get(3).length()-1)));
         dulieuTheoNgay.setGiaMoCua(Double.parseDouble(a.get(4).substring(1,a.get(4).length()-1)));
         dulieuTheoNgay.setGiaCaoNhat(Double.parseDouble(a.get(5).substring(1,a.get(5).length()-1)));
         dulieuTheoNgay.setGiaThapNhat(Double.parseDouble(a.get(6).substring(1,a.get(6).length()-1)));
@@ -23,11 +23,9 @@ public class DuLieuTheoNgay extends LayDuLieuCSV {
         dulieuTheoNgay.setKlgdThoaThuan(Long.parseLong(a.get(9).substring(1,a.get(9).length()-1).replace(".","")));
         dulieuTheoNgay.setGtgdThoaThuan(Long.parseLong(a.get(10).substring(1,a.get(10).length()-1).replace(".","")));
         return dulieuTheoNgay;
-
-
     }
-    public ArrayList<TheoNgay> chuyenCSVSangIndexList (String csvPath) {
-        ArrayList<TheoNgay> list = new ArrayList<>() ;
+    public List<TheoNgay> chuyenCSVSangIndexList (String csvPath) {
+        List<TheoNgay> list = new ArrayList<>() ;
         BufferedReader br = null;
         try {
             String line;
@@ -49,7 +47,5 @@ public class DuLieuTheoNgay extends LayDuLieuCSV {
             }
         }
         return list ;
-
     }
-
 }

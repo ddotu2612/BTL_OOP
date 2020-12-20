@@ -53,7 +53,7 @@ public class MauCauChiSoIndex {
 	public static String[] TangLienTuc ={"Chỉ số " + maCK + " cho thấy những dấu hiệu tích cực khi tăng liên tục từ ngày " + Date1 + " đến ngày " + Date2 + ", tổng giá trị tăng lên tới " + Sum + " điểm.",
 			"Trong các phiên giao dịch liên tiếp kể từ ngày " + Date1 + " đến " + Date2 + " chỉ số " + maCK + " liên tục tăng từ " + CloseValue1 + " đến " + CloseValue2 + " điểm.",
 			"" + maCK + " liên tục tăng từ ngày " + Date1 + " đến " + Date2 + " với mức tăng tương ứng là " + Sum + " điểm."};
-	public static String[] GiamLienTuc = {"Chỉ số " + maCK + " cho thấy những dấu hiệu tích cực khi giảm liên tục từ ngày " + Date1 + " đến ngày " + Date2 + ", tổng giá trị giảm lên tới " + Sum + " điểm.",
+	public static String[] GiamLienTuc = {"Chỉ số " + maCK + " cho thấy những dấu hiệu không khả quanget khi giảm liên tục từ ngày " + Date1 + " đến ngày " + Date2 + ", tổng giá trị giảm lên tới " + Sum + " điểm.",
 			"Trong các phiên giao dịch liên tiếp kể từ ngày " + Date1 + " đến " + Date2 + " chỉ số " + maCK + " liên tục giảm từ " + CloseValue1 + " đến " + CloseValue2 + " điểm.",
 			"" + maCK + " liên tục tăng từ ngày " + Date1 + " đến " + Date2 + " với mức giảm tương ứng là " + Sum + " điểm."};
 	public static String[] GiaCaoNhat = {"Trong khoảng thời gian trên, chỉ số " + maCK + " đạt đỉnh tại mức " +giaDongCua+ " điểm tại ngày " +ngay+ ".",

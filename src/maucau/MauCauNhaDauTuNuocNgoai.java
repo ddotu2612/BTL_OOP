@@ -51,7 +51,7 @@ public class MauCauNhaDauTuNuocNgoai {
             "|mã 1|, |mã 2|, |mã 3| là 3 cổ phiếu được khối ngoại mua ròng nhiều nhất trong ngày trên sàn |san|",
     };
     public static String [] topCoPhieuCoGiaTriBanCaoNhat = {
-            "Phía bán cổ phiếu, mã |mã 1| và |mã| có giá bán áp đảo lần lượt là |GTB1|, |GTB2|",
+            "Phía bán cổ phiếu, mã |mã 1| và |mã 2| có giá bán áp đảo lần lượt là |GTB1|, |GTB2|",
             "Vói giá trị bán đạt |GTB1| và |GTB2|,do đó |mã 1|, |mã 2| đã trở thành 2 cổ phiếu có giá trị bán cao nhất trong ngày hôm nay",
             "Được bán nhiều nhất hôm nay là |mã 1| và |mã 2| trong số các khối ngọại với giá trị bán đạt ngưỡng |GTB1| và |GTB2|",
             "Đứng thứ nhất về giá trị bán trên |san| là cổ phiếu |mã 1| với giá trị bán đạt |GTB1| và |mã 2| với giới giá trị bán |GTB2|",
@@ -75,48 +75,38 @@ public class MauCauNhaDauTuNuocNgoai {
     }
 
     public static String[] getTongKhoiLuongMuaVao() {
-
         return tongKhoiLuongMuaVao;
     }
 
     public static String[] getTongKhoiLuongBanRa() {
-
         return tongKhoiLuongBanRa;
     }
 
     public static String[] getTongGiaTriBanRa() {
-
         return tongGiaTriBanRa;
     }
 
     public static String[] getTongGiaTriMuaVao() {
-
         return tongGiaTriMuaVao;
     }
 
-
     public static String[] getCoPhieuCoKhoiLuongBanNhieuNhat() {
-
         return coPhieuCoKhoiLuongBanNhieuNhat;
     }
 
     public static String[] getTopCoPhieuMuaRongNhieuNhat() {
-
         return topCoPhieuMuaRongNhieuNhat;
     }
 
     public static String[] getTopCoPhieuCoGiaTriBanCaoNhat() {
-
         return topCoPhieuCoGiaTriBanCaoNhat;
     }
 
     public static String[] getCoPhieuCoGiaTriGiaoDichRongCaoNhat() {
-
         return coPhieuCoGiaTriGiaoDichRongCaoNhat;
     }
 
     public static String[] getTopCoPhieuDuocSoHuuCaoNhat() {
-
         return topCoPhieuDuocSoHuuCaoNhat;
     }
 }

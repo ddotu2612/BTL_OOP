@@ -10,7 +10,6 @@ public  class MauCauTheoNgay{
             "Chốt phiên giao dịch, ghi nhận giá cổ phiếu |maCk| đạt |giaDongCua|,tăng |thaydoi| so với khi mở cửa phiên giao dịch.",
             "Cổ phiếu |maCk| tại lúc đóng cửa phiên giao dịch đạt |giaDongCua|,ghi nhận tăng |thaydoi| so với thời điểm bắt đầu phiên giao dịch."
     };
-
     private static String[] bangSoVoiBanDau = new String[]{
             "Chốt phiên cuối ngày , giá cổ phiếu |maCk| đứng giá tại |giaMoCua| .",
             "Đóng cửa phiên cuối ngày , giá cổ phiếu |maCk| dừng lại ở mức |giaMoCua|,không đổi so với khi mở cửa phiên giao dịch.",
@@ -98,7 +97,7 @@ public  class MauCauTheoNgay{
     };
 
     private static String[] giaTriGiaoDichKhopLenh = new String[]{
-            "Kết thúc phiên giao dịch, mã cổ phiếu |maCk| được khớp lệnh với giá trị tổng cộng |gtdgKhopLenh|",
+            "Kết thúc phiên giao dịch, mã cổ phiếu |maCk| được khớp lệnh với giá trị tổng cộng |gtgdKhopLenh|",
             "Chốt phiên giao dịch, ghi nhận mã cổ phiếu |maCk| có tổng cộng |gtgdKhopLenh| được khớp lệnh",
             "Kết thúc phiên giao dịch, tổng cộng có |gtgdKhopLenh| đã được khớp lệnh cho mã cổ phiểu |maCk|"
     };

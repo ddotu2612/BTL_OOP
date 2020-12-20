@@ -47,7 +47,7 @@ public class MaucauBienDongChungKhoan {
     };
 
     public static String[] kLuongSoVoiTBLonNhat = {
-            "Top 3 về khối lượng so với trung bình 1 tháng cao nhất là |ma1|, |ma2| và |ma3| với tỉ lệ lần lượt là gấp |klvtbt1|, |klsvtbt2| và |klsvtbt3| lần.", // khối lượng so với trung bình tháng
+            "Top 3 về khối lượng so với trung bình 1 tháng cao nhất là |ma1|, |ma2| và |ma3| với tỉ lệ lần lượt là gấp |klsvtbt1|, |klsvtbt2| và |klsvtbt3| lần.", // khối lượng so với trung bình tháng
             "Trong tháng qua, chứng kiến sự tăng trưởng mạnh mẽ về khối lượng so với trung bình 1 tháng trước của mã cổ phiếu |ma1| (gấp |klsvtbt1| lần)," +
                     " đứng ngay sau là |ma2| (gấp |klsvtbt2| lần) và |ma3| (gấp |klsvtbt3| lần)."
     };

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DuLieuBDTK extends LayDuLieuCSV {
-    public static BienDongChungKhoan LayDLBDTK(ArrayList<String> args){
+    public static BienDongChungKhoan LayDLBDTK(List<String> args){
         BienDongChungKhoan Data = new BienDongChungKhoan();
         Data.setMa(args.get(0));
         Data.setVonHoa(args.get(1));

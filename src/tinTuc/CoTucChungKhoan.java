@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CoTucChungKhoan implements ChungKhoan {
-	public static List<String> coTuc =new ArrayList<String>();
+	public static List<String> coTuc = new ArrayList<String>();
         
 	@Override
 	public boolean checkKey(String s) {
@@ -14,7 +14,6 @@ public class CoTucChungKhoan implements ChungKhoan {
 
 	@Override
 	public boolean checkData(String s) {
-
 		return true;
 	}
         
