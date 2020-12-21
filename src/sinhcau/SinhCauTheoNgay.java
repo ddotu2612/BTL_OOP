@@ -41,7 +41,7 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
         cau = cau.replace("|gtgdKhopLenh|", (data.getGtgdKhopLenh()) +" đồng");
         cau = cau.replace("|gtgdThoaThuan|", (data.getGtgdThoaThuan())+" đồng");
         cau = cau.replace("|thaydoi|",Double.toString(Math.abs(data.getThaydoi())));
-        cau = cau.replace("|klgd|", Long.toString(data.getKlgdKhopLenh()/1000000000));
+        cau = cau.replace("|klgd|", Long.toString(data.getKlgdKhopLenh()));
         return cau;
     }
 
@@ -53,7 +53,7 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
         cau = cau.replace("|maCk4|", datalist.get(4).getMaCk());
         cau = cau.replace("|giaMoCua0|", Double.toString(datalist.get(0).getGiaMoCua()) + " đồng");
         cau = cau.replace("|giaDongCua0|", Double.toString(datalist.get(0).getGiaDongCua()) + " đồng");
-        cau=cau.replace("|klgd0|",datalist.get(0).getKlgdKhopLenh()/1000000000+ " đồng");
+        cau=cau.replace("|klgd0|",datalist.get(0).getKlgdKhopLenh()+ " đồng");
         return cau;
     }
     //Sinh cau theo 1 ma
