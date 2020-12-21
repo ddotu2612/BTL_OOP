@@ -1,4 +1,4 @@
-package tinTuc;
+package tintuc;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package tinTuc;
+package tintuc;
 
 public class PhanLoai {
 

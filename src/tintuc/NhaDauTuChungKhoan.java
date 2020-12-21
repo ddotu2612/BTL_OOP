@@ -1,14 +1,14 @@
-package tinTuc;
+package tintuc;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CoDongChungKhoan implements ChungKhoan {
-	public static List<String> coDong =new ArrayList<String>();
+public class NhaDauTuChungKhoan implements ChungKhoan {
+	public static List<String> nhaDauTu =new ArrayList<String>();
         
 	@Override
 	public boolean checkKey(String s) {
-		if (s.toLowerCase().contains("cổ đông")) return true;
+		if (s.toLowerCase().contains("nhà đầu tư")) return true;
 		else return false;
 	}
 
@@ -20,6 +20,6 @@ public class CoDongChungKhoan implements ChungKhoan {
         
 	@Override
 	public void addList(String s) {
-		if (checkKey(s) && checkData(s)) coDong.add(s);
+		if (checkKey(s) && checkData(s)) nhaDauTu.add(s);
 	}
 }

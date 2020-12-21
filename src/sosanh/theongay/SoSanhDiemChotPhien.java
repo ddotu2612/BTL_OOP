@@ -1,12 +1,12 @@
 package sosanh.theongay;
 
-import cackieudulieu.TheoNgay;
+import cackieudulieu.ChungKhoanTheoNgay;
 
 import java.util.Comparator;
 
-public class SoSanhDiemChotPhien implements Comparator <TheoNgay> {
+public class SoSanhDiemChotPhien implements Comparator <ChungKhoanTheoNgay> {
 
-    public int compare(TheoNgay o1, TheoNgay o2){
+    public int compare(ChungKhoanTheoNgay o1, ChungKhoanTheoNgay o2){
         return (Double.compare (o1.getGiaDongCua(), o2.getGiaDongCua()));
 
     }

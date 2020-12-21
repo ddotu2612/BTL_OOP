@@ -1,4 +1,4 @@
-package tinTuc;
+package tintuc;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

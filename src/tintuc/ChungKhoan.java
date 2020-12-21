@@ -1,4 +1,4 @@
-package tinTuc;
+package tintuc;
 
 public interface ChungKhoan {
 	public boolean checkKey(String s);

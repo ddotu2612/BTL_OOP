@@ -23,7 +23,7 @@ public class MaucauBienDongChungKhoan {
     };
 
     public static String[] giaCaoNhat = {
-            "|ma1| là mã cổ phiếu có giá cao nhất trong tháng vừa qua với |gia| tỷ đồng, theo sau đó là |ma2| và |ma3| với giá lần lượt là |gia2| và |gia3| tỷ đồng.",
+            "|ma1| là mã cổ phiếu có giá cao nhất trong tháng vừa qua với |gia1| tỷ đồng, theo sau đó là |ma2| và |ma3| với giá lần lượt là |gia2| và |gia3| tỷ đồng.",
             "Đứng đầu bảng về giá là mã cổ phiếu |ma1| (|gia1| tỷ đồng), tiếp theo đó là |ma2| (|gia2| tỷ đồng) và |ma3| (|gia3| tỷ đồng).",
             "Top 3 mã cổ phiếu có giá cao nhất trong tháng qua lần lượt là |ma1|, |ma2| và |ma3| với giá lần lượt là |gia1|, |gia2| và |gia3| tỷ đồng."
     };

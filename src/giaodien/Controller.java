@@ -11,9 +11,9 @@ import laydulieu.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
-import tinTuc.ChiSoChungKhoan;
+import tintuc.ChiSoChungKhoan;
 import sinhcau.*;
-import tinTuc.*;
+import tintuc.*;
 
 import java.io.FileWriter;
 import java.net.URL;
@@ -61,6 +61,7 @@ public class Controller implements Initializable {
     }
 
     public void inTatCa(List<String> p){
+        p.add("\n");
         p.stream().forEach((s) -> {
             noiDung.appendText(s +"\n");
         });
@@ -118,6 +119,8 @@ public class Controller implements Initializable {
                 noiDung.appendText("===NHÀ ĐẦU TƯ NƯỚC NGOÀI ngày "+ ngayChon +" ===:\n");
                 nhaDauTu.setSanGiaoDich(sanCK);
                 nhaDauTu.setDataList(new DuLieuNDTNN().chuyenFileCSVNDTNNSangList( dir+"\\src\\dulieu\\nhaDauTuNuocNgoaiData.csv"));
+                nhaDauTu.setTongGiaTriMuaBan(nhaDauTu.getDataList());
+                nhaDauTu.setTongKhoiLuongMuaBan(nhaDauTu.getDataList());
                 inTatCa(nhaDauTu.sinhDoanVan());
             } catch (Exception ex) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -256,7 +259,9 @@ public class Controller implements Initializable {
         sinhcauComboxBox.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(!sinhcauComboxBox.getSelectionModel().isEmpty())  sinhcau();
+                if(!sinhcauComboxBox.getSelectionModel().isEmpty()) {
+                    sinhcau();
+                }
             }
         });
         san.setItems(list);

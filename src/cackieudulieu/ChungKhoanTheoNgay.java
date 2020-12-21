@@ -1,6 +1,6 @@
 package cackieudulieu;
 
-public class TheoNgay  {
+public class ChungKhoanTheoNgay {
 
     private String maCk;
 
@@ -15,7 +15,7 @@ public class TheoNgay  {
 
     private double thaydoi;
 
-    public TheoNgay() {
+    public ChungKhoanTheoNgay() {
     }
 
     public String getMaCk() {

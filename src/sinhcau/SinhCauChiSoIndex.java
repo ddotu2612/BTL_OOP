@@ -152,9 +152,9 @@ public class SinhCauChiSoIndex extends AbstractSinhCau{
 	}
 
 	public List<String> sinhDuLieuNhieuNgay() {
-		ArrayList<String> doanVan = new ArrayList<>();
+		List<String> doanVan = new ArrayList<>();
 
-		int MAX_SIZE = this.dataList.size() - 1;
+		int MAX_SIZE = this.dataList.size() ;
 
 		//Thiết lập các giá trị max, min ban đầu là phiên đầu tiên trong danh sách
 		ChiSoIndex giaCaoNhat = dataList.get(0);
@@ -193,9 +193,9 @@ public class SinhCauChiSoIndex extends AbstractSinhCau{
 				double sum = dataList.get(i).getGiaTriThayDoi() + dataList.get(i + 1).getGiaTriThayDoi() + dataList.get(i + 2).getGiaTriThayDoi();
 				int j = i + 2;
 				while(j + 1 < MAX_SIZE) {
-					if(dataList.get(i + 1).getGiaTriThayDoi() > 0) {
+					if(dataList.get(j + 1).getGiaTriThayDoi() > 0) {
 						j++;
-						sum += dataList.get(j+1).getGiaTriThayDoi();
+						sum += dataList.get(j).getGiaTriThayDoi();
 					} else {
 						break;
 					}
@@ -214,7 +214,7 @@ public class SinhCauChiSoIndex extends AbstractSinhCau{
 				double sum = dataList.get(i).getGiaTriThayDoi() + dataList.get(i + 1).getGiaTriThayDoi() + dataList.get(i + 2).getGiaTriThayDoi();
 				int j = i + 2;
 				while(j + 1 < MAX_SIZE) {
-					if(dataList.get(i + 1).getGiaTriThayDoi() < 0) {
+					if(dataList.get(j + 1).getGiaTriThayDoi() < 0) {
 						sum += dataList.get(j+1).getGiaTriThayDoi();
 						j++;
 					} else {

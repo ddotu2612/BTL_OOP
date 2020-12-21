@@ -76,24 +76,15 @@ public class NhaDauTuNuocNgoai {
         this.dangSoHuu = dangSoHuu;
     }
 
-    public String getKhoiLuongQuyDoi( long khoiLuong) {
-        if ((double)khoiLuong/1_000_000_000 > 1)
-            return String.format("%.2f",(double) khoiLuong/1_000_000_000) + " tỷ";
-        if ((double)khoiLuong / 1_000_000 > 1)
-            return String.format("%.2f", (double) khoiLuong / 1_000_000) + " triệu";
-        else if ((double)khoiLuong/ 1000 > 1)
-            return String.format("%.2f", (double) khoiLuong / 1000) + " nghìn";
+    public String getQuyDoi( long giaTriQuyDoi) {
+        if ((double)giaTriQuyDoi/1_000_000_000 > 1)
+            return String.format("%.2f",(double) giaTriQuyDoi/1_000_000_000) + " tỷ";
+        if ((double)giaTriQuyDoi / 1_000_000 > 1)
+            return String.format("%.2f", (double) giaTriQuyDoi / 1_000_000) + " triệu";
+        else if ((double)giaTriQuyDoi/ 1000 > 1)
+            return String.format("%.2f", (double) giaTriQuyDoi / 1000) + " nghìn";
         else
-            return String.format("%d", khoiLuong);
-    }
-
-    public String getGiaTriQuyDoi(long giaTri) {
-        if ((double)giaTri/1_000_000_000 > 1)
-            return String.format("%.2f",(double) giaTri/1_000_000_000) + " tỷ";
-        else if((double)giaTri/1_000_000 > 1)
-            return String.format("%.2f",(double) giaTri/1_000_000) + " triệu";
-        else
-            return String.format("%d",giaTri);
+            return String.format("%d", giaTriQuyDoi);
     }
 }
 

@@ -17,6 +17,19 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
     private long tongGiaTriMua;
     private long tongGiaTriBan;
 
+    public void setTongKhoiLuongMuaBan( List<NhaDauTuNuocNgoai> dataList) {
+        for(int i = 0; i < dataList.size();i++) {
+            this.tongKhoiLuongMua += dataList.get(i).getKhoiLuongMua();
+            this.tongKhoiLuongBan += dataList.get(i).getKhoiLuongBan();
+        }
+    }
+    public void setTongGiaTriMuaBan( List<NhaDauTuNuocNgoai> dataList) {
+        for(int i = 0; i < dataList.size();i++) {
+            this.tongGiaTriMua += dataList.get(i).getGiaTriMua();
+            this.tongGiaTriBan += dataList.get(i).getGiaTriBan();
+        }
+    }
+
     public static List<String> getCau() {
         return cau;
     }
@@ -55,29 +68,29 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
         cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTopCoPhieuDuocMuaNhieu());
         for(int i = 0 ; i < dataList.size(); i++) {
             cau = cau.replace("|mã "+(i+1)+"|", dataList.get(i).getMa());
-            cau = cau.replace("|KL"+(i+1)+"|", String.valueOf(new NhaDauTuNuocNgoai().getKhoiLuongQuyDoi(dataList.get(i).getKhoiLuongMua())));
+            cau = cau.replace("|KL"+(i+1)+"|", String.valueOf(new NhaDauTuNuocNgoai().getQuyDoi(dataList.get(i).getKhoiLuongMua())));
         }
         return cau;
     }
 
     public String sinhCauTongKhoiLuongMuaVao () {
         String cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTongKhoiLuongMuaVao());
-        cau = cau.replace("|tongKhoiLuongMua|", String.valueOf(new NhaDauTuNuocNgoai().getKhoiLuongQuyDoi(this.getTongKhoiLuongMua())));
+        cau = cau.replace("|tongKhoiLuongMua|", String.valueOf(new NhaDauTuNuocNgoai().getQuyDoi(this.getTongKhoiLuongMua())));
         return cau;
     }
     public String sinhCauTongKhoiLuongBanRa() {
         String cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTongKhoiLuongBanRa());
-        cau = cau.replace("|tongKhoiLuongBan|", String.valueOf(new NhaDauTuNuocNgoai().getKhoiLuongQuyDoi(this.getTongKhoiLuongBan())));
+        cau = cau.replace("|tongKhoiLuongBan|", String.valueOf(new NhaDauTuNuocNgoai().getQuyDoi(this.getTongKhoiLuongBan())));
         return cau;
     }
     public String sinhCauTongGiaTriBanRa () {
         String cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTongGiaTriBanRa());
-        cau = cau.replace("|tongGiaTriBan|", String.valueOf(new NhaDauTuNuocNgoai().getGiaTriQuyDoi(this.getTongGiaTriBan())));
+        cau = cau.replace("|tongGiaTriBan|", String.valueOf(new NhaDauTuNuocNgoai().getQuyDoi(this.getTongGiaTriBan())));
         return cau;
     }
     public String sinhCauTongGiaTriMuaVao () {
         String cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTongGiaTriMuaVao());
-        cau = cau.replace("|tongGiaTriMua|", String.valueOf(new NhaDauTuNuocNgoai().getGiaTriQuyDoi(this.getTongGiaTriMua())));
+        cau = cau.replace("|tongGiaTriMua|", String.valueOf(new NhaDauTuNuocNgoai().getQuyDoi(this.getTongGiaTriMua())));
         return cau;
     }
 
@@ -86,7 +99,7 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
         Collections.sort(this.dataList,new SoSanhKhoiLuongBan());
         cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getCoPhieuCoKhoiLuongBanNhieuNhat());
         cau = cau.replace("|ma|", dataList.get(0).getMa());
-        cau = cau.replace("|khoiLuongBan|", new NhaDauTuNuocNgoai().getKhoiLuongQuyDoi(dataList.get(0).getKhoiLuongBan()));
+        cau = cau.replace("|khoiLuongBan|", new NhaDauTuNuocNgoai().getQuyDoi(dataList.get(0).getKhoiLuongBan()));
         return cau;
     }
     public String sinhCauTopCoPhieuMuaRongNhieuNhat() {
@@ -95,7 +108,7 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
         cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTopCoPhieuMuaRongNhieuNhat());
         for (int i = 0 ; i < 3; i++ ) {
             cau = cau.replace("|mã "+(i+1)+"|", dataList.get(i).getMa());
-            cau = cau.replace("|KLR"+(i+1)+"|", String.valueOf(new NhaDauTuNuocNgoai().getKhoiLuongQuyDoi(this.dataList.get(i).getKhoiLuongRong())));
+            cau = cau.replace("|KLR"+(i+1)+"|", String.valueOf(new NhaDauTuNuocNgoai().getQuyDoi(this.dataList.get(i).getKhoiLuongRong())));
         }
         return cau;
     }
@@ -106,7 +119,7 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
         cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getTopCoPhieuCoGiaTriBanCaoNhat());
         for(int i = 0 ; i < 3 ;i++) {
             cau = cau.replace("|mã "+(i+1)+"|", dataList.get(i).getMa());
-            cau = cau.replace("|GTB"+(i+1)+"|", String.valueOf(new NhaDauTuNuocNgoai().getGiaTriQuyDoi(dataList.get(i).getGiaTriBan())));
+            cau = cau.replace("|GTB"+(i+1)+"|", String.valueOf(new NhaDauTuNuocNgoai().getQuyDoi(dataList.get(i).getGiaTriBan())));
         }
         return cau;
     }
@@ -115,7 +128,7 @@ public class SinhCauNhaDauTuNuocNgoai extends AbstractSinhCau{
         Collections.sort(this.dataList,new SoSanhGiaTriGDRong());
         cau = sinhCauNgauNhien(MauCauNhaDauTuNuocNgoai.getCoPhieuCoGiaTriGiaoDichRongCaoNhat());
         cau = cau.replace("|ma|",dataList.get(0).getMa());
-        cau = cau.replace("|giaTriGiaoDichRong|",new NhaDauTuNuocNgoai().getGiaTriQuyDoi(dataList.get(0).getGiaTriGiaoDichRong()));
+        cau = cau.replace("|giaTriGiaoDichRong|",new NhaDauTuNuocNgoai().getQuyDoi(dataList.get(0).getGiaTriGiaoDichRong()));
         return cau;
     }
 

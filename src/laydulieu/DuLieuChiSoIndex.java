@@ -42,7 +42,7 @@ public class DuLieuChiSoIndex extends LayDuLieuCSV{
 			String line;
 			br = new BufferedReader(new FileReader(csvPath));
 			// Bỏ qua dòng đầu tiên
-			br.readLine();
+			//br.readLine();
 			// Đọc file csv
 			while ((line = br.readLine()) != null) {
 				list.add(taoChiSoIndex(parseCSVLine(line),maCK));

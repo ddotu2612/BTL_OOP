@@ -126,27 +126,27 @@ public class ChiSoIndex {
 		return giaMoCua - (giaDongCua - giaTriThayDoi);
 	}
 
-	public int quyDoiGTGDKhopLenh() {
-		int a;
-		a = (int) GTGDKhopLenh/1000000000;
+	public double quyDoiGTGDKhopLenh() {
+		double a;
+		a = GTGDKhopLenh * 1.0/1000000000;
 		return a;
 	}
 
-	public int quyDoiKLGDKhopLenh() {
-		int a;
-		a = (int )KLGDKhopLenh/1000000 ;
+	public double quyDoiKLGDKhopLenh() {
+		double a;
+		a = KLGDKhopLenh * 1.0/1000000 ;
 		return a;
 	}
 
-	public int quyDoiGTGDThoaThuan() {
-		int a;
-		a = (int) GTGDThoaThuan/1000000000;
+	public double quyDoiGTGDThoaThuan() {
+		double a;
+		a =  GTGDThoaThuan * 1.0/1000000000;
 		return a;
 	}
 
-	public int quyDoiKLGDThoaThuan() {
-		int a;
-		a = (int) KLGDThoaThuan/1000000;
+	public double quyDoiKLGDThoaThuan() {
+		double a;
+		a = KLGDThoaThuan * 1.0/1000000;
 		return a;
 	}
 }
