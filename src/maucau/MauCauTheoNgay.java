@@ -85,7 +85,7 @@ public  class MauCauTheoNgay{
     };
 
     private static String[] khoiLuongGiaoDichKhopLenh = new String[]{
-            "Trong toàn bộ phiên giao dịch,mã cổ phiếu |maCk| đạt khối lượng giao dịch |klgd|",
+            "Trong toàn bộ phiên giao dịch,mã cổ phiếu |maCk| đạt khối lượng giao dịch |klgd| lượt",
             "Có tổng cộng |klgd| lượt giao dịch cổ phiếu |maCk| trong phiên giao dịch"
     };
 
