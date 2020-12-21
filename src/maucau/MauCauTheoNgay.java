@@ -5,7 +5,7 @@ public  class MauCauTheoNgay{
 
     }
     private static String[] tangSoVoiBanDau = new String[]{
-            "Chốt phiên cuối ngày, giá cổ phiếu |maCk| tăng từ |openValue| lên thành |giaDongCua| .",
+            "Chốt phiên cuối ngày, giá cổ phiếu |maCk| tăng từ |giaMoCua| lên thành |giaDongCua| .",
             "Đóng cửa phiên cuối ngày, giá cổ phiếu |maCk| dừng lại ở mức |giaDongCua|, so với khi mở cửa phiên giao dịch tăng |thaydoi|.",
             "Chốt phiên giao dịch, ghi nhận giá cổ phiếu |maCk| đạt |giaDongCua|,tăng |thaydoi| so với khi mở cửa phiên giao dịch.",
             "Cổ phiếu |maCk| tại lúc đóng cửa phiên giao dịch đạt |giaDongCua|,ghi nhận tăng |thaydoi| so với thời điểm bắt đầu phiên giao dịch."
