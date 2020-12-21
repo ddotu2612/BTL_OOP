@@ -28,8 +28,8 @@ public class SinhCauTheoNgay extends AbstractSinhCau {
     }
     public  List<ChungKhoanTheoNgay>  datalist = new ArrayList<>();
 
-    public void setDatalist(List<ChungKhoanTheoNgay> datalist) {
-        this.datalist = datalist;
+//     public void setDatalist(List<ChungKhoanTheoNgay> datalist) {
+//         this.datalist = datalist;
     }
     // Thay the cac key word va du lieu trong cau bang cac thuoc tinh cua data
     public String chenDuLieu(String cau, ChungKhoanTheoNgay data) {
